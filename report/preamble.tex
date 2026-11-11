@@ -1,0 +1,96 @@
+% ---------------------------------------------------------------- preamble
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+\usepackage[a4paper,margin=2.0cm,top=2.0cm,bottom=2.2cm]{geometry}
+\usepackage{microtype}
+\usepackage{thmtools}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{booktabs,multirow,threeparttable,tabularx}
+\usepackage[group-separator={,},group-minimum-digits=4]{siunitx}
+\usepackage{caption,subcaption}
+\usepackage[section]{placeins}   % floats never drift into a later section
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing,shapes.geometric,fit,backgrounds,patterns}
+\usepackage[most]{tcolorbox}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue]{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% ---------------------------------------------------------------- colours (same roles as the figures)
+\definecolor{linkblue}{HTML}{1C5CAB}
+\definecolor{gaC}{HTML}{2A78D6}
+\definecolor{tsC}{HTML}{EB6834}
+\definecolor{maC}{HTML}{1BAF7A}
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{ink2}{HTML}{52514E}
+\definecolor{muted}{HTML}{898781}
+\definecolor{gridc}{HTML}{E1E0D9}
+\definecolor{water}{HTML}{DBE9F7}
+\definecolor{landE}{HTML}{F1EFE9}
+\definecolor{landA}{HTML}{EBEAE4}
+\definecolor{addC}{HTML}{1BAF7A}
+\definecolor{remC}{HTML}{E34948}
+\definecolor{keyC}{HTML}{F4F8FD}
+
+% ---------------------------------------------------------------- layout
+\setlength{\parskip}{2pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}\setcounter{topnumber}{3}\setcounter{totalnumber}{4}
+\setlist{itemsep=1pt,topsep=2pt,leftmargin=*}
+\captionsetup{font=small,labelfont=bf,labelsep=period,skip=4pt}
+\captionsetup[sub]{font=footnotesize}
+\titleformat{\section}{\large\bfseries\sffamily}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\sffamily}{\thesubsection}{0.6em}{}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{}{}{}[.]
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+\titlespacing*{\subsection}{0pt}{7pt}{3pt}
+\titlespacing*{\paragraph}{0pt}{3pt}{0.6em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\color{ink2}CMP3005 Term Project --- MediDrone Istanbul}
+\fancyhead[R]{\footnotesize\sffamily\color{ink2}F.~Alpay (2267273)}
+\fancyfoot[C]{\footnotesize\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% ---------------------------------------------------------------- theorems
+\declaretheorem[style=plain,name=Theorem]{theorem}
+\declaretheorem[style=plain,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=plain,name=Proposition,sibling=theorem]{proposition}
+\declaretheorem[style=plain,name=Corollary,sibling=theorem]{corollary}
+\declaretheorem[style=definition,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=remark,name=Remark,sibling=theorem]{remark}
+
+\newtcolorbox{keybox}[1][]{enhanced,colback=keyC,colframe=gaC!60,boxrule=0.4pt,arc=1.5pt,
+  left=5pt,right=5pt,top=3pt,bottom=3pt,fontupper=\small,#1}
+
+% ---------------------------------------------------------------- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\NP}{\textsf{NP}}
+\newcommand{\Poly}{\textsf{P}}
+\newcommand{\pred}{\operatorname{pred}}
+\newcommand{\succc}{\operatorname{succ}}
+\newcommand{\cvrp}{\textsc{CVRP}}
+\newcommand{\tsp}{\textsc{TSP}}
+\newcommand{\hc}{\textsc{HamCycle}}
+\newcommand{\bp}{\textsc{BinPacking}}
+\newcommand{\feas}{\textsc{CVRP-Feas}}
+\newcommand{\BP}{\operatorname{BP}}
+\newcommand{\GA}{\textcolor{gaC}{\textbf{GA}}}
+\newcommand{\TS}{\textcolor{tsC}{\textbf{TS}}}
+\newcommand{\MA}{\textcolor{maC}{\textbf{MA}}}
+\newcommand{\figdir}{../figures}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{\hfill{\color{ink2}\footnotesize$\triangleright$ #1}}

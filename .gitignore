@@ -1,0 +1,34 @@
+# Machine-specific files and local recovery copy
+.DS_Store
+.local-backup/
+.venv/
+__pycache__/
+*.py[cod]
+tmp/
+demo*.json
+
+# Build products (keep report/main.pdf and the final report PDF)
+solver/build/
+solver/bin/
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Historical copies remain available locally
+archive/
+report/research.pdf
+slides/slides.pdf
+slides/tikz/*.pdf
+deliverables/*.zip
+
+# Never ignore the experimental evidence
+# data/, results/raw/, CSV summaries and figures are versioned.

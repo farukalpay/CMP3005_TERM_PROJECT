@@ -1,0 +1,26 @@
+% ======================================================================
+\section{Problem model}\label{sec:model}
+% ======================================================================
+\paragraph{Instance} A complete undirected graph on $V=\{0,1,\dots,n\}$, node $0$ the central
+laboratory (depot) and $1..n$ the clinics; a distance $d:V\times V\to\R_{\ge0}$, symmetric, with
+$d(i,i)=0$ and the triangle inequality; demands $q_i\in\Z^+$ with $q_i\le Q$; capacity $Q$ and fleet
+size $K$. A \emph{route} is a sequence $\rho=(v_1,\dots,v_m)$ of distinct clinics flown as
+$0\to v_1\to\dots\to v_m\to0$, with load $q(\rho)=\sum_t q_{v_t}$ and cost
+$c(\rho)=d(0,v_1)+\sum_{t<m}d(v_t,v_{t+1})+d(v_m,0)$.
+
+\paragraph{Feasible solution, objective} A set $s=\{\rho_1,\dots,\rho_r\}$ with $r\le K$ whose routes
+partition $\{1..n\}$ and satisfy $q(\rho)\le Q$. \textbf{\cvrp-OPT:} minimise $\mathrm{cost}(s)=\sum_\rho c(\rho)$.
+\textbf{\cvrp-D:} given $(G,d,q,Q,K)$ and $B\in\R^+$, is there a feasible $s$ with $\mathrm{cost}(s)\le B$?
+
+\paragraph{MediDrone metric} Let $S\subseteq V$ be the nodes on the European side and $e$ the Euclidean
+distance. Flying across the Bosphorus costs a constant extra $P$ (air corridor, wind, battery margin):
+$d(i,j)=e(i,j)+P\cdot\delta_S(i,j)$ with $\delta_S(i,j)=1$ iff exactly one of $i,j$ is in $S$
+(\cref{eq:bosphorus}). In the team instance $S=\{i:x_i<500\}$ and $P=150$; in the real-geography instance
+$S$ is the set of clinics located in the 25 European districts of Istanbul and $P=5$\,km.
+Note that the depot $(500,500)$ satisfies $x\ge500$, so the laboratory of the team instance is on the
+\emph{Asian} side and every route that serves Europe crosses the strait.
+
+\paragraph{Quality measures} $\mathrm{Gap}=100\,(\mathrm{cost}-\mathrm{BKS})/\mathrm{BKS}$, with
+CVRPLIB's published BKS for benchmarks and, for our own instances, the best value found by any run of
+any experiment (\cref{sec:setup}). The \emph{load factor} $\tau=\sum_iq_i/(KQ)$ measures how tight the
+fleet is.

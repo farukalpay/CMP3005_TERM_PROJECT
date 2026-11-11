@@ -1,0 +1,51 @@
+\section{Tabu Search: improving one route plan}
+TS stores a route plan directly. It starts from CW. If CW has too many routes, the code
+removes the smallest routes and reinserts their clinics into $K$ remaining slots. This can
+temporarily overload a route. The search then repairs and improves the plan.
+
+\subsection*{Moves and constant-time cost changes}
+\textbf{Relocate} moves a clinic to another position or route. \textbf{Swap} exchanges two clinics.
+\textbf{2-opt} reverses a segment within one route. \textbf{2-opt*} exchanges tails of two routes.
+The code supports all four. Candidate lists focus the search on nearby clinics, with $k=20$
+in the main experiments.
+
+For a relocate between distinct routes, remove $u$ from edges $(a,u),(u,b)$ and insert it between
+$c$ and $d$. The change in cost is
+\[
+\begin{split}
+ \Delta={}&d(a,b)-d(a,u)-d(u,b)\\
+          &+d(c,u)+d(u,d)-d(c,d).
+\end{split}
+\]
+Only six edge costs are needed, regardless of the number of clinics. Cached route loads give
+the overload change in constant time too. Applying the chosen move can take longer because
+route arrays and positions must be updated.
+
+\subsection*{Tabu memory, aspiration and overload}
+Removed undirected edges become tabu for a random 10--25 iterations. A move reintroducing
+one is normally forbidden. \emph{Aspiration} allows it if it creates a new best feasible solution.
+
+Moves are ranked by cost plus $\lambda$ times total overload. If the new plan is overloaded,
+multiply $\lambda$ by 1.3; otherwise divide it by 1.3, within fixed bounds. This discourages
+long periods of overload while letting the search move between clinic assignments. Initially,
+$\lambda$ is average depot distance divided by average demand. Only zero-overload plans with
+at most $K$ routes can become saved answers. TS follows the memory-based search idea in [7].
+
+\begin{algorithm}[h]\caption{Tabu Search (\texttt{tabu.cpp}, moves in \texttt{routes.hpp})}
+\begin{algorithmic}[1]
+\State Start from CW, reducing to at most $K$ route slots if necessary
+\State Initialise tabu expiry times, penalty and best feasible answer
+\While{time remains}
+ \State Enumerate moves; compute their cost and overload changes
+ \State Reject tabu moves unless aspiration holds
+ \State Choose the best admissible penalised move, even if current cost worsens
+ \State Apply it and mark removed edges tabu
+ \State Adapt the overload penalty
+ \State Save a feasible plan if it improves the best answer
+ \State After stagnation, restart from the best answer with random relocations
+\EndWhile
+\State Return the best feasible answer
+\end{algorithmic}\end{algorithm}
+
+\takeaway{GA searches a population of orders. TS changes an explicit route plan, using short-term
+memory to discourage cycling back to recently reversed choices.}

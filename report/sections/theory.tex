@@ -1,0 +1,264 @@
+% ======================================================================
+\section{Complexity: why MediDrone cannot be solved exactly every morning}
+\label{sec:theory}
+% ======================================================================
+We use the definitions of \cref{sec:model}. Instances are encoded with the
+distance matrix written explicitly (rationals), so the input has size
+$\Theta(n^2 b)$ for $b$-bit numbers; w.l.o.g.\ $K\le n$ (more vehicles than
+customers are useless).
+
+\subsection{CVRP-D is in \NP}
+\begin{theorem}\label{thm:np}
+$\cvrp\text{-D}\in\NP$. A certificate is the list of routes (at most $n+K$ integers,
+$O(n\log n)$ bits) and it can be verified with $O(n)$ arithmetic operations.
+\end{theorem}
+\begin{proof}
+The verifier (i) rejects if more than $K$ routes are listed; (ii) scans all routes with a
+Boolean array $\mathit{seen}[1..n]$ and rejects if an id is out of range or seen twice,
+and finally if some customer is unseen --- $O(n)$; (iii) sums the demands of every route and
+rejects if a sum exceeds $Q$ --- $O(n)$ additions; (iv) adds $d(0,v_1)+\sum d(v_t,v_{t+1})+d(v_m,0)$
+over all routes, i.e.\ exactly $n+(\text{number of routes})\le n+K\le 2n$ matrix look-ups and
+additions; (v) accepts iff the sum is $\le B$. All numbers involved have polynomial length,
+so the verifier runs in time polynomial (indeed linear in $n$) and accepts iff the
+certificate is a feasible solution of cost $\le B$.
+\end{proof}
+\begin{remark}
+The explicit-matrix (or integer, as in CVRPLIB) encoding matters: if the input were real
+coordinates with \emph{exact} Euclidean distances, step~(v) compares a sum of square roots with
+$B$, a problem not known to be decidable in polynomial time; this is why Euclidean TSP is
+NP-hard but not known to be in \NP{} \citep{garey1976some}. Our solver and checker therefore
+fix the encoding: nint-rounded integers for CVRPLIB, IEEE doubles (a rational encoding) for
+MediDrone.
+\end{remark}
+
+\subsection{The reduction chain $\hc\le_p\tsp\le_p\cvrp$}
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
+  v/.style={circle,draw=ink2,fill=white,inner sep=1.3pt,minimum size=11pt},
+  dep/.style={rectangle,draw=ink,fill=tsC!25,inner sep=2pt,minimum size=11pt},
+  e1/.style={draw=ink,line width=0.7pt}, e2/.style={draw=gridc,line width=0.6pt,dash pattern=on 2pt off 1.5pt},
+  hc/.style={draw=tsC,line width=1.6pt}]
+% panel (a)
+\begin{scope}
+  \foreach \i/\a in {0/90,1/162,2/234,3/306,4/18} \node[v] (a\i) at (\a:1.05) {$v_{\i}$};
+  \foreach \u/\w in {0/1,1/2,2/3,3/4,4/0,0/2,1/3} \draw[e1] (a\u)--(a\w);
+  \node[font=\scriptsize\bfseries,anchor=west] at (-1.5,1.55) {(a) \hc{} instance $H$};
+\end{scope}
+\draw[-{Latex[length=2mm]},ink2,line width=0.6pt] (1.45,0)--(2.25,0) node[midway,above,align=center]{$w{=}1$ on $E_H$\\$w{=}2$ else};
+% panel (b)
+\begin{scope}[xshift=3.75cm]
+  \foreach \i/\a in {0/90,1/162,2/234,3/306,4/18} \node[v] (b\i) at (\a:1.05) {$v_{\i}$};
+  \foreach \u/\w in {0/3,1/4,2/4} \draw[e2] (b\u)--(b\w);
+  \foreach \u/\w in {0/2,1/3} \draw[e1] (b\u)--(b\w);
+  \foreach \u/\w in {0/1,1/2,2/3,3/4,4/0} \draw[hc] (b\u)--(b\w);
+  \node[font=\scriptsize\bfseries,anchor=west] at (-1.5,1.55) {(b) metric \tsp, $B=N$};
+\end{scope}
+\draw[-{Latex[length=2mm]},ink2,line width=0.6pt] (5.2,0)--(6.0,0) node[midway,above,align=center]{$q_i{=}1$\\$Q{=}n,K{=}1$};
+% panel (c)
+\begin{scope}[xshift=7.5cm]
+  \node[dep] (c0) at (90:1.05) {$0$};
+  \foreach \i/\a in {1/162,2/234,3/306,4/18} \node[v] (c\i) at (\a:1.05) {$\i$};
+  \foreach \u/\w in {0/1,1/2,2/3,3/4,4/0} \draw[hc,-{Latex[length=1.6mm]}] (c\u)--(c\w);
+  \node[font=\scriptsize\bfseries,anchor=west] at (-1.5,1.55) {(c) \cvrp: one route};
+  \node[font=\tiny,ink2] at (0,-1.45) {load $=n\le Q$, cost $\le B$};
+\end{scope}
+% panel (d) bin packing
+\begin{scope}[xshift=10.6cm,yshift=-1.05cm]
+  \node[font=\scriptsize\bfseries,anchor=west] at (-0.35,2.6) {(d) \bp{} $\le_p$ \feas};
+  \foreach \x/\h/\c in {0/0.55/gaC,0.45/0.85/maC,0.9/0.35/tsC,1.35/0.7/gaC,1.8/0.45/maC} \fill[\c!55] (\x,0) rectangle +(0.35,\h);
+  \node[font=\tiny,ink2,anchor=west] at (-0.3,-0.25) {items $a_i$ $\to$ demands $q_i$};
+  \draw[ink2,line width=0.5pt] (0.2,1.35) rectangle +(0.6,1.0); \draw[ink2,line width=0.5pt] (1.2,1.35) rectangle +(0.6,1.0);
+  \fill[gaC!55] (0.25,1.35) rectangle +(0.5,0.55); \fill[tsC!55] (0.25,1.9) rectangle +(0.5,0.35);
+  \fill[maC!55] (1.25,1.35) rectangle +(0.5,0.85);
+  \node[font=\tiny,ink2] at (1.0,1.17) {bins: $C{\to}Q$, $k{\to}K$};
+\end{scope}
+\end{tikzpicture}
+\caption{The reduction chain. (a)$\to$(b): Hamiltonian cycle $\le_p$ metric TSP with weights in $\{1,2\}$;
+a tour of length $N$ must use only edges of $H$ (orange). (b)$\to$(c): TSP $\le_p$ CVRP with unit
+demands, $Q=n$ and $K=1$: the single route is the tour. (d): the hidden problem --- packing items into
+bins is exactly deciding whether $K$ vehicles of capacity $Q$ suffice.}
+\label{fig:reductions}
+\end{figure}
+
+\begin{theorem}[\hc{} $\le_p$ \tsp-D]\label{thm:hc}
+Given $H=(V_H,E_H)$, $N=|V_H|\ge 3$, let $w(u,v)=1$ if $\{u,v\}\in E_H$ and $2$ otherwise,
+and $B=N$. Then $H$ is Hamiltonian $\iff$ the complete graph has a tour of length $\le B$.
+The construction takes $O(N^2)$ time and $w$ is a metric.
+\end{theorem}
+\begin{proof}
+\emph{Polynomial:} one pass over the $\binom N2$ pairs. \emph{Metric:} $w(u,v)\le 2\le w(u,x)+w(x,v)$
+because every weight is $\ge1$. ($\Rightarrow$) A Hamiltonian cycle of $H$ is a tour that uses
+$N$ edges of weight 1, total $N=B$. ($\Leftarrow$) Any tour has exactly $N$ edges of weight
+$\ge1$, so length $\le N$ forces every edge to have weight exactly 1, i.e.\ to lie in $E_H$:
+the tour is a Hamiltonian cycle of $H$.
+\end{proof}
+
+\begin{theorem}[\tsp-D $\le_p$ \cvrp-D]\label{thm:tsp}
+Given a metric TSP instance on $\{v_0,\dots,v_n\}$ ($n\ge 2$) with bound $B$, build the CVRP
+instance with depot $0=v_0$, customers $i=v_i$, $d=w$, $q_i=1$, $Q=n$, $K=1$ and the same $B$.
+Then the TSP instance is a YES instance $\iff$ the CVRP instance is.
+\end{theorem}
+\begin{proof}
+\emph{Polynomial:} copying the matrix and writing $n$ demands is $O(n^2)$; the instance is metric
+because $d=w$. ($\Rightarrow$) Rotate a tour of length $\le B$ so that it starts at $v_0$: it is a single
+route $0\to v_{\pi(1)}\to\dots\to v_{\pi(n)}\to0$ that visits every customer once, carries load
+$n\le Q$ and uses $1\le K$ vehicle --- feasible with the same cost. ($\Leftarrow$) A feasible solution
+uses at most $K=1$ route, which must therefore visit every customer exactly once and start and end at $0$:
+it is a Hamiltonian cycle of the complete graph, i.e.\ a tour of cost $\le B$.
+\end{proof}
+The hint of Task~1 is visible in the choice $q_i=1$, $Q=n$, $K=1$: capacity never binds and only one
+vehicle exists, so the CVRP ``is'' a TSP. (With a metric, $K=1$ is not even needed: merging two routes
+$0\!\to\!A\!\to\!0$, $0\!\to\!B\!\to\!0$ changes the cost by $d(a,b)-d(a,0)-d(0,b)\le 0$.)
+
+\begin{lemma}[composition]\label{lem:comp}
+If $A\le_p B$ via $f$ computable in time $p(|x|)$ and $B\le_p C$ via $g$ in time $r(|y|)$,
+then $g\circ f$ is a polynomial-time reduction from $A$ to $C$.
+\end{lemma}
+\begin{proof}
+$x\in A\iff f(x)\in B\iff g(f(x))\in C$. A machine cannot write more symbols than steps, so
+$|f(x)|\le p(|x|)$ and computing $g(f(x))$ takes $r(|f(x)|)\le r(p(|x|))$ steps (w.l.o.g.\ $r$ is
+monotone); the total $p(|x|)+r(p(|x|))$ is a polynomial because polynomials are closed under
+addition and composition.
+\end{proof}
+Since \hc{} is \NP-complete \citep{karp1972reducibility}, \cref{thm:hc,thm:tsp,lem:comp} give
+$\hc\le_p\cvrp\text{-D}$: a polynomial algorithm for CVRP would decide Hamiltonicity in polynomial
+time. Hardness ``travels'' forwards along $\le_p$ (from the known-hard problem to the new one), never backwards.
+With \cref{thm:np}, \cvrp-D is \NP-complete --- even restricted to metric instances with
+distances in $\{1,2\}$, unit demands and one vehicle, hence \emph{strongly} \NP-complete (no
+pseudo-polynomial algorithm unless $\Poly=\NP$; cf.\ \citep{lenstra1981complexity}).
+
+\subsection{The hidden second NP-hard problem: Bin Packing}
+Ignore distances and ask only: \emph{can all customers be served by at most $K$ vehicles of capacity
+$Q$?} Call this \feas.
+\begin{theorem}\label{thm:bp}
+\feas{} is (strongly) \NP-complete.
+\end{theorem}
+\begin{proof}
+\emph{In \NP:} a certificate assigns a vehicle in $\{1..K\}$ to each customer; summing loads is $O(n)$.
+\emph{Hard:} reduce \bp{} (items $a_1..a_n\in\Z^+$, bins of capacity $C$, $k$ bins) by
+$q_i=a_i$, $Q=C$, $K=k$ and any metric (e.g.\ $d\equiv1$ off the diagonal); if some $a_i>C$ output a fixed
+NO instance. A packing of the items into $k$ bins gives $k$ routes (visit the items of a bin in any order)
+with loads $\le Q$, and vice versa, since the order inside a route never affects its load. The map is
+$O(n^2)$ (writing the matrix). \bp{} is strongly \NP-complete \citep[SR1]{garey1979computers}; with
+$K=2$ and $Q=\tfrac12\sum a_i$ the same map reduces \textsc{Partition}.
+\end{proof}
+\begin{keybox}
+\textbf{Consequence for the metaheuristics.} Even \emph{finding a feasible solution} is \NP-hard in
+general, so no polynomial heuristic can promise one. We see this in our own data: Clarke--Wright
+needs 7 routes on A-n45-k6 ($K=6$, load factor $\sum q/KQ=0.988$) and 19 routes on the team instance
+($K=18$). Our designs follow from this: TS walks through infeasible space with an adaptive penalty
+on overload (\cref{sec:ts}); the GA decodes with a fleet-limited Split and ranks fleet-infeasible
+chromosomes lexicographically; both report only solutions accepted by the independent checker.
+\end{keybox}
+
+\subsection{The Bosphorus twist keeps the theory valid --- and adds structure}
+Let $e$ be the Euclidean metric and $S$ the set of European nodes. Define the \emph{cut semimetric}
+$\delta_S(i,j)=1$ if exactly one of $i,j$ lies in $S$, else $0$, and the MediDrone distance
+\begin{equation}
+  d(i,j)=e(i,j)+P\,\delta_S(i,j),\qquad P\ge 0. \label{eq:bosphorus}
+\end{equation}
+\begin{theorem}\label{thm:metric}
+For every metric $e$, every bipartition $(S,V\setminus S)$ and every $P\ge0$, $d$ is a metric.
+\end{theorem}
+\begin{proof}
+Symmetry and $d(i,i)=0$ are inherited; $d(i,j)\ge e(i,j)>0$ for $i\ne j$. Because $e$ is a metric it suffices
+to show $\delta_S(i,k)\le\delta_S(i,j)+\delta_S(j,k)$. If $\delta_S(i,k)=0$ there is nothing to prove.
+Otherwise $i$ and $k$ lie on different sides; $j$ lies on one of them, so exactly one of the pairs
+$\{i,j\},\{j,k\}$ is separated and the right-hand side equals $1$ (\cref{fig:cut}).
+\end{proof}
+The proof never uses the geometry of the strait: it holds for the line $x=500$ of the synthetic
+instance and for the real coastline of our OpenStreetMap instance (\cref{sec:data}), and a sum of a metric and a non-negative multiple of a cut semimetric is the textbook construction of new metrics \citep{deza1997geometry}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
+  p/.style={circle,fill=ink,inner sep=1.2pt},
+  ed/.style={draw=ink2,line width=0.6pt}, cr/.style={draw=tsC,line width=1.2pt}]
+\foreach \k/\title/\ix/\iy/\jx/\jy/\kx/\ky/\cij/\cjk/\cik in
+  {0/{$i,j,k$ same side}/0.3/0.3/0.75/1.1/0.95/0.25/0/0/0,
+   1/{$j$ with $i$}/0.3/0.3/0.75/1.1/1.9/0.4/0/1/1,
+   2/{$j$ with $k$}/0.3/0.3/1.6/1.1/1.9/0.4/1/0/1,
+   3/{$j$ alone}/0.3/0.3/1.65/1.0/0.85/0.35/1/1/0}{
+  \begin{scope}[xshift=\k*3.3cm]
+    \fill[water] (1.15,-0.05) rectangle (1.45,1.4);
+    \node[font=\tiny,muted] at (0.55,1.3) {E}; \node[font=\tiny,muted] at (2.05,1.3) {A};
+    \coordinate (I) at (\ix,\iy); \coordinate (J) at (\jx,\jy); \coordinate (K) at (\kx,\ky);
+    \ifnum\cij=1 \draw[cr] (I)--(J); \else \draw[ed] (I)--(J); \fi
+    \ifnum\cjk=1 \draw[cr] (J)--(K); \else \draw[ed] (J)--(K); \fi
+    \ifnum\cik=1 \draw[cr,dash pattern=on 2pt off 1.2pt] (I)--(K); \else \draw[ed,dash pattern=on 2pt off 1.2pt] (I)--(K); \fi
+    \node[p,label={[font=\tiny]left:$i$}] at (I) {}; \node[p,label={[font=\tiny]above:$j$}] at (J) {};
+    \node[p,label={[font=\tiny]below:$k$}] at (K) {};
+    \node[font=\tiny,ink2,align=center] at (1.1,-0.42) {\title\\ $\delta_{ik}{=}\cik\ \le\ \delta_{ij}{+}\delta_{jk}{=}\the\numexpr\cij+\cjk\relax$};
+  \end{scope}}
+\end{tikzpicture}
+\caption{Why the Bosphorus penalty is metric: every triangle crosses the strait an even number of
+times (0 or 2, orange), so a crossing edge $\{i,k\}$ is always matched by a crossing on the detour via $j$.}
+\label{fig:cut}
+\end{figure}
+
+\paragraph{Counter-examples (what would \emph{not} work)}
+(1)~A \emph{multiplicative} surcharge $d'=e\,(1+\alpha\,\delta_S)$, a natural model of ``flying over water
+costs more battery'', is \emph{not} a metric: with the strait at $x=1.95$, $i=(0,0)$, $j=(1.9,0)$,
+$k=(2,0)$ and $\alpha=1$ we get $d'(i,k)=4>d'(i,j)+d'(j,k)=1.9+0.2$. The fix is to replace $d'$ by its
+shortest-path (metric) closure, or to use the additive form \eqref{eq:bosphorus}.
+(2)~The CVRPLIB convention $d=\operatorname{nint}(e)$ can also break the triangle inequality: since
+$|\operatorname{nint}(x)-x|\le\tfrac12$, $\operatorname{nint}(e_{ij})+\operatorname{nint}(e_{jk})\ge e_{ik}-1$,
+so violations are at most one unit. They do occur: in the 27 Augerat-A instances
+\textbf{8\,058 of 3.76 million ordered triples (0.21\,\%)} violate it, all by exactly 1; our unrounded
+MediDrone metric has none. Proof-level statements that need a metric (merging routes never hurts,
+shortcutting in \cref{sec:approx}) hold on CVRPLIB only up to $+1$ per shortcut.
+
+\paragraph{Structure created by the cut (our analysis)}
+Place the depot on side $A$ (it is at $x=500$, i.e.\ on the \emph{Asian} side of the team instance) and let
+$E$ be the far-side customers, with demand vector $q|_E$.
+\begin{proposition}\label{prop:cross}
+(a) For every route $\rho$, the penalty paid is $P\cdot c(\rho)$ where $c(\rho)$, the number of side changes,
+is \emph{even}; $c(\rho)\ge2$ iff $\rho$ visits $E$.
+(b) Every feasible solution $s$ satisfies
+$\;\mathrm{cost}(s)\ \ge\ e(s)+2P\cdot\BP(q|_E,Q)\ \ge\ e(s)+2P\lceil q(E)/Q\rceil$, where $\BP$ is the
+optimal number of bins.
+(c) The Clarke--Wright saving of a pair is shifted by exactly $+2P$ if both customers are in $E$ and by $0$
+otherwise.
+(d) Let $X(s)=\sum_\rho c(\rho)$ and $X_{\min}$ its minimum over feasible solutions. Any optimum $s^\ast$
+satisfies $X(s^\ast)\le X_{\min}+\big(e(s_{\min})-e(s^\ast)\big)/P$ for a solution $s_{\min}$ attaining $X_{\min}$;
+hence, $X$ being even, $X(s^\ast)=X_{\min}$ once $P>\tfrac12\big(e(s_{\min})-e(s^\ast)\big)$. If side-pure
+routes fit in the fleet, $X_{\min}=2\BP(q|_E,Q)$.
+\end{proposition}
+\begin{proof}
+(a) A closed walk that starts and ends on side $A$ must cross the cut an even number of times, and it
+crosses at least twice iff it enters $E$. (b) Each route visiting $E$ pays $\ge2P$ by (a), and the
+$E$-customers, split among those routes with loads $\le Q$, need at least $\BP(q|_E,Q)$ of them.
+(c) $s(i,j)=s_e(i,j)+P[\delta_S(0,i)+\delta_S(0,j)-\delta_S(i,j)]$ and the bracket is $1+1-0$ for $i,j\in E$, $1+0-1$
+for one of them, $0$ for none. (d) Optimality gives $e(s^\ast)+PX(s^\ast)\le e(s_{\min})+PX_{\min}$; rearrange.
+\end{proof}
+\begin{corollary}\label{cor:invariant}
+If some optimal solution $s_0$ for $P=0$ already attains $X(s_0)=X_{\min}$, then $s_0$ is optimal for \emph{every}
+$P\ge0$ and the optimal cost is exactly $e(s_0)+P\,X_{\min}$, linear in $P$.
+\end{corollary}
+\begin{proof}
+For every feasible $s$: $e(s)\ge e(s_0)$ and $X(s)\ge X_{\min}=X(s_0)$, hence $e(s)+PX(s)\ge e(s_0)+PX(s_0)$.
+\end{proof}
+For side-pure solutions $\mathrm{cost}=e(s)+2P\cdot r_E(s)$ ($r_E$ = number of far-side routes): the
+strait acts as a \emph{fixed cost per far-side vehicle}, i.e.\ it makes the hidden Bin-Packing problem of
+\cref{thm:bp} explicit in the objective. Moreover, $K=\lceil\sum q/Q\rceil+1$ and
+$\lceil a\rceil+\lceil b\rceil\le\lceil a+b\rceil+1$ show that the project's \emph{one spare vehicle} is exactly
+what allows side-pure routing whenever each side packs into its trivial bound. \Cref{sec:bosphorus}
+tests every part of \cref{prop:cross} on data.
+
+\subsection{Bonus: what approximation theory guarantees}\label{sec:approx}
+Haimovich and Rinnooy Kan's \emph{iterated tour partitioning} (ITP) \citep{haimovich1985bounds} cuts an
+$\alpha$-approximate TSP tour into capacity-feasible consecutive segments, each joined to the depot. Its
+analysis combines two lower bounds, $\mathrm{OPT}\ge\mathrm{TSP}^\ast$ and the radial bound
+$\mathrm{OPT}\ge\tfrac2Q\sum_i q_i d(0,i)$, and yields a $(1+(1-\tfrac1Q)\alpha)$-approximation for unit
+(or splittable) demands; for unsplittable demands Altinkemer and Gavish \citep{altinkemer1987heuristics,altinkemer1990heuristics}
+obtain $2+(1-\tfrac2Q)\alpha$. With Christofides' $\alpha=\tfrac32$ \citep{christofides1976worst} (now
+$\tfrac32-10^{-36}$ \citep{karlin2021slightly}) this was the state of the art for 30 years, until
+Blauth, Traub and Vygen \citep{blauth2023improving} reached $\alpha+2(1-\varepsilon)$, Friggstad et al.\
+\citep{friggstad2022improved} about $\alpha+1.69$ and Zhao and Xiao \citep{zhao2026approximating} about
+$\alpha+1.65$ (survey: \citep{chen2023survey}). All bounds need only the triangle inequality, so by
+\cref{thm:metric} they \emph{carry over verbatim} to the Bosphorus metric. Note the link to our GA: the
+Split decoder applied to every rotation of a TSP tour dominates ITP (ITP chooses one consecutive
+partition, Split the best one), so ``double-tree tour + best-rotation Split'' is a polynomial
+$(2+2(1-\tfrac2Q))\approx3.96$-approximation. We implemented it (\texttt{medidrone/approx.py}); its measured
+ratios are reported in \cref{sec:discussion}.

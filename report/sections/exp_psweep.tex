@@ -1,0 +1,25 @@
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/psweep.pdf}
+\caption{The crossing penalty as a control parameter (TS and MA, 5 seeds, 20\,s per run and value of $P$).
+(a)--(d) Real Istanbul instance: crossing routes (violet) for $P=0,1,2,5$\,km. (e) Number of crossing routes
+(dots: individual runs) against the bin-packing bound and the switching threshold predicted by
+\cref{prop:cross}(d). (f) Team instance: the best plan is identical for all eleven values of $P$, only the bill grows.}
+\label{fig:psweep}
+\end{figure}
+To test \cref{prop:cross} beyond one value of $P$, we re-solved both MediDrone instances with the same clinics and
+demands for 11 (synthetic) and 10 (Istanbul) penalties, 100 runs per instance (\cref{fig:psweep}).
+
+\textbf{Team instance: the strait changes the bill, not the plan.} For every $P$ from 0 to 1000 \emph{every} run uses
+exactly 10 crossing routes, and the best plan is the same: its flight distance stays $e^\ast=17\,724.21$ and its cost is
+exactly $e^\ast+20P$. The reason is \cref{cor:invariant}: the laboratory sits on the strait and the European clusters lie
+far to the west, so even the pure-distance optimum ($P=0$) already uses the minimum $\BP(q|_E)=10$ of crossing
+drones --- it is then optimal for every $P$.
+
+\textbf{Istanbul: a phase transition, predicted to the kilometre.} On real geography the pure-distance plan sends
+7 drones across, one more than the bound; from $P=2$\,km on, the optimiser uses exactly 6 $=\BP(q|_A)$ and accepts
+2.24\,km of extra flight to save two crossings. \Cref{prop:cross}(d) predicts the switch: the two plans have
+flight distances 566.97 and 569.21\,km and 14 versus 12 crossings, so they cost the same at
+$P^\ast=(569.21-566.97)/2=1.12$\,km --- and the measured switch lies between $P=1$ and $P=2$. No plan at any
+penalty contains a zig-zag route. The only side effect of very large penalties is a slightly harder search: for
+$P\ge12$\,km the best runs end up to 0.12\,\% above the flight distance of the $P=2$ plan.

@@ -1,0 +1,51 @@
+\section{Constructive baseline and Genetic Algorithm}
+\subsection*{Clarke--Wright savings}
+The savings method [2] starts with one drone per clinic. Joining routes removes two depot connections and adds an
+edge between the clinics. The saving is
+\[
+ s(i,j)=d(0,i)+d(0,j)-d(i,j).
+\]
+If the depot legs cost 10 and 12 and the clinic-to-clinic edge costs 5, merging saves 17.
+Try larger savings first. Merge only suitable endpoints of distinct routes whose combined load fits.
+
+\begin{algorithm}[h]\caption{Clarke--Wright baseline (\texttt{savings.cpp})}
+\begin{algorithmic}[1]
+\State Create a route $(0,i,0)$ for every clinic $i$
+\State Compute pair savings and sort in decreasing order
+\For{each pair $(i,j)$ in that order}
+ \If{$i,j$ are suitable endpoints of distinct routes and combined load is $\le Q$}
+  \State Orient and merge those routes
+ \EndIf
+\EndFor
+\State Return routes and check their number against $K$
+\end{algorithmic}\end{algorithm}
+
+CW has no backtracking. Its routes can each fit capacity while exceeding the fleet limit.
+This happens on A-n45-k6 and the team instance. Such outputs are labelled infeasible.
+
+\subsection*{Genetic Algorithm: many candidate orders}
+A chromosome is a permutation such as $(3,1,4,2)$ without drone boundaries. Split converts it
+into routes. Fitness favours fewer excess routes first, then lower cost. Only fleet-feasible
+solutions can become the reported best answer.
+
+\begin{algorithm}[h]\caption{Steady-state GA (\texttt{ga.cpp})}
+\begin{algorithmic}[1]
+\State Initialise population with the CW order and random permutations; decode them
+\While{time remains}
+ \For{each of $\mu$ offspring in a generation}
+  \State Choose parents by tournaments between two random individuals
+  \State Apply Order Crossover with probability $p_c$
+  \State Apply swap, inversion or insertion with probability $p_m$
+  \State Decode with Split; reject a duplicate decoded solution
+  \State Save the child if it improves the best feasible answer
+  \State Replace a random member of the worse half; restore population order
+ \EndFor
+ \State Partially restart after stagnation, keeping the best fraction
+\EndWhile
+\State Return the best feasible solution
+\end{algorithmic}\end{algorithm}
+
+Order Crossover [9] copies a segment from one parent, then fills remaining positions in the other
+parent's order, skipping used clinics. It preserves a valid permutation. Mutations change that
+order. Duplicate rejection and restarts help retain variety; replacement protects the best
+individual. This main GA uses no local search. The optional memetic variant does.

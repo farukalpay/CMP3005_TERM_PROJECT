@@ -1,0 +1,906 @@
+osm,name,kind,lat,lon,district,side
+node/531393598,Hospital Türk,hospital,41.0259618,29.0218119,Üsküdar,1
+node/806437320,Zümrütevler 3 Nolu Sağlık Ocağı,clinic,40.9455062,29.1524899,Maltepe,1
+node/1035923037,Fatih 7 No'lu Aile Sağlığı Merkezi,clinic,41.0140399,28.9300317,Fatih,0
+node/1407272990,Vera Tıp Merkezi,hospital,41.0060255,28.7968486,Küçükçekmece,0
+node/1483978245,Baltalimanı Hastanesi,hospital,41.0964088,29.0535611,Sarıyer,0
+node/1667935994,Özel Maltepe Tıp Merkezi,clinic,40.924788,29.1305306,Maltepe,1
+node/1690847732,Nazier Soyak Aile Sağlığı Merkezi,clinic,41.0008695,29.0699207,Üsküdar,1
+node/1740708127,Florence Nightingale,hospital,41.0632063,29.0042388,Beşiktaş,0
+node/1749544379,Özel Küplüce Tıp Merkez,hospital,41.0396776,29.0522183,Üsküdar,1
+node/1867699268,KÜÇÜKÇEKMECE ZAMBAK AİLE SAĞLIĞI MERKEZİ,clinic,40.992532,28.781754,Küçükçekmece,0
+node/1905650693,Özel Remedy Hospital,hospital,40.8787769,29.2368748,Pendik,1
+node/1920284174,Sağlık Ocağı,clinic,41.0462254,29.075537,Üsküdar,1
+node/1923364059,Göztepe Kardiyoloji Merkezi,clinic,40.9888311,29.0428766,Kadıköy,1
+node/1923763514,Özel Bağcılar Tekden Hastanesi,hospital,41.0479666,28.8449942,Bağcılar,0
+node/1924802334,Adnan Odabaş Aile Sağlık Merkezi,clinic,41.028581,29.057633,Üsküdar,1
+node/1935274553,Acıbadem Hospital,hospital,40.977664,28.8730593,Bakırköy,0
+node/2126603859,Kartal 8 Nolu Aile Sağlığı Merkezi,clinic,40.902112,29.1915456,Kartal,1
+node/2258298193,Fatih Sultan Mehmet Tıp Merkezi,clinic,41.0132094,29.1909037,Ümraniye,1
+node/2260090099,Çevre Hastanesi,hospital,41.0672214,29.0013232,Şişli,0
+node/2260090104,Aksoy Hastanesi,hospital,41.0673508,29.0013661,Şişli,0
+node/2268511656,Çekmeköy Tıp Merkezi,clinic,41.0219727,29.1931524,Çekmeköy,1
+node/2279410580,Birinci Göz Hastanesi Beylikdüzü,hospital,41.0112282,28.6428053,Beylikdüzü,0
+node/2279410859,Dünya Göz Hastanesi Beykent,hospital,41.019077,28.6274846,Büyükçekmece,0
+node/2311684920,Amerikan Hastanesi,hospital,41.0533806,28.9952948,Şişli,0
+node/2363452816,Belde Tıp Merkezi,hospital,41.057449,28.9158289,Gaziosmanpaşa,0
+node/2446475203,Alataş Polikliniği,hospital,41.0347149,28.6806966,Esenyurt,0
+node/2658496937,Zübeyde Güleser Sağlık Ocağı,clinic,41.0554927,28.9575026,Kağıthane,0
+node/2928527566,Özel Avcılar Anadolu Hastanesi,hospital,41.0054462,28.7061163,Avcılar,0
+node/2928533162,Özel Avcılar Hospital,hospital,40.9947818,28.709593,Avcılar,0
+node/2928533998,Özel Medicana Hastanesi,hospital,40.9812753,28.7211479,Avcılar,0
+node/3127850463,İstanbul Tüpbebek,hospital,41.0554676,28.9983966,Şişli,0
+node/3282963282,Kasım Paşa Eski Deniz Hastanesi,hospital,41.0327835,28.964016,Beyoğlu,0
+node/3623018966,Psikolog Didem Üngör,clinic,40.9783957,28.873398,Bakırköy,0
+node/3702508832,Sağlık Ocağı,clinic,41.0592943,28.6787059,Esenyurt,0
+node/4036600523,Kuzguncuk Aile Hekimliği,clinic,41.0316899,29.0329208,Üsküdar,1
+node/4052354622,Mecidiyeköy KBB ve Vertigo Kliniği,clinic,41.06524,28.995985,Şişli,0
+node/4053740059,Nöropsikiyatri Etiler Kliniği,clinic,41.0762784,29.0202268,Beşiktaş,0
+node/4254745798,Alibey Hastanesi,hospital,41.0789994,28.9270647,Eyüpsultan,0
+node/4390623792,Güngören Toplum Sağlığı Merkezi,clinic,41.0216155,28.870858,Güngören,0
+node/4450142690,Müşerref - Sabri Köseoğlu Aile Sağlığı Merkezi,clinic,41.0311574,28.8499549,Bağcılar,0
+node/4456392992,Çırpıcı Aile Sağlık Merkezi,clinic,40.9993984,28.8962112,Zeytinburnu,0
+node/4459098190,Koç Üniversitesi Hastanesi,hospital,41.0241414,28.9166504,Zeytinburnu,0
+node/4507856874,Zümrütevler 2 Nolu Aile Sağlığı Merkezi,clinic,40.9347353,29.1507706,Maltepe,1
+node/4511371082,Özel Mediplus Tıp Merkezi,hospital,41.0178075,28.6608987,Esenyurt,0
+node/4538375044,Duydu Özyurt Aile Sağlığı Merkezi,clinic,41.0742587,28.8888709,Gaziosmanpaşa,0
+node/4538375080,Lütfiye Nuri Burat,clinic,41.0751437,28.8872076,Gaziosmanpaşa,0
+node/4543865076,Öztürk Göz Polikliniği,clinic,41.073159,28.8864457,Gaziosmanpaşa,0
+node/4549493636,Sarıgazi Yaşam Tıp Merkezi,clinic,41.0090511,29.2136077,Sancaktepe,1
+node/4566879134,Bakırköy Dr. Sadi Konuk Eğitim ve Araştırma Hastanesi Bahçelievler Polikliniği,hospital,40.9970758,28.8560596,Bahçelievler,0
+node/4567346190,Özel Bilge Sağlık Kabini,clinic,41.0034035,28.859767,Bahçelievler,0
+node/4580148991,Siyavuşpaşa Aile Sağlığı Merkezi,clinic,40.9994877,28.8520402,Bahçelievler,0
+node/4580148992,Hekimbaşı Ömer Aile Sağlığı Merkezi,clinic,41.0110242,28.8554591,Bahçelievler,0
+node/4580149096,Bahçelievler 9 Nolu Aile Sağlığı Merkezi,clinic,41.0036619,28.8519273,Bahçelievler,0
+node/4580156182,Özel Alemdağ Şifa Tıp Merkezi,clinic,41.0478696,29.2398982,Çekmeköy,1
+node/4631487199,Bahçelievler 5 Nolu Aile Sağlığı Merkezi,clinic,41.0122001,28.8552668,Bahçelievler,0
+node/4631565591,Kazım Karabekir Aile Sağlığı Merkezi,clinic,41.0466219,28.8719064,Esenler,0
+node/4631616290,Kemer Aile Sağlığı Merkezi,clinic,41.0529312,28.8784659,Esenler,0
+node/4695532007,Kadıköy Belediyesi Özel Sağlık Plikliniği,clinic,40.9887902,29.0429317,Kadıköy,1
+node/4770074123,Sağlık Ocağı,clinic,40.9349789,29.1318103,Maltepe,1
+node/4828479032,Sağlık ocağı,clinic,41.0418065,28.6470624,Esenyurt,0
+node/4842613051,Beyoğlu Göz Hastanesi,hospital,41.0245743,28.9742012,Beyoğlu,0
+node/4865164094,Kadıköy 13 Nolu ASM,clinic,40.9841278,29.0628033,Kadıköy,1
+node/4924465720,Özel Akgün Tem Hastanesi,hospital,41.0614165,28.8016254,Küçükçekmece,0
+node/4926504627,Özel FMC Ataşehir Diyaliz Merkezi,clinic,40.9881068,29.0913324,Ataşehir,1
+node/4926916937,Beyoglu,hospital,41.0314549,28.974911,Beyoğlu,0
+node/4942277908,Uzun Yusuf Aile Sağlığı Merkezi,clinic,41.0083061,28.9270347,Fatih,0
+node/4961053928,T.C. Sağlık Bakanlığı Bayrampaşa 3 No'lu Aile Sağlığı Merkezi,clinic,41.040517,28.8983633,Bayrampaşa,0
+node/5057772722,Güney Hastanesi,hospital,41.0437273,28.8796744,Esenler,0
+node/5081264696,Medipol Üniversitesi Fındıkzade Hastanesi,hospital,41.0125315,28.9400268,Fatih,0
+node/5081274091,Özel Fatih Hastanesi,hospital,41.0156766,28.9507717,Fatih,0
+node/5081445098,Özel Haliç Sağlık Hizmetleri Polikliniği,clinic,41.0236098,28.951638,Fatih,0
+node/5081610959,Fatih Yedikule Aile Sağlığı Merkezi,clinic,40.9988258,28.9239294,Fatih,0
+node/5086061084,Küçük Mustafa Paşa Aile Sağlıgi Merkezi,clinic,41.0253856,28.9571469,Fatih,0
+node/5087418123,İstanbul Cerrahi Hastanesi,hospital,41.0555721,28.9980027,Şişli,0
+node/5099065439,Özel Avrupa Göz Merkezi,clinic,41.0092806,28.9496679,Fatih,0
+node/5100823683,Med Ok Hiperbarik Oksijen Tedavi Merkezi,clinic,41.0198269,28.9322453,Fatih,0
+node/5106123748,Nefisoğlu Sağlık Merkezi,clinic,41.0214522,28.9355743,Fatih,0
+node/5106125530,Hırka-i Şerif Aile Sağlığı Merkezi,clinic,41.0214037,28.9389753,Fatih,0
+node/5106125536,Fatih 12 No'lu Aile Sağlığı Merkezi,clinic,41.0198252,28.9400429,Fatih,0
+node/5106131073,Fatih Merkez Aile Sağlığı Merkezi,clinic,41.0250016,28.9422959,Fatih,0
+node/5106132758,EMAR-MED,clinic,41.0146576,28.9340146,Fatih,0
+node/5107245369,Silivrikapı Aile Sağlığı Merkezi,clinic,41.0035195,28.9240211,Fatih,0
+node/5108838373,Sirkeci Aile Sağlığı Merkezi,clinic,41.0122926,28.9774548,Fatih,0
+node/5108843514,Esthetic Hair Turkey,clinic,41.00849,28.9735918,Fatih,0
+node/5108843552,Yerebatan Basıin Semt Polikliniği,clinic,41.009566,28.9773143,Fatih,0
+node/5112749736,Kasım Günani Aile Sağlığı Merkezi,clinic,41.032653,28.9436782,Fatih,0
+node/5113465007,Darüşşifa aile sağlığı merkezi,clinic,41.0188496,28.9517827,Fatih,0
+node/5113481349,Özel Laçin Polikliniği 2,clinic,41.0210415,28.9490295,Fatih,0
+node/5113487689,Neslişah Sultan Aile Sağlığı Merkezi,clinic,41.0237004,28.9355714,Fatih,0
+node/5113487706,Fatih Otizm Merkezi,clinic,41.0246261,28.9349633,Fatih,0
+node/5113495932,Özel Vefa Sağlık Kabini,clinic,41.0267133,28.9387507,Fatih,0
+node/5113495937,Fatih 1 No'lu Göçmen Sağlığı Merkezi,clinic,41.0271359,28.9381681,Fatih,0
+node/5113598505,Fatih 8 No'lu Aile Sağlığı Merkezi,clinic,41.0106522,28.9399915,Fatih,0
+node/5113599515,istanbul Eğitim ve Araştırma Hastanesi Poliklinikleri,hospital,41.0092457,28.9457972,Fatih,0
+node/5113599726,ÜRORAD Tıp Merkezi,clinic,41.0100298,28.9454567,Fatih,0
+node/5113599727,İstanbul Üniversitesi Kardiyoloji enistitusu,hospital,41.0091541,28.9432435,Fatih,0
+node/5113609516,Nur Polikliniği,clinic,41.0261712,28.9400875,Fatih,0
+node/5113611503,Derman Sağlık Kabini,clinic,41.0298246,28.9419722,Fatih,0
+node/5172615673,Surp Pırgiç Ermeni Hastanesi,hospital,40.9939323,28.9146943,Zeytinburnu,0
+node/5208459494,Bağcılar Eğitim ve Araştırma Hastanesi,hospital,41.0301322,28.8712404,Bağcılar,0
+node/5255846922,Simetri Diş Polikliniği,clinic,40.9309261,29.1284541,Maltepe,1
+node/5270315500,Mehmet Oğuz Aile Sağlığı Merkezi,clinic,40.8822629,29.2444268,Pendik,1
+node/5272473026,Bostancı Tıp Merkezi,clinic,40.9572627,29.0950636,Kadıköy,1
+node/5274052766,Özel İstanbul Şafak Hastahanesi,hospital,41.0656093,28.8999746,Gaziosmanpaşa,0
+node/5275504494,BİM;Maltepe Verem Savaş Dispanseri,clinic,40.9435652,29.1395949,Maltepe,1
+node/5280587267,Cadde Tıp Merkezi,clinic,40.9554199,29.0906149,Kadıköy,1
+node/5285760849,Şişli Etfal Aile Sağlık Merkezi,clinic,41.104315,28.8634886,Sultangazi,0
+node/5289936080,Özel gop Yaşam Diyaliz Merkezi,hospital,41.1049081,28.8645332,Sultangazi,0
+node/5291970741,Sultangazi Diyaliz,clinic,41.0931159,28.8637105,Sultangazi,0
+node/5291970782,İstanbulum Tıp Merkezi,hospital,41.1033788,28.8617105,Sultangazi,0
+node/5293131285,ÜSKÜDAR 16 NOLU AİLE SAĞLIK MERKEZİ,clinic,41.0071317,29.0337947,Kadıköy,1
+node/5304393431,Dora Hospital,hospital,41.0589817,29.0010012,Şişli,0
+node/5329298076,Sultanbeyli 9 No'lu Aile Sağlığı Merkezi,clinic,40.9512353,29.2811704,Sultanbeyli,1
+node/5329311003,Süleyman Taşpınar Aile Sağlığı Merkezi,clinic,40.9451712,29.2772865,Sultanbeyli,1
+node/5329311641,Gazi Mahallesi Aile Sağlığı Merkezi,clinic,40.9756097,29.2653295,Sultanbeyli,1
+node/5476614247,İBB Şehzadebaşı Tıp Merkezi,clinic,41.0163606,28.9565706,Fatih,0
+node/5529094344,Fatih 2 No'lu Aile Sağlığı Merkezi,clinic,41.0224284,28.9517445,Fatih,0
+node/5529094345,Fatih 13 No'lu Aile Sağlığı Merkezi,clinic,41.0200163,28.9412149,Fatih,0
+node/5529094346,Hekimoğlu Aile Sağlığı Merkezi,clinic,41.0079637,28.9316986,Fatih,0
+node/5529094347,Hüsambey Aile Sağlığı Merkezi,clinic,41.0196662,28.9567223,Fatih,0
+node/5529094348,Kocamustafa Paşa Aile Sağlığı Merkezi,clinic,41.0025944,28.9302611,Fatih,0
+node/5529094349,Kumkapı Aile Sağlığı Merkezi,clinic,41.004669,28.9676143,Fatih,0
+node/5529094350,Marmara Aile Sağlığı Merkezi,clinic,41.0012629,28.9323457,Fatih,0
+node/5529094352,Mevlanakapı Aile Sağlığı Merkezi,clinic,41.0105169,28.9254688,Fatih,0
+node/5529094353,Seyitömer aile Sağlığı Merkezi,clinic,41.0066994,28.9443549,Fatih,0
+node/5529094354,Sofular Aile Sağlığı Merkezi,clinic,41.0161066,28.9507944,Fatih,0
+node/5529094355,Topkapı Aile Sağlığı Merkezi,clinic,41.0197043,28.930097,Fatih,0
+node/5540115570,Orhangazi Aile Sağlığı Merkezi,clinic,40.9404474,29.2870097,Sultanbeyli,1
+node/5540115573,Ali Mehmet Ceylan Aile Sağlığı Merkezi,clinic,40.9485676,29.2983656,Sultanbeyli,1
+node/5540115576,Saygı Hastanesi Ayak Sağlığı Birimi,hospital,40.969457,29.257738,Sultanbeyli,1
+node/5540115578,T.C. Sağlık Bakanlığı 1 No'lu Aile Sağlığı Merkezi,clinic,40.9730527,29.2778845,Sultanbeyli,1
+node/5540121294,Abdurrahmangazi Aile Sağlığı Merkezi,clinic,40.960417,29.2559004,Sultanbeyli,1
+node/5540121295,Türkmed Diyaliz Merkezi,clinic,40.9697119,29.2601592,Sultanbeyli,1
+node/5540121296,Saygı Hastanesi,hospital,40.9697567,29.2581715,Sultanbeyli,1
+node/5540121298,Sultanbeyli Dünyagöz Hastanesi,hospital,40.9685018,29.2534249,Sultanbeyli,1
+node/5587508521,Neolife,hospital,41.0704006,29.0200903,Beşiktaş,0
+node/5590349117,Merkezefendi Aile Sağlığı Merkezi,clinic,41.011474,28.9131243,Zeytinburnu,0
+node/5599182127,Kirazlı Aile Sağlığı Merkezi,clinic,41.033775,28.8404632,Bağcılar,0
+node/5599287878,Kazım Karabekir Aile Sağlığı Merkezi,clinic,41.0307906,28.8463855,Bağcılar,0
+node/5599288664,Veliefendi Aile Sağlığı Merkezi,clinic,40.9973808,28.8981092,Zeytinburnu,0
+node/5599780767,Yenimahalle Aile Sağlığı Merkezi,clinic,41.0449485,28.8376334,Bağcılar,0
+node/5608717521,Vital Fulya Plaza,clinic,41.0562797,28.996644,Şişli,0
+node/5619163664,T.C. Sağlık Bakanlığı İstanbul Tacirler Eğitim Vakfı Sultanbeyli İlçe Devlet Hastanesi Merkez Polikliniği,hospital,40.9636827,29.265783,Sultanbeyli,1
+node/5619261179,Özel Sultanbeyli Tıp Merkezi,clinic,40.9652669,29.2717825,Sultanbeyli,1
+node/5619315960,Ersoy Hastanesi,hospital,40.966572,29.2694043,Sultanbeyli,1
+node/5619345567,İstanbul Tacirler Eğitim Vakfı T.E.V. Sultanbeyli İlçe Devlet Hastanesi,hospital,40.965177,29.2659788,Sultanbeyli,1
+node/5619950711,Hamidiye Aile Sağlığı Merkezi,clinic,40.9550106,29.28107,Sultanbeyli,1
+node/5619992995,Sultanbeyli 3 No'lu Aile Sağlığı Merkezi,clinic,40.9625443,29.2638714,Sultanbeyli,1
+node/5620019132,Sultanbeyli 4 No'lu Aile Sağlığı Merkezi,clinic,40.9583058,29.2661355,Sultanbeyli,1
+node/5620025061,Manolya Aile Sağlığı Merkezi,clinic,40.9554642,29.2718034,Sultanbeyli,1
+node/5620030370,Sultanbeyli 6 No'lu Aile Sağlığı Merkezi,clinic,40.9613523,29.2583575,Sultanbeyli,1
+node/5620034613,Sevim Taşpınar Aile Sağlığı Merkezi,clinic,40.9656111,29.2497836,Sultanbeyli,1
+node/5620044312,Sultanbeyli 7 No'lu Aile Sağlığı Merkezi,clinic,40.9682423,29.2496068,Sultanbeyli,1
+node/5620057925,Sultanbeyli 5 No'lu Sağlık Merkezi,clinic,40.967355,29.255569,Sultanbeyli,1
+node/5620072581,Sultanbeyli Avrupa Göz Hastanesi,hospital,40.9670638,29.2612337,Sultanbeyli,1
+node/5621682561,Erguvan Aile Sağlığı Merkezi,clinic,40.9933949,29.2653447,Sultanbeyli,1
+node/5621698433,Mimar Sinan Aile Sağlığı Merkezi,clinic,40.9945455,29.2745157,Sultanbeyli,1
+node/5621721169,Altıntepe Aile Sağlığı Merkezi,clinic,40.9850513,29.2781424,Sultanbeyli,1
+node/5621729960,Adil Mahallesi Aile Sağlığı Merkezi,clinic,40.9824599,29.2630166,Sultanbeyli,1
+node/5621735632,Sultanbeyli AÇSAP (Anne Çocuk Sağlığı Merkezi),clinic,40.9814196,29.2616211,Sultanbeyli,1
+node/5621741396,Turgut Reis Bağlık Aile Sağlığı Merkezi,clinic,40.966661,29.2801313,Sultanbeyli,1
+node/5621747020,Ahmet Keleş Aile Sağlığı Merkezi,clinic,40.9600066,29.2952256,Sultanbeyli,1
+node/5637096519,TC Sağlık Bakanlığı Sultanbeyli Toplum Sağlığı Merkezi 1 No'lu Göçmen Sağlığı Merkezi,clinic,40.9585633,29.2743708,Sultanbeyli,1
+node/5637096520,Bezmialem Vakıf Üniversitesi Fatih Polikliniği,clinic,41.0178834,28.94954,Fatih,0
+node/5639494863,Rahim Çelik Aile Sağlığı Merkezi,clinic,40.976196,29.265435,Sultanbeyli,1
+node/5667618339,Özel Merkezefendi Seçkin Çocuklar Özel Eğitim Ve Rehbilitasyon Merkezi,clinic,41.0139943,28.9207214,Zeytinburnu,0
+node/5667618351,Otrila KBB,clinic,41.0179234,28.9118763,Zeytinburnu,0
+node/5667634424,Beştelsiz Aile Sağlığı Merkezi,clinic,41.0010171,28.9032414,Zeytinburnu,0
+node/5667640786,balıklı rum hastanesi vakfı,hospital,40.9996039,28.9175398,Zeytinburnu,0
+node/5667640791,Yeryüzü Doktorları,clinic,41.002599,28.9186103,Zeytinburnu,0
+node/5667641556,Yedikule Göğüş Hastalıkları Hastanesi,hospital,41.0017833,28.9164448,Zeytinburnu,0
+node/5667642087,Zeytinburnu Aile sağlık merkezi,clinic,41.0014056,28.9117941,Zeytinburnu,0
+node/5667657045,Özel Yeşiltepe Polikliniği,clinic,40.9946368,28.9026669,Zeytinburnu,0
+node/5667661148,Yedikule Surp PIRGIÇ ERMENI Hastanesi,hospital,40.9938689,28.9152516,Zeytinburnu,0
+node/5667661164,Damla Üroloji Tıp mekezi,clinic,40.9949058,28.9118023,Zeytinburnu,0
+node/5667662147,SÜLEYMANİYE KADIN DOĞUM VE ÇOCUK HASTANESİ,hospital,40.9956164,28.9148279,Zeytinburnu,0
+node/5667662678,Diş Hekimi Mustafa İsmailoğlu,clinic,40.9955941,28.9019541,Zeytinburnu,0
+node/5667672292,Bağcılar 20 No'lu Aike Sağlığı Merkezi,clinic,41.054239,28.8484094,Bağcılar,0
+node/5667672685,Gözde sağlık kabini,clinic,41.0540031,28.8468591,Bağcılar,0
+node/5667673492,Özel Öz İstanbul Tıp Merkezi,clinic,41.0624232,28.8549452,Bağcılar,0
+node/5667673513,Özel Işık Tıp Merkezi,clinic,41.0628918,28.8551006,Bağcılar,0
+node/5667674435,MEDILIFE HASTANESİ,hospital,41.048796,28.8595084,Bağcılar,0
+node/5667674972,Göztepe Sena Tıp Merkezi,clinic,41.0541749,28.8370756,Bağcılar,0
+node/5667674990,MEDİKARE DİYALİZ,clinic,41.0505785,28.8583595,Bağcılar,0
+node/5667687568,Aksa,hospital,41.0314854,28.826181,Bağcılar,0
+node/5667689744,Özel Yunus Emre tıp merkezi,clinic,41.0315573,28.8434157,Bağcılar,0
+node/5667702795,Özel Dünya Tıp Merkezi,clinic,41.0437162,28.841293,Bağcılar,0
+node/5667706125,AİLE TIP MERKEZİ,clinic,41.0433321,28.8475171,Bağcılar,0
+node/5667719070,Özel Hospitalist Hastanesi,hospital,41.0345832,28.8550884,Bağcılar,0
+node/5667719076,Medicalist,clinic,41.035471,28.8539828,Bağcılar,0
+node/5667723851,Dünya Göz Kliniği,clinic,41.0334797,28.8534454,Bağcılar,0
+node/5667746020,Osse,clinic,41.0297127,28.8695445,Bağcılar,0
+node/5667747232,Yenigün Aile Sağlığı merkezi,clinic,41.0219702,28.8595399,Bağcılar,0
+node/5669568475,Özel Bezmialem Vakıf Üniversitesi Fatih Semt Polikliniği,clinic,41.0180506,28.9493981,Fatih,0
+node/5674307825,Aile Sağlığı Merkezi,clinic,40.9799139,29.0844566,Kadıköy,1
+node/5713935954,Altıntepsi Aile Sağlığı Merkezi,clinic,41.0356474,28.9001935,Bayrampaşa,0
+node/5724461734,İstanbul Eğitim ve Araştırma Hastanesi Osmaniye Semt Poliklinği,hospital,40.9920204,28.8813608,Bakırköy,0
+node/5728941779,İstanbul Ümraniye 18 Nolu Aile Sağlığı Merkezi,clinic,40.9990119,29.1376234,Ümraniye,1
+node/5745686359,1 No'lu Göçmen Sağlığı Merkezi,clinic,40.9643667,29.2796032,Sultanbeyli,1
+node/5859055685,Gaziosmanpaşa Özel Başarı Hastanesi,hospital,41.0797533,28.9066811,Gaziosmanpaşa,0
+node/5933800279,Tuzla 3 Nolu Aile Sağlığı Merkezi,clinic,40.8847487,29.3358656,Tuzla,1
+node/6004165586,Avusturya Sen Jorj Hastanesi,clinic,41.0246228,28.9742558,Beyoğlu,0
+node/6069331851,Dayıoğlu Tıp Merkezi,hospital,41.0633215,28.746725,Başakşehir,0
+node/6069332186,Haydarpaşa Numune Eğitim ve Araştırma Hastanesi Tıbbiye Binası,hospital,41.0043457,29.0257508,Üsküdar,1
+node/6082066585,improgen,clinic,41.0927416,28.7926027,Başakşehir,0
+node/6107409814,Ahmet Yesevi Aile Sağlığı Merkezi,clinic,40.8640132,29.3102436,Pendik,1
+node/6285648070,Medamerikan Tıp Merkezi,clinic,40.9779751,29.0462492,Kadıköy,1
+node/6317600226,Pendik 10 Nolu Aile Sağlığı Merkezi,clinic,40.9153108,29.279408,Pendik,1
+node/6321841028,Cumhuriyet Aile Sağlığı Merkezi,clinic,40.9075799,29.2206469,Kartal,1
+node/6329035785,Kurtköy Diyaliz,clinic,40.9180549,29.3071312,Pendik,1
+node/6364562968,Zeytinburnu Tıp Merkezi,clinic,40.9884704,28.9042367,Zeytinburnu,0
+node/6400675261,Özel Pendik Şifa Hastanesi,hospital,40.88302,29.2361908,Pendik,1
+node/6417699194,Kavakpınar 1 Nolu Aile Sağlığı Merkezi,clinic,40.8774789,29.2857356,Pendik,1
+node/6445014889,Dűnyagöz,hospital,41.0824606,29.0370934,Beşiktaş,0
+node/6508582455,Özel Pendik Şifa Tıp Merkezi,clinic,40.8784061,29.2355088,Pendik,1
+node/6508582507,Dünya Göz Hastanesi,hospital,40.8788432,29.2362843,Pendik,1
+node/6596338851,Şekerpınar Aile Sağlığı Merkezi,clinic,40.8608013,29.3742901,Tuzla,1
+node/6669804333,Haydarpaşa Numune Hastanesi,hospital,41.0044482,29.0227593,Üsküdar,1
+node/6673797104,18 Nc Aile Sağlığı Merkezi,clinic,41.0113699,29.014793,Üsküdar,1
+node/6679604494,Çağlayan 2 Nolu Aile Sağlığı Merkezi,clinic,41.0781061,28.9867662,Kağıthane,0
+node/6695055576,Tempo OSGB - İşe Giriş Sağlık Raporu,clinic,41.0265549,29.0933844,Ümraniye,1
+node/6696425797,16 Nolu Aile Sağlığı Merkezi,clinic,40.9748758,29.0578998,Kadıköy,1
+node/6697235740,İstanbullu OSGB,hospital,41.0800511,28.8059014,Başakşehir,0
+node/6707182389,Uğur Diyaliz,clinic,40.8840386,29.2438372,Pendik,1
+node/6721462533,Kemal Hacıyüzbaşıoğlu Aile Sağlığı Merkezi,clinic,40.901596,29.1585049,Kartal,1
+node/6753065641,Ataşehir Toplum Sağlığı Merkezi,clinic,40.9824473,29.1107538,Ataşehir,1
+node/6807213216,Kartal 3 Nolu Aile Sağlığı Merkezi,clinic,40.9061012,29.2331756,Kartal,1
+node/6863444123,Maltepe 17 Nolu Aile Sağlığı Merkezi,clinic,40.9239455,29.1684966,Maltepe,1
+node/6863554603,Gülsuyu Aile Sağlığı Merkezi,clinic,40.9279039,29.1571455,Maltepe,1
+node/6872628702,Özel Üsküdar Anadolu Hastanesi,hospital,41.0214296,29.0158947,Üsküdar,1
+node/6872676930,Paşabahçe Aile Sağlığı Merkezi,clinic,41.0186848,29.0310815,Üsküdar,1
+node/6872685621,Üsküdar Merkez Aile Sağlığı Merkezi,clinic,41.0234578,29.0115225,Üsküdar,1
+node/6872755494,Zeynep Kamil Aile Sağlığı Merkezi,clinic,41.0170567,29.0241164,Üsküdar,1
+node/6874195043,Doktor Levent Polikliniği,hospital,41.0624452,28.9864126,Şişli,0
+node/6874291251,Başakşehir 5 Nolu Aile Sağlığı Merkezi,clinic,41.1097477,28.788484,Başakşehir,0
+node/6874511167,Başakşehir 5 Nolu Aile Sağlığı Merkezi,clinic,41.1037575,28.7917264,Başakşehir,0
+node/6875953910,Başakşehir Aile Sağlığı Merkezi,clinic,41.1071536,28.789661,Başakşehir,0
+node/6875953911,Başakşehir Devlet Hastanesi Ağız ve Diş Sağlığı Polikliniği,clinic,41.1070667,28.7897066,Başakşehir,0
+node/6879036780,Esenyurt 4 Nolu Aile Sağlığı Merkezi,clinic,41.0091608,28.6665231,Esenyurt,0
+node/6881230553,Özel Başakşehir Aktif Tıp Merkezi,clinic,41.1019034,28.7875219,Başakşehir,0
+node/6903822055,Beykoz Merkez Aile Sağlığı Merkezi,clinic,41.1347815,29.091298,Beykoz,1
+node/6908779269,Altınyıldız Aile Sağlığı Merkezi,clinic,41.0208992,28.8202784,Bahçelievler,0
+node/6908779270,Doğu Sanayi Aile Sağlığı Merkezi,clinic,41.0208799,28.8204139,Bahçelievler,0
+node/6912522214,Hamidiye Semt Aile Sağlığı Merkezi,clinic,41.091704,28.9779216,Kağıthane,0
+node/6912522215,Kağıthane 13 Nolu Aile Sağlığı Merkezi,clinic,41.0914541,28.9778702,Kağıthane,0
+node/7001101489,Özel Elitium,hospital,41.0603661,28.6760478,Esenyurt,0
+node/7034423087,Elysieum elit,clinic,41.0060541,29.0381114,Kadıköy,1
+node/7135965785,مستشفي صفا,clinic,40.9991494,28.8383849,Bahçelievler,0
+node/7167511973,BHT Clinic İstanbul Tema Hastanesi,hospital,41.0600854,28.7739432,Küçükçekmece,0
+node/7189793474,Istanbul Hair Center,clinic,41.0691564,29.0088707,Şişli,0
+node/7321901859,Infinity Smiles Ağız ve Diş Sağlığı Polikliniği,clinic,41.1144624,28.7685369,Başakşehir,0
+node/7354635829,Bayrampaşa 1 Nolu Yabancı Uyruklular Polikliniği,hospital,41.0303249,28.9070788,Zeytinburnu,0
+node/7354717114,Bağcılar 28 Nolu Aile Sağlığı Merkezi,hospital,41.0431277,28.8201612,Bağcılar,0
+node/7362978980,Özel Işık Sağlık Kabini,clinic,41.0446111,28.8693018,Esenler,0
+node/7363117227,Acil Tıp Kliniği,hospital,41.0028506,28.9370757,Fatih,0
+node/7365233440,Alpha Hair Central,hospital,41.0613263,28.992022,Şişli,0
+node/7369176307,Bezmialem Vakıf Üniversitesi Tıp Fakültesi Acil Tıp,hospital,41.0199922,28.9348553,Fatih,0
+node/7443622910,Hekimbaşı Yusuf Sinan Aile Sağlığı Merkezi,clinic,41.0393117,28.8698237,Esenler,0
+node/7452914848,Şişli Hamidiye Etfal Eğitim ve Araştırma Hastanesi Gümüşsuyu Binası,hospital,41.0375948,28.9900446,Beyoğlu,0
+node/7457578377,Kartal 10 Nolu Aile Sağlığı Merkezi,clinic,40.89023,29.2151361,Kartal,1
+node/7468612173,Hasanpaşa Aile Sağlığı Merkezi,hospital,40.9973977,29.0428574,Kadıköy,1
+node/7468631345,Bakırköy 4 Nolu Aile Sağlığı Merkezi,hospital,40.9785089,28.8718638,Bakırköy,0
+node/7473283829,Kadıköy 1 Nolu Aile Sağlığı Merkezi,clinic,40.9672632,29.0918995,Kadıköy,1
+node/7569580576,Estetikmed Saç Ekimi ve Estetik,clinic,40.8785943,29.2307474,Pendik,1
+node/7575511401,fsm tıp merkezi,hospital,41.0229665,29.218531,Çekmeköy,1
+node/7593371915,Şeyh Şamil Aile Sağlığı Merkezi,clinic,41.0065767,29.2174341,Sancaktepe,1
+node/7615257491,Dental Care,clinic,41.2077062,29.0243641,Sarıyer,0
+node/7615257492,Villa Medica,clinic,41.207569,29.0239483,Sarıyer,0
+node/7635726141,Ataşehir Belediyesi Sağlık Merkezi,clinic,40.9798098,29.117607,Ataşehir,1
+node/7740545302,Medient,hospital,40.9826508,29.0927519,Kadıköy,1
+node/7743640857,Ataşehir Küçükbakkalköy 11 Nolu Aile Sağlığı Merkezi,clinic,40.9812355,29.1151794,Ataşehir,1
+node/7872060239,Seyitömer Aile Sağlığı Merkezi,clinic,41.0069341,28.9330023,Fatih,0
+node/7874885507,Creadenta,clinic,41.0480002,28.9933122,Şişli,0
+node/8116895417,Bahceci,hospital,41.0221279,29.0418888,Üsküdar,1
+node/8137511048,Gülbağ Aile Sağlığı Merkezi,clinic,41.0725463,28.9941973,Şişli,0
+node/8137735680,İstanbul Üniversitesi Tıp Fakültesi Hastanesi,hospital,41.0168625,28.9339596,Fatih,0
+node/8138079174,Kadıköy 30 Nolu Aile Sağlığı Merkezi,clinic,40.9543975,29.0945247,Kadıköy,1
+node/8138118434,Özel Median Hastanesi,clinic,41.0216789,28.8393232,Bahçelievler,0
+node/8138461845,Özel Avusturya Sen Jorj Hastanesi,hospital,41.0242924,28.9743145,Beyoğlu,0
+node/8148735309,Özel Bliss Maçka Polikliniği,clinic,41.046941,28.9942369,Şişli,0
+node/8148780692,Ümraniye 4 Nolu Sağlık Hizmetleri İstasyonu,clinic,41.0177509,29.1776893,Ümraniye,1
+node/8148796390,Beylikdüzü 4 Nolu Acil Yardım İstasyonu,clinic,40.9957856,28.6516947,Beylikdüzü,0
+node/8310469099,Avrupa Cerrahi Tıp Merkezi,clinic,40.9840766,28.8727471,Bakırköy,0
+node/8365297618,Valide Sultan Aile Sağlığı Merkezi,clinic,41.1021585,28.8822503,Sultangazi,0
+node/8388129592,Sıhhat Sağlık Kabini,clinic,41.0144798,28.8623097,Bahçelievler,0
+node/8438032718,Medihaus,hospital,41.0133418,28.6568742,Esenyurt,0
+node/8520699195,Kadın Hastalıkları ve Doğum Uzmanı Prof. Dr. Soner Doğanyılmaz,clinic,40.9793468,29.1092756,Ataşehir,1
+node/8560158220,Maltepe 4 Nolu Aile Hekimliği,hospital,40.9410585,29.1167634,Maltepe,1
+node/8581425229,Özel Formmed Polikliniği,clinic,40.9789314,29.1160279,Ataşehir,1
+node/8662302211,ARES Psikolojik Danışmanlık Merkezi,hospital,40.9226879,29.1338782,Maltepe,1
+node/8737937251,Opr. Dr. Tülay Egeli,clinic,40.977335,28.7212019,Avcılar,0
+node/8746237509,Yaşam Diyaliz,clinic,41.0228041,29.0723288,Üsküdar,1
+node/8815788093,Denizköşkler Aile Sağlığı Merkezi,clinic,40.9771907,28.7380953,Avcılar,0
+node/8871767984,Nuh Tufan Yaşam Merkezi,clinic,40.9781504,29.1229867,Ataşehir,1
+node/8871771706,Özel Ataşehir Diyaliz Merkezi,clinic,40.9794382,29.117203,Ataşehir,1
+node/8883751441,Bağcılar 27 Nolu Aile Sağlık Merkezi,clinic,41.0608053,28.8532835,Bağcılar,0
+node/8936696650,Hürriyet Aile Sağlığı Merkezi,clinic,40.9017801,29.2283105,Kartal,1
+node/9021072612,Rahime Başaran Aile Sağlığı Merkezi,clinic,41.0701142,28.8976547,Gaziosmanpaşa,0
+node/9054272093,Özel Asya Hastanesi,hospital,41.073873,28.9038241,Gaziosmanpaşa,0
+node/9060510149,Özel Bilge Hastanesi,hospital,41.0695422,28.9073845,Gaziosmanpaşa,0
+node/9071316891,Avrupa Özel Şafak Hastanesi,hospital,41.0596967,28.9123842,Gaziosmanpaşa,0
+node/9139796054,Küçükbakkalköy Aile Sağlığı Merkezi,hospital,40.9804944,29.1255715,Ataşehir,1
+node/9164320460,Özel Maslak Tıp Merkezi,clinic,41.1155241,28.9988685,Sarıyer,0
+node/9187942417,Cihangir lab (covid test),clinic,41.0318562,28.9831387,Beyoğlu,0
+node/9217033170,Eyüp Sultan Verem Savaş Dispanseri,clinic,41.0715592,28.9386536,Eyüpsultan,0
+node/9217044048,Pendik Verem Savaş Dispanseri,clinic,40.8797096,29.2353931,Pendik,1
+node/9288107013,Atafiz Tıp Merkezi,clinic,40.9865056,29.1100255,Ataşehir,1
+node/9288113130,Doktor Şefkat,clinic,40.9839388,29.1118853,Ataşehir,1
+node/9288127454,Özel Vera Clinic Tıp Merkezi,clinic,40.9841655,29.1113136,Ataşehir,1
+node/9391995578,Kadın Hastalıkları ve Doğum Uzmanı Op. Dr. Zeynep Ahmad,clinic,40.9793226,29.1093604,Ataşehir,1
+node/9452683155,Dermatolog Uzm. Dr. Leyla Ertenü,clinic,40.9853751,29.0490259,Kadıköy,1
+node/9592134837,Kartal 1 Nolu Aile Sağlığı Merkezi,clinic,40.9187945,29.2047013,Kartal,1
+node/9592154797,Kartal 2 Nolu Aile Sağlığı Merkezi,clinic,40.9215797,29.221086,Kartal,1
+node/9662588906,NGY Med Dental Clinic,hospital,41.0025741,28.6261789,Beylikdüzü,0
+node/9663256905,Kozyatağı Psikoloji,clinic,40.9729664,29.0831395,Kadıköy,1
+node/9671607317,Konaşlı,clinic,40.8847891,29.3358125,Tuzla,1
+node/9674185890,MT AESTHETIC INTERNATIONAL,clinic,41.0515639,28.992001,Şişli,0
+node/9682615233,Akşemsettin Aile Sağlığı Merkezi,clinic,41.084334,28.9225632,Eyüpsultan,0
+node/9838688944,Biruni Aile Sağlığı Merkezi,clinic,41.0129393,29.221186,Sancaktepe,1
+node/9933684483,Özel Nil Metropol Diyaliz Merkezi,clinic,41.0815508,28.9720756,Kağıthane,0
+node/9939299555,Sabri Artam Vakfı Aile Sağlığı Merkezi,clinic,41.1824723,28.989319,Sarıyer,0
+node/9966218477,Kadıköy 34 Nolu Aile Sağlığı Merkezi,clinic,40.9779346,29.0822579,Kadıköy,1
+node/9977917293,İnalöz Clinic,clinic,40.9661791,29.069057,Kadıköy,1
+node/10029201831,Sena Protez Ortez Yapım ve Uygulama Merkezi,clinic,40.9987054,28.8578698,Bahçelievler,0
+node/10074784665,Tüccarbaşı Aile Sağlığı Merkezi,clinic,40.9773931,29.0912432,Kadıköy,1
+node/10104720028,Diyetisyen Esma Bulut,clinic,41.0818961,28.9171609,Eyüpsultan,0
+node/10111332595,Türkan Saylan Tıp Merkezi,clinic,40.9799736,29.1040124,Ataşehir,1
+node/10239749187,Küçükçekmece 7 Nolu Aile Sağlığı Merkezi,clinic,41.0216808,28.7900165,Küçükçekmece,0
+node/10284787511,Leva Psikoloji,clinic,41.0178252,29.0176375,Üsküdar,1
+node/10285745708,Sağlık Ocağı,clinic,40.9720901,29.1122804,Ataşehir,1
+node/10303128841,Esenyurt 32 Nolu Aile Sağlığı Merkezi,clinic,41.0149317,28.6900173,Esenyurt,0
+node/10605646407,Fizyomotto Fizik Tedavi Merkezi,clinic,41.0232233,29.1064659,Ümraniye,1
+node/10612631170,Üsküdar Üniversitesi Diş Hastanesi,hospital,41.0276144,29.1157001,Ümraniye,1
+node/10655076102,Prof. Dr. Emin Ünüvar Çocuk Sağlığı ve Hastalıkları Uzmanı,clinic,40.9841916,29.1142461,Ataşehir,1
+node/10669076897,Estepalace Clinic,hospital,41.064592,28.9782466,Şişli,0
+node/10703674050,Veni Vidi Göz,clinic,40.982311,29.1069964,Ataşehir,1
+node/10711833155,Özel Medipoint Tıp Merkezi,hospital,40.9823877,29.0713318,Kadıköy,1
+node/10723901727,Kozyatağı Diyaliz Merkezi,clinic,40.9660278,29.1033385,Kadıköy,1
+node/10790587816,Esenyurt 9 Nolu Aile Sağlığı Merkezi,clinic,41.0433889,28.68139,Esenyurt,0
+node/10807975729,Avcılar Cihangir Aile Sağlığı Merkezi,clinic,40.9873417,28.710086,Avcılar,0
+node/10880944666,Cihangir Kirazlı Aile Sağlığı Merkezi,clinic,40.9871085,28.7101311,Avcılar,0
+node/10949045967,Avcılar 5 Nolu Aile Sağlığı Merkezi,clinic,41.0423204,28.6924377,Esenyurt,0
+node/11067341494,Uzm. Dr. Şirin Çelik - Estetik & Dermatoloji Uzmanı,clinic,41.0522338,28.9922411,Şişli,0
+node/11150023769,Acıbadem,hospital,41.1797497,28.8860229,Eyüpsultan,0
+node/11170457543,Üniversite Aile Sağlık Merkezi,clinic,40.9961655,28.7127867,Avcılar,0
+node/11308435861,5 Nolu Aile Sağlığı Merkezi,clinic,41.0312501,29.0871759,Ümraniye,1
+node/11348146054,Özel Baydent Ağız ve Diş Sağlığı Polikliniği,hospital,40.8829325,29.2367531,Pendik,1
+node/11429261991,Bayındır Levent Tıp Merkezi,hospital,41.0730408,29.0179686,Beşiktaş,0
+node/11429261999,Özel Etiler Hastanesi,hospital,41.0726109,29.0183816,Beşiktaş,0
+node/11443247669,İkem Işık Rehabilitasyon Merkezi,clinic,40.9325984,29.1377593,Maltepe,1
+node/11645565174,Uzm. Dr. Sibel Spinu Çocuk Sağlığı ve Hastalıkları Uzmanı,clinic,40.9795829,29.1122316,Ataşehir,1
+node/11659710442,Özel Kurtköy Tıp Merkezi,clinic,40.9142866,29.3001219,Pendik,1
+node/11773740416,Dr. Sibel Çakıtlı,clinic,40.9684055,29.0649159,Kadıköy,1
+node/11773759469,Uzm. Dr. Şenay Eserdağ,clinic,40.9609433,29.0785527,Kadıköy,1
+node/11780348640,Patológia,hospital,41.003674,28.9383347,Fatih,0
+node/11897551847,Aktif International Hospital,hospital,41.0230164,29.0174216,Üsküdar,1
+node/11903829163,Marmara Tıp Merkezi,hospital,40.9840765,29.0584553,Kadıköy,1
+node/11950800470,Eyüpsultan 1 Nolu Aile Sağlığı Merkezi,clinic,41.0354759,28.9371175,Eyüpsultan,0
+node/11987039826,Havuzbaşı Aile Sağlığı Merkezi,clinic,41.0524096,29.0683078,Üsküdar,1
+node/12012116288,Kayışdağı Aile Sağlığı Merkezi,clinic,40.9817781,29.1557753,Ataşehir,1
+node/12041897972,Maltepe 3 Nolu Aile Sağlığı Merkezi,clinic,40.950561,29.1043983,Maltepe,1
+node/12041924181,Maltepe 5 Nolu Aile Sağlığı Merkezi,clinic,40.939316,29.1188632,Maltepe,1
+node/12041925902,Dudullu Sağlıklı Hayat Merkezi,clinic,41.0164964,29.1618263,Ümraniye,1
+node/12041932629,Oruç Reis Aile Sağlığı Merkezi,clinic,41.0547406,28.8599039,Esenler,0
+node/12041934334,Avcılar 1 Nolu Göçmen Sağlığı Merkezi,clinic,40.9874324,28.710675,Avcılar,0
+node/12041934340,Dr. Safiye Aile Sağlığı Merkezi,clinic,41.0186421,29.1926178,Çekmeköy,1
+node/12041974068,Ataşehir 11 Nolu Aile Sağlığı Merkezi,clinic,40.9823638,29.1107329,Ataşehir,1
+node/12041988185,Kadıköy 8 Nolu Aile Sağlığı Merkezi,clinic,40.9788402,29.0678151,Kadıköy,1
+node/12041999071,İnönü Aile Sağlığı Merkezi,clinic,40.9779593,29.1327861,Ataşehir,1
+node/12042004639,Eyüpsultan 10 Nolu Aile Sağlığı Merkezi,clinic,41.0796275,28.9413425,Eyüpsultan,0
+node/12042004640,Seyitnizam Aile Sağlığı Merkezi,clinic,41.0076591,28.9097491,Zeytinburnu,0
+node/12042004966,Yunus Emre Aile Sağlığı Merkezi,clinic,41.0385256,29.0580788,Üsküdar,1
+node/12042022578,Göktürk Aile Sağlığı Merkezi,clinic,41.181658,28.8918369,Eyüpsultan,0
+node/12042024230,Seyrantepe Aile Sağlığı Merkezi,clinic,41.0979734,28.9904839,Kağıthane,0
+node/12042029086,Gültepe Aile Sağlığı Merkezi,clinic,40.9954861,28.7917161,Küçükçekmece,0
+node/12042064041,Gürsel Aile Sağlığı Merkezi,clinic,41.0732073,28.9714059,Kağıthane,0
+node/12042064042,Örnek Ana Çocuk Sağlığı ve Aile Planlanma Merkezi,clinic,40.9939446,29.076133,Ataşehir,1
+node/12042065885,Kağıthane 10 Nolu Aile Sağlığı Merkezi,clinic,41.0652207,28.9658049,Kağıthane,0
+node/12042066387,Ahmet Ermiş Aile Sağlığı Merkezi,clinic,41.0147471,28.8061171,Küçükçekmece,0
+node/12042213633,Şişli Merkez Aile Sağlığı Merkezi,clinic,41.0581981,28.9851918,Şişli,0
+node/12042218321,Şaban Gündeş Aile Sağlığı Merkezi,clinic,41.0739923,29.0339872,Beşiktaş,0
+node/12042234091,Yavuztürk Aile Sağlığı Merkezi,clinic,41.0408114,29.0858214,Üsküdar,1
+node/12042237344,Kağıthane 5 Nolu Aile Sağlığı Merkezi,clinic,41.082213,29.005245,Kağıthane,0
+node/12042238578,Ümraniye 6 Nolu Aile Sağlığı Merkezi,clinic,41.0212541,29.1056348,Ümraniye,1
+node/12042256077,Çobançeşme Aile Sağlığı Merkezi,clinic,41.005724,28.8282927,Bahçelievler,0
+node/12042260669,Cumhuriyet Aile Sağlığı Merkezi,clinic,41.0865034,28.8761979,Sultangazi,0
+node/12042932048,Üsküdar Devlet Hastanesi Çamlıca Semt Polikliniği,clinic,41.0273356,29.0749732,Üsküdar,1
+node/12086863731,Medicana Zincirlikuyu Hastanesi,hospital,41.0714522,29.0151774,Şişli,0
+node/12088466129,Kadıköy 2 No'lu Aile Sağlığı Merkezi,clinic,40.9646667,29.0916812,Kadıköy,1
+node/12145193531,Erdem Hastanesi,hospital,41.021568,29.1198759,Ümraniye,1
+node/12159988566,Derviş Ali Ceylan Aile Sağlığı merkezi,clinic,41.0182809,29.2586908,Sancaktepe,1
+node/12193935372,Erguvan Aile Sağlığı Merkezi,clinic,41.0245735,29.0179402,Üsküdar,1
+node/12193982322,Sağlık Ocağı,clinic,41.0136396,29.079075,Üsküdar,1
+node/12196469254,Özel Florence Nightingale Tıp Merkezi Göktürk,clinic,41.177971,28.8893001,Eyüpsultan,0
+node/12196759994,Uzm. Dr. Duygu Ekmekçi Doğan - Nöroloji Uzmanı,clinic,40.9834365,29.1168665,Ataşehir,1
+node/12196766671,Op. Dr. Ahmet Doğan - Genel Cerrahi Uzmanı,clinic,40.9834352,29.1169223,Ataşehir,1
+node/12200943348,Atakent 1. Etap Aile Sağlığı Merkezi,clinic,41.0456132,28.7960409,Küçükçekmece,0
+node/12242161498,Eyüp Kemerburgaz Aile Sağlığı Merkezi,hospital,41.1590617,28.9115526,Eyüpsultan,0
+node/12253683052,Eyüpsultan 16 Numaralı Aile Sağlığı Merkezi,clinic,41.0531957,28.9154697,Eyüpsultan,0
+node/12291588101,Bağcılar İşitme Engelli Rehabilitasyon Merkezi,hospital,41.0254232,28.8487524,Bağcılar,0
+node/12302133702,Prof. Dr. Murat Balcı Aile Sağlığı Merkezi,clinic,41.051125,29.245641,Çekmeköy,1
+node/12302834202,Çekmeköy Devlet Hastanesi,hospital,41.0373376,29.2352315,Çekmeköy,1
+node/12303032501,Şehit Prof. İlhan Varank Eğitim ve Araştırma Hastanesi - Çekmeköy Ek Hizmet Binası,hospital,41.0378066,29.2351897,Çekmeköy,1
+node/12309554771,Şerif Ali Çiftliği Aile Sağlık Merkezi,clinic,40.9898528,29.1530644,Ataşehir,1
+node/12316312101,Aile Sağlığı Merkezi,clinic,41.0252986,28.845519,Bağcılar,0
+node/12330981859,Youest Clinic,clinic,40.994907,29.0526943,Kadıköy,1
+node/12372576223,Özel Belde Tıp Merkezi,hospital,41.0567006,28.9153423,Gaziosmanpaşa,0
+node/12432994011,Althea Clinic,clinic,41.0767845,29.0163154,Beşiktaş,0
+node/12449988179,Novapol Poliklinik,clinic,40.9882082,29.1036369,Ataşehir,1
+node/12468678688,akl polikliniği,clinic,40.9865735,29.0990971,Ataşehir,1
+node/12473026229,Vialife Polikliniği,clinic,40.9868543,29.0989549,Ataşehir,1
+node/12531488301,Özel Okmeydanı hastanesi,hospital,41.0525054,28.959974,Beyoğlu,0
+node/12558641888,ENT Clinic-Dr. Selcuk Guney,hospital,41.0550656,28.9852615,Şişli,0
+node/12589779884,Diyetisyen İrem EFE,clinic,41.1040429,28.8610431,Sultangazi,0
+node/12590625299,Özel Medicaworld Polikliniği,clinic,40.9658667,29.1034734,Kadıköy,1
+node/12679611009,İmrahor Aile Sağlığı Merkezi,clinic,41.215047,28.7454103,Arnavutköy,0
+node/12721927673,Fikirtepe Aile Sağlığı Merkezi,clinic,40.9924061,29.0492595,Kadıköy,1
+node/12730673797,Kartal 5 Nolu Alie Sağlığı Merkezi,clinic,40.9148785,29.2008628,Kartal,1
+node/12739136799,Vitruvian Clinic - Center of Surgeons,clinic,41.0374753,28.9350216,Eyüpsultan,0
+node/12741818919,Beşiktaş 1 Nolu Aile Sağlık Merkezi,clinic,41.0647569,29.0075281,Beşiktaş,0
+node/12791620124,Pendik 8 Nolu Aile Sağlığı Merkezi,clinic,40.8884688,29.2300751,Pendik,1
+node/12810050745,Melik Yağmur Polikliniği,clinic,40.8833787,29.2345276,Pendik,1
+node/12825641335,Eyüpsultan 11 No'lu Aile Sağlığı Merkezi,clinic,41.0760275,28.9382775,Eyüpsultan,0
+node/12830010711,Özel Venüs Poliklinik,clinic,41.0362255,28.9317489,Eyüpsultan,0
+node/12830952389,Kavaklı 1 No'lu Sağlık Ocağı,clinic,40.9816797,28.6398947,Beylikdüzü,0
+node/12832450900,Bulgurlu Aile Sağlığı Merkezi,clinic,41.0190973,29.0742893,Üsküdar,1
+node/12836388953,Yayalar Aile Sağlığı Merkezi,clinic,40.901565,29.2674727,Pendik,1
+node/12840658571,Özel Oksipol Hiperbarik Oksijen Tedavi Merkezi,clinic,40.9851013,29.089141,Kadıköy,1
+node/12848811331,Üniversite Mahallesi Aile Sağlığı Merkezi,clinic,40.9961376,28.7128333,Avcılar,0
+node/13006734570,Özel Lilyum Tıp Merkezi,hospital,41.1577165,28.6273395,Arnavutköy,0
+node/13018789507,Dr. Mehmet Zeki Kaplan Aile Sağlığı Merkezi,clinic,40.9058412,29.1713963,Kartal,1
+node/13018832125,Kartal 12 Nolu Aile Sağlığı Merkezi,clinic,40.9034537,29.2269366,Kartal,1
+node/13018847803,Kartal Aile Sağlığı Merkezi,clinic,40.8999736,29.1758027,Kartal,1
+node/13018852472,Kartal 9 Nolu Aile Sağlığı Merkezi,clinic,40.8962663,29.216777,Kartal,1
+node/13018894061,Kartal 18 Nolu Aile Sağlığı Merkezi,clinic,40.9109794,29.1709797,Kartal,1
+node/13018945095,Nergis Aile Sağlığı Merkezi,clinic,40.9135878,29.1677072,Kartal,1
+node/13018949783,Kartal 5 Nolu Aile Sağlığı Merkezi,clinic,40.9129626,29.202512,Kartal,1
+node/13018950338,Topselvi Aile Sağlığı Merkezi,clinic,40.8942974,29.2136574,Kartal,1
+node/13018956402,Kartal 6 Nolu Aile Sağlığı Merkezi,clinic,40.9106106,29.1816409,Kartal,1
+node/13018964247,Kartal 7 Nolu Aile Sağlığı Merkezi,clinic,40.908208,29.1714169,Kartal,1
+node/13018984940,Orhantepe Aile Sağlığı Merkezi,clinic,40.9093306,29.1626586,Kartal,1
+node/13018985693,Uğurmumcu Aile Sağlığı Merkezi,clinic,40.9295328,29.214472,Kartal,1
+node/13018986930,Soğanlık Aile Sağlığı Merkezi,clinic,40.9152926,29.2053882,Kartal,1
+node/13019001685,Yalı Aile Sağlığı Merkezi,clinic,40.8921115,29.2207376,Kartal,1
+node/13063245171,Onkoloji Hematoloji Servisi,clinic,40.9932546,28.8671236,Bakırköy,0
+node/13072239069,Ömerli Aile Sağlığı Merkezi,clinic,41.0791414,29.3342889,Çekmeköy,1
+node/13103790592,Sağlık Ocağı,clinic,41.0588237,29.069779,Üsküdar,1
+node/13252823668,DERMATOLOGY CLINIC,clinic,41.0239612,28.9738595,Beyoğlu,0
+node/13276363275,Şişli 15 Nolu Aile Sağlığı Merkezi,clinic,41.0501785,28.9782253,Şişli,0
+node/13339001001,Esthetic Hair Turkey,clinic,40.9978436,28.8945328,Zeytinburnu,0
+node/13363104986,Diyetisyen Gülşen Lükel,clinic,41.0033707,28.6569494,Beylikdüzü,0
+node/13383854101,Hikmet Ercan Aile Sağlığı Merkezi,clinic,40.9836676,28.8662253,Bakırköy,0
+node/13399352518,MY PhysioClinic,clinic,41.0003744,29.1178102,Ümraniye,1
+node/13423662401,Özel Medivia Hastanesi,hospital,41.0523465,29.0761361,Üsküdar,1
+node/13433113421,Altıparmak & Altıparmak Klinik,clinic,40.9693171,29.0542836,Kadıköy,1
+node/13437639559,Özel Alvin Ağız ve Diş Sağlığı Polikliniği,clinic,40.8939295,29.1915514,Kartal,1
+node/13444868254,Aile Sağlığı Merkezi,clinic,41.0044526,29.124687,Ümraniye,1
+node/13513774986,Aile Sağlığı Merkezi,clinic,40.913245,29.3090572,Pendik,1
+node/13542433175,Bağcılar Meydan TRSM,hospital,41.0355011,28.8597775,Bağcılar,0
+node/13640519195,Özel Sondurak Ümran Tıp Merkezi,hospital,41.0245523,29.0999874,Ümraniye,1
+node/13647285734,Durmuş Tanış Aile Sağlığı Merkezi,clinic,41.0218569,29.091881,Ümraniye,1
+node/13703830486,Pendik 16 Nolu Aile Sağlığı Merkezi,clinic,40.8876991,29.2243861,Pendik,1
+node/13706065851,Ümraniye 2 Nolu Aile Sağlığı Merkezi,clinic,41.0501079,29.0914483,Ümraniye,1
+node/13706480611,Özel Kartal As Polikliniği,clinic,40.8899551,29.1797663,Kartal,1
+node/13720404864,Psikiyatri Acil,hospital,40.9875816,28.86234,Bakırköy,0
+node/13730814468,İstanbul Sultangazi 30 No'lu Aile Sağlığı Merkezi,clinic,41.1030996,28.8574794,Sultangazi,0
+node/13755251655,Kazım Karabekir Mahallesi 4 Nolu ASM,clinic,41.0434075,29.1041285,Ümraniye,1
+node/13776282679,Özel Medinverse Polikliniği,clinic,40.9802944,29.1040596,Ataşehir,1
+node/13853012620,Yenimahalle Aile Sağlığı Merkezi,clinic,41.0704099,29.0788838,Beykoz,1
+node/13857677661,Operatör Doktor Kamil Erez,clinic,40.8992609,29.1698069,Kartal,1
+node/13857677662,Doktor Yaşar Ekren,clinic,40.8992496,29.1698289,Kartal,1
+node/13902872305,Rüzgarlıbahçe Aile Sağlığı Merkezi,clinic,41.0969506,29.0983154,Beykoz,1
+node/13907467251,Küçüksu Aile Sağlığı Merkezi,clinic,41.0701387,29.0719615,Üsküdar,1
+node/13928717258,Dr. Lokman Kılıç,clinic,41.0946794,29.0859583,Beykoz,1
+node/13947568186,Bostancı Aile Sağlığı Merkezi,clinic,40.960666,29.1034323,Kadıköy,1
+node/13960732690,Gülsen Solmaz Aile Sağlığı Merkezi,clinic,41.004064,29.2003324,Sancaktepe,1
+node/13969987845,Op.Dr. Övün. Akdemir,clinic,40.9961687,28.8701659,Bakırköy,0
+node/13985513890,Acil Girişi,hospital,40.8447305,29.3036368,Tuzla,1
+node/13987606729,Malazgirt Aile Sağlığı Merkezi,clinic,40.8850419,29.2683982,Pendik,1
+node/14004396001,Artemis,clinic,40.95718,29.0945299,Kadıköy,1
+node/14061510446,Mabel Clinic,clinic,41.0552405,28.7708549,Küçükçekmece,0
+node/14064817232,Özel Veni Vidi Göz Merkezi Pendik,hospital,40.8799509,29.2609087,Pendik,1
+node/14082282950,Arnavutköy Devlet Hastanesi,hospital,41.1776215,28.7469453,Arnavutköy,0
+node/14134966701,Yuniq Clinic,clinic,40.9848115,29.0425839,Kadıköy,1
+node/14134998301,Op. Dr. İsmet Emrah Emre,clinic,40.9624869,29.0776032,Kadıköy,1
+node/14155848564,Pendik 18 Nolu Aile Sağlık Merkezi,clinic,40.8671228,29.3034441,Pendik,1
+node/14159204696,T.C. Sağlık Bakanlığı Fenerbahçe Aile Sağlığı Merkezi,hospital,40.9724311,29.0405658,Kadıköy,1
+node/14159429432,Ekşioğlu Ortak Sağlık Güvenlik Birimi,clinic,40.8794292,29.2274201,Pendik,1
+node/14165271767,Nephrology,clinic,41.0169534,28.9358933,Fatih,0
+node/14165271768,Endocrinology,clinic,41.0169273,28.9359898,Fatih,0
+node/14165271769,Rheumatology,clinic,41.0169089,28.9360489,Fatih,0
+node/14183419245,Özel Rumeli Hastanesi,hospital,41.0078241,28.7982803,Küçükçekmece,0
+node/14196667046,Erenköy FTR Ünalan Ek Hizmet Binası,hospital,40.9972013,29.0652081,Üsküdar,1
+node/14203592336,Sancaktepe 21 Nolu Aile Sağlığı Merkezi,clinic,40.9980364,29.2251751,Sancaktepe,1
+node/14216205395,FMC Şişli Diyaliz,clinic,41.0590106,28.9893199,Şişli,0
+node/14220332475,Bahçelievler 1 Nolu Aile Sağlığı Merkezi,clinic,41.0106233,28.8449878,Bahçelievler,0
+node/14225973426,Nevzat Ayaz Aile Sağlığı Merkezi,clinic,41.0976709,28.9048792,Sultangazi,0
+node/14230499630,Barbaros Aile Sağlığı Merkezi,clinic,41.0283218,28.8370073,Bağcılar,0
+node/14231498822,Zeytinburnu Semt Polkliniği,clinic,40.9868087,28.9054408,Zeytinburnu,0
+node/14232170558,Uzm. Dr. Levent Koçu Medikal Estetik Kliniği,clinic,41.031239,29.1731895,Çekmeköy,1
+node/14232424535,Biruni Hastanesi,hospital,41.0148892,28.9508721,Fatih,0
+node/14232441259,Estetica Pendik,clinic,40.8790981,29.2298565,Pendik,1
+node/14233815549,75. Yıl Mecidiyeköy Aile Sağlığı Merkezi,clinic,41.0713097,29.0030638,Şişli,0
+node/14239953720,Karlıtepe Aile Sağlığı Merkezi,clinic,41.0598533,28.9280567,Gaziosmanpaşa,0
+node/14245145669,Yaşam Tıp Merkezi,clinic,40.8788314,29.2356148,Pendik,1
+node/14283498001,Ümraniye 10 No'lu Aile Sağlığı Merkezi,clinic,41.0182559,29.1162108,Ümraniye,1
+node/14283499301,Zeyneloğlu Aile Sağlığı Merkezi,clinic,41.0093953,29.1446491,Ümraniye,1
+node/14290948286,Yaşampark Evde Sağlık ve Bakım Hizmetleri,hospital,41.0560193,28.9084953,Bayrampaşa,0
+node/14309796406,Sultangazi Haseki Eğitim ve Araştırma Hastanesi Acil Servisi,hospital,41.1039662,28.8729798,Sultangazi,0
+node/14338032438,Vera Clinic Saç Ekim Merkezi,clinic,40.8943466,29.1701555,Kartal,1
+node/14340298112,Live Life Taller,clinic,40.9097996,29.2036974,Kartal,1
+node/14359746723,Özel Kumkapı Polikinliği,clinic,41.0053637,28.9629943,Fatih,0
+way/25554942,Şişli Hamidiye Etfal Eğitim ve Araştırma Hastanesi,hospital,41.0375952,28.9900615,Beyoğlu,0
+way/74982866,Özel Çapa Hastanesi,hospital,41.0133216,28.9341763,Fatih,0
+way/76465628,İstanbul Bezmialem Vakıf Üniversitesi Valide Sultan Gureba Hastanesi,hospital,41.0185641,28.9359844,Fatih,0
+way/89279727,Medilife Çapa Hastanesi,hospital,41.0148299,28.9334617,Fatih,0
+way/110311563,İstanbul Esnaf Hastanesi,hospital,41.0140112,28.9621912,Fatih,0
+way/111262040,Göçmen Konutları Sağlık Ocağı,clinic,41.1031371,28.7991113,Başakşehir,0
+way/135253011,Beykoz 7 No'lu Aile Sağlığı Merkezi,clinic,41.081151,29.069128,Beykoz,1
+way/145788829,İstanbul Eğitim ve Araştırma Hastanesi,hospital,41.0032476,28.9380519,Fatih,0
+way/148460526,SBÜ Sultan Abdülhamid Han Eğitim ve Araştırma Hastanesi,hospital,41.0011021,29.0207146,Üsküdar,1
+way/148461658,Şişli Etfal Eğitim ve Araştırma Hastanesi,hospital,41.0578908,28.9906883,Şişli,0
+way/148462025,Haydarpaşa Numune Eğitim ve Araştırma Hastanesi,hospital,41.004774,29.0229597,Üsküdar,1
+way/148463842,Dr. Lütfi Kırdar Kartal Eğitim ve Araştırma Hastanesi,hospital,40.9151429,29.1739112,Kartal,1
+way/148469373,Okmeydanı Profesör Doktor Cemil Taşçıoğlu Şehir Hastanesi,hospital,41.0645108,28.9749829,Şişli,0
+way/148469927,Göztepe Prof. Dr. Süleyman Yalçın Şehir Hastanesi,hospital,40.9867224,29.0570969,Kadıköy,1
+way/154233585,Maltepe Üniversitesi Hastanesi,hospital,40.925514,29.1351134,Maltepe,1
+way/163811039,Acıbadem International Hospital,hospital,40.9589216,28.8355416,Bakırköy,0
+way/164368990,Fransız Lape Hastanesi,hospital,41.0619103,28.9905843,Şişli,0
+way/177433772,Fatih Sultan Mehmet Eğitim ve Araştırma Hastanesi,hospital,40.9710632,29.1048837,Ataşehir,1
+way/177433773,Yeditepe Üniversitesi Kozyatağı Hastanesi,hospital,40.968911,29.103692,Ataşehir,1
+way/178779851,Avicenna Hastanesi,hospital,40.9793026,29.108622,Ataşehir,1
+way/179212650,Fatih Sultan Mehmet Eğitim ve Araştırma Hastanesi Sağlık Kurulu,clinic,40.970293,29.1073091,Ataşehir,1
+way/179231474,Lifemed Tıp Merkezi,clinic,40.974646,29.0546274,Kadıköy,1
+way/182853312,Kolan Hospital-Beylikdüzü,hospital,41.0066877,28.6296349,Beylikdüzü,0
+way/182859252,Adnan Kahveci Sağlık Ocağı,clinic,41.0041346,28.6295021,Beylikdüzü,0
+way/187794147,Erenköy Ruh ve Sinir Hastalıkları Eğitim ve Araştırma Hastanesi,hospital,40.9750143,29.0887494,Kadıköy,1
+way/197993628,Emsey Hastanesi,hospital,40.9237898,29.2888718,Pendik,1
+way/200222114,Haydarpaşa Numune Hastanesi Yeldeğirmeni Semt Polikliniği,hospital,40.9930708,29.0290091,Kadıköy,1
+way/201072633,Fatih Medical Park Hastanesi,hospital,41.0148015,28.9522605,Fatih,0
+way/209188025,Esenyurt Necmi Kadıoğlu Devlet Hastanesi,hospital,41.0286914,28.6683609,Esenyurt,0
+way/218462585,Güzelyurt Sağlık Ocağı,clinic,41.015947,28.6530597,Esenyurt,0
+way/218546225,Beykent Cerrahi Tıp Merkezi,clinic,40.9966231,28.6250073,Beylikdüzü,0
+way/219346240,İstanbul Tıp Merkezi,hospital,41.0710651,28.9991949,Şişli,0
+way/225989447,Karakoy Sahil Saglik Denetleme Merkezi,hospital,41.0220362,28.9766321,Beyoğlu,0
+way/227851330,Özel Gazi Hastanesi,hospital,41.1010032,28.8985811,Sultangazi,0
+way/235271675,Moda Sağlık Ocağı,clinic,40.9830573,29.0255587,Kadıköy,1
+way/235463554,Florence Nightingale Hastanesi,hospital,40.9816285,29.0417135,Kadıköy,1
+way/236641495,Esenyurt Devlet Hastanesi (Ek Binası),hospital,41.0325033,28.6830154,Esenyurt,0
+way/237001077,Tepe Özel Kliniği,hospital,41.0365277,29.0615651,Üsküdar,1
+way/237176270,Erenköy Fizik Tedavi ve Rehabilitasyon Hastanesi,hospital,40.9748394,29.083684,Kadıköy,1
+way/237686526,Dr. Siyami Ersek Göğüs Kalp ve Damar Cerrahisi Eğitim ve Araştırma Hastanesi,hospital,41.0039903,29.0243116,Üsküdar,1
+way/237914844,Erenköy Fizik Tedavi ve Reahabilitasyon Hastanesi,hospital,40.9860653,29.0656466,Kadıköy,1
+way/237946576,Acıbadem Kadıköy Hastanesi,hospital,41.0072126,29.0430345,Kadıköy,1
+way/237949321,Medipol,hospital,41.0048953,29.0340722,Kadıköy,1
+way/239828607,Özel Intermed Çiftehavuzlar Polikliniği,hospital,40.9692906,29.053565,Kadıköy,1
+way/246883311,İtalyan Hastanesi - Giovanni Alberto Agnelli,hospital,41.028438,28.98111,Beyoğlu,0
+way/252473709,Sağlık Ocağı,clinic,41.1551457,28.673538,Arnavutköy,0
+way/260419647,Sağlık Merkezi,hospital,41.2035674,29.0701352,Sarıyer,0
+way/260613837,Beylikdüzü Devlet Hastanesi,hospital,41.0147219,28.6244411,Büyükçekmece,0
+way/260615279,Medihaus Tıp Merkezi,hospital,41.0133707,28.6569108,Esenyurt,0
+way/262772289,Esatpaşa Aile Sağlık Merkezi,clinic,41.0025602,29.0865058,Ataşehir,1
+way/263129307,Başakşehir Tıp Merkezi,hospital,41.1055494,28.7934497,Başakşehir,0
+way/274235242,Uskumruköy Aile Hekimliği,clinic,41.2196769,29.0225523,Sarıyer,0
+way/278572867,Delta Hospital,hospital,40.9461699,29.1251189,Maltepe,1
+way/278630525,Maltepe Üniversitesi Kadın Doğum ve Çocuk Hastanesi,hospital,40.9260352,29.1333182,Maltepe,1
+way/280193623,Pendik Devlet Hastanesi Kurtköy Semt Polikliniği,hospital,40.9253697,29.3078803,Pendik,1
+way/281084303,Sağlık Ocağı,clinic,40.9579052,29.1879847,Maltepe,1
+way/291737213,Hamit Demir Sağlık Ocağı,clinic,41.0258815,28.6352098,Esenyurt,0
+way/298129119,Acıbadem Hospital,hospital,41.0035592,28.6559044,Beylikdüzü,0
+way/298129124,Barış Mahallesi Sağlık Ocağı,clinic,41.0044491,28.6557865,Beylikdüzü,0
+way/302546248,Dr Cınık Tıp Merkezi,clinic,41.0639594,29.0011028,Şişli,0
+way/305826780,Marmara Üniversitesi Pendik Eğitim ve Araştırma Hastanesi,hospital,40.8867609,29.2626952,Pendik,1
+way/305839875,Ümraniye Eğitim ve Araştırma Hastanesi,hospital,41.0323464,29.1012718,Ümraniye,1
+way/310813112,İlgi Hastanesi,hospital,41.0209094,28.8666912,Güngören,0
+way/312367436,Aile Hastanesi,hospital,40.9974037,28.8669638,Bahçelievler,0
+way/315715372,Memorial Bahçelievler Hastanesi,hospital,40.993276,28.8527432,Bahçelievler,0
+way/316629384,Acıbadem Üniversitesi Hastanesi,hospital,41.0349134,28.7786592,Küçükçekmece,0
+way/316650279,Mehmet Akif Ersoy Göğüs Kalp Ve Damar Cerrahisi Eğitim Ve Araştırma Hastanesi,hospital,41.0333764,28.7770266,Küçükçekmece,0
+way/316666736,Kanuni Sultan Süleyman Eğitim ve Araştırma Hastanesi,hospital,41.0546445,28.7595701,Küçükçekmece,0
+way/338806809,Beykoz Devlet Hastanesi Tepeüstü Ek Hizmet Birimi,hospital,41.1106101,29.0862362,Beykoz,1
+way/342973790,Fatih Toplum Ruh Sağlığı Merkezi,clinic,41.02277,28.9446085,Fatih,0
+way/355962701,Harmandere Aile Sağlığı Merkezi,clinic,40.9282005,29.3219308,Pendik,1
+way/363316258,Özel Avrasya Hastanesi,hospital,41.0032497,28.9066589,Zeytinburnu,0
+way/365255513,Zekeriyaköy Aile Hekimliği,clinic,41.1968745,29.028929,Sarıyer,0
+way/375108990,Zeynep Kamil Kadın Ve Çocuk Hastalıkları Eğitim Ve Araştırma Hastanesi,hospital,41.0151264,29.0262798,Üsküdar,1
+way/376031174,Acıbadem Kozyatağı Hastanesi,hospital,40.9766927,29.0931138,Kadıköy,1
+way/382843570,Memorial Şişli Hastanesi,hospital,41.0616543,28.9727332,Şişli,0
+way/388720621,"Yakacık Kadın, Doğum ve Çocuk Hastalıkları Hastanesi",hospital,40.9177882,29.219018,Kartal,1
+way/390256751,Bezmialem Üniversitesi Dragos Hastanesi,hospital,40.9099953,29.1379765,Maltepe,1
+way/397822277,Bakırköy Dr. Sadi Konuk Eğitim ve Araştırma Hastanesi,hospital,40.9937465,28.8653937,Bakırköy,0
+way/399306293,Ataşehir Memorial Hastanesi,hospital,40.9842318,29.1070501,Ataşehir,1
+way/402969943,Acıbadem Etiler Tıp Merkezi,clinic,41.0763706,29.0214534,Beşiktaş,0
+way/402969944,Memorial Etiler Tıp Merkezi,clinic,41.0761471,29.0210271,Beşiktaş,0
+way/403552357,Liv Hospital Ulus,hospital,41.0608579,29.0284965,Beşiktaş,0
+way/406058505,Yenişehir Aile Sağlığı Merkezi,clinic,40.923544,29.2926934,Pendik,1
+way/408550345,Ethica Hastanesi,hospital,40.9972327,28.8726251,Bakırköy,0
+way/419164018,Üsküdar Devlet Hastanesi,hospital,41.0157709,29.0389618,Üsküdar,1
+way/421055274,Özel Diyabet Hastanesi,hospital,40.9982377,29.0334085,Kadıköy,1
+way/429350599,Özel Güngören Hastanesi,hospital,41.0268791,28.8717621,Güngören,0
+way/430341380,Medical Park,hospital,40.9958281,28.8630524,Bahçelievler,0
+way/436659631,75.Yıl 2 nolu Aile Sağlık Merkezi,clinic,41.0336014,29.1817945,Çekmeköy,1
+way/437417504,Acıbadem Fulya Hastanesi,hospital,41.0557869,28.9995664,Beşiktaş,0
+way/439649929,Ümraniye 30 Nolu Aile Sağlığı Merkezi,clinic,41.050932,29.1074557,Ümraniye,1
+way/443790677,Şişli Belediyesi Merkez Semt Polikliniği,clinic,41.0532163,28.9838869,Şişli,0
+way/446337225,Medipol Üniversitesi Sefaköy Sağlık Uygulama Merkezi Hastanesi,hospital,41.014852,28.7983106,Küçükçekmece,0
+way/446826425,Özel Ataşehir Hastanesi,hospital,40.9860818,29.1756358,Ataşehir,1
+way/454198403,İstanbul 3 Nolu Halk Sağlığı Laboratuvarı,clinic,40.9330517,29.1375856,Maltepe,1
+way/457650991,Çamlık Aile Sağlığı Merkezi,clinic,41.0090308,29.1256018,Ümraniye,1
+way/457935667,kurnaköy sağlık ocağı,clinic,40.9559715,29.334378,Pendik,1
+way/459869176,Esentepe Aile Sağlığı Merkezi,clinic,40.9036511,29.1857325,Kartal,1
+way/460382594,Avicenna Umut Hastanesi,hospital,40.8907056,29.1776524,Kartal,1
+way/460952709,Alemdağ Aile Sağlığı Merkezi,clinic,41.0504447,29.2368458,Çekmeköy,1
+way/461114154,Or-Ayahim Özel Balat Hastanesi,hospital,41.038504,28.9456088,Fatih,0
+way/461449298,Karlıktepe H. Melahat H. Konuralp Aile Sağlığı Merkezi,clinic,40.8967862,29.1904241,Kartal,1
+way/462297017,Anka Sağlık Merkezi,clinic,41.0103836,29.0380403,Kadıköy,1
+way/462742396,SBÜ Süreyyapaşa Göğüs Hastalıkları Hastanesi,hospital,40.9505814,29.1405521,Maltepe,1
+way/462845183,Veni Vidi Göz,hospital,40.9701598,29.0630206,Kadıköy,1
+way/463232938,Zafer Aile Sağlığı Merkezi,clinic,41.0114195,28.8346586,Bahçelievler,0
+way/464881829,Özel Çamlık Hastanesi,hospital,40.9893869,28.8700885,Bakırköy,0
+way/465113164,Yaşar Hastanesi,hospital,40.9837641,28.8728374,Bakırköy,0
+way/469996529,Medical Park Göztepe,hospital,40.9900002,29.0773176,Kadıköy,1
+way/485688870,Liv Hospital,hospital,41.0607957,29.0284425,Beşiktaş,0
+way/485984690,Medicana Böbrek Nakil Merkezi,hospital,41.0246551,29.0829288,Üsküdar,1
+way/489671400,Hilmi Şahin Aile Sağ.Mrk.,clinic,40.8454777,29.2979963,Tuzla,1
+way/500364330,Acıbadem Altunizade Hastanesi,hospital,41.0190219,29.0463398,Üsküdar,1
+way/501824061,Atakent 3.Etap Aile Sağlığı Merkezi,clinic,41.0549035,28.7777227,Küçükçekmece,0
+way/506635204,Medipol Mega Hastaneler Kompleksi,hospital,41.0582324,28.8433861,Bağcılar,0
+way/506791957,Nilgün Tezsezer Aile Sağlık Merkezi,hospital,40.9958351,28.6516314,Beylikdüzü,0
+way/508601078,Emp Clinics,clinic,40.9871725,29.1131185,Ataşehir,1
+way/518497853,Bahçelievler Devlet Hastanesi,hospital,41.0062437,28.844367,Bahçelievler,0
+way/519572843,Fatih 1 No'lu Aile Sağlığı Merkezi,clinic,41.0243308,28.9487963,Fatih,0
+way/521335121,Fatih 9 No'lu Aile Sağlığı Merkezi,clinic,41.0144897,28.9378434,Fatih,0
+way/521866853,Üniversal Aksaray Hastanesi,hospital,41.0126339,28.9452978,Fatih,0
+way/523093888,İmrahor Aile Sağlığı Merkezi,clinic,40.996455,28.9290224,Fatih,0
+way/524892365,Academic Hospital,hospital,41.0197099,29.0350121,Üsküdar,1
+way/524940073,İstanbul Eğitim ve Araştırma Hastanesi Kızılelma Polikliniği,clinic,41.0069619,28.9361758,Fatih,0
+way/525654580,Çarşamba Aile Sağlığı Merkezi,clinic,41.0267424,28.9466022,Fatih,0
+way/527496165,Bayrampaşa Devlet Hastanesi,hospital,41.0420205,28.9020672,Bayrampaşa,0
+way/531292894,Melek Hatun Aile Sağlığı Merkezi,clinic,41.015514,28.9256824,Fatih,0
+way/534079885,Şehit Tolga Ecebalın Aile Sağlığı Merkezi,clinic,41.0373987,28.943007,Fatih,0
+way/534830576,Cerrahpaşa Tıp Fakültesi,hospital,41.0040192,28.9415822,Fatih,0
+way/539587648,Nisa Hastanesi Acil,hospital,40.9989607,28.8294908,Bahçelievler,0
+way/539587649,Nisa Hastanesi,hospital,40.9994231,28.8302433,Bahçelievler,0
+way/540601527,Pendik Devlet Hastanesi,hospital,40.8771069,29.2295481,Pendik,1
+way/542205536,Medicana Kadıköy,hospital,40.98532,29.0381654,Kadıköy,1
+way/543445804,Sante Plus Hastanesi,hospital,40.9984202,28.8943061,Zeytinburnu,0
+way/545081137,Kaynarca Devlet Hastanesi,hospital,40.8734534,29.2532498,Pendik,1
+way/545292024,Özel Pendik Bölge Hastanesi,hospital,40.8827896,29.2458524,Pendik,1
+way/545292027,Pendik Hospital,hospital,40.8835693,29.2443562,Pendik,1
+way/546065440,Hatice Kuşçulu Aile Sağlığı Merkezi,clinic,40.9068916,29.2515375,Pendik,1
+way/546786422,Kartaltepe Aile Sağlığı Merkezi,clinic,41.0577557,28.8965013,Bayrampaşa,0
+way/547029815,Bahat Özel Hastanesi,hospital,41.106122,28.860323,Sultangazi,0
+way/547386341,Yedikule Göğüs Hastalıkları ve Göğüs Cerrahisi Eğitim ve Araştırma Hastanesi,hospital,41.0020121,28.9152757,Zeytinburnu,0
+way/547389353,Diş Sağlık Merkezi,hospital,41.0971677,29.0912527,Beykoz,1
+way/547694063,Bezmialem Üniversitesi İlhan Varank Yerleşkesi,hospital,41.0949722,28.8647834,Sultangazi,0
+way/547921297,9 Nolu Acil Sağlık Hizmetleri İstasyonu,clinic,40.8992442,29.2476194,Pendik,1
+way/548166396,Bedri Akman Sağlık Ocağı,clinic,41.1310821,28.8313687,Sultangazi,0
+way/548864118,Çubuklu Sağlık Ocağı,clinic,41.1043648,29.0831757,Beykoz,1
+way/548962087,İbn-i Sina Tıp Merkezi,clinic,40.947834,29.1131904,Maltepe,1
+way/549952500,Ümraniye 11 Nolu Aile Sağlığı Merkezi,clinic,41.0175069,29.1277214,Ümraniye,1
+way/551910623,Bahçeşehir Semt Polikliniği,hospital,41.0624876,28.683931,Başakşehir,0
+way/552108808,Özel Bahçeşehir Sağlık Polikliniği,clinic,41.0622485,28.6896148,Başakşehir,0
+way/552198295,İstanbul Gaziosmanpaşa Eğitim ve Araştırma Hastanesi,hospital,41.0864654,28.8980769,Gaziosmanpaşa,0
+way/553818243,Cemal Pamuk Aile Sağlığı Merkezi,hospital,40.9991399,28.7854371,Küçükçekmece,0
+way/557981050,Bayrampaşa Devlet Hastanesi Maltepe Semt Polikliniği,clinic,41.0298989,28.9141818,Zeytinburnu,0
+way/558895625,Sancaktepe Şehit Prof.Dr. İlhan Varank Eğitim Ve Araştırma Hastanesi,hospital,41.0053544,29.1962203,Sancaktepe,1
+way/559738938,Haseki Eğitim Ve Araştırma Hastanesi,hospital,41.0097389,28.8993122,Zeytinburnu,0
+way/560156032,Zeytinburnu 9 No'lu Maltepe Aile Sağlığı Merkezi,clinic,41.0187819,28.9132048,Zeytinburnu,0
+way/569772096,Özel Safa Hastanesi,hospital,41.022721,28.8571751,Bağcılar,0
+way/570062551,Göztepe Mahalle Konağı Ve Sağlık Ocağı,clinic,41.0594119,28.8364412,Bağcılar,0
+way/571219884,Özel Yaman Cerrahi Tıp Merkezi,hospital,41.027416,28.8296398,Bağcılar,0
+way/571346624,Yıldıztepe Aile Sağliği Merkezi,clinic,41.0241387,28.850322,Bağcılar,0
+way/571771295,Çamlık Tıp Merkezi,clinic,41.0140598,29.1964688,Çekmeköy,1
+way/571842136,Samandıra Aile Sağlığı Merkezi,clinic,40.987291,29.2267735,Sancaktepe,1
+way/572106520,Özel Akkuş Ağız ve Diş Sağlığı Polikliniği,hospital,41.0384251,28.8271052,Bağcılar,0
+way/572404518,Bağcılar Ana Çocuk Sağlığı ve Aile Planlama Merkezi,clinic,41.0407235,28.8539199,Bağcılar,0
+way/585881345,Çekmeköy 1 Nolu Sağlık Ocağı,clinic,41.0155281,29.1875078,Çekmeköy,1
+way/586993225,İhlas Marmara Evleri Aile Sağlığı Merkezi,clinic,40.9844418,28.6580821,Beylikdüzü,0
+way/590605748,Gaziosmanpaşa Fizik Tedavi Rehabilitasyon Eğitim ve Araştırma Hastanesi,hospital,41.089079,28.9083256,Gaziosmanpaşa,0
+way/593180276,Aile Sağlığı Merkezi,clinic,41.0773031,28.7800787,Başakşehir,0
+way/597167817,Beykoz Devlet Hastanesi,hospital,41.1176139,29.0982065,Beykoz,1
+way/615858599,Sarıyer 4 Nolu Acil Sağlık Hizmetleri İstasyonu,clinic,41.1371412,29.0236916,Sarıyer,0
+way/623349547,Tuzla 4 Nolu Aile Sağlığı Merkezi,clinic,40.864829,29.3412556,Tuzla,1
+way/630160181,Tuzla Devlet Hastanesi,hospital,40.8443897,29.3032558,Tuzla,1
+way/647453125,Yakacık Tıp Merkezi,hospital,40.9200673,29.2243537,Kartal,1
+way/651758747,İstinye Devlet Hastanesi,hospital,41.1151361,29.0557561,Sarıyer,0
+way/651758748,İstinye Devlet Hastanesi,hospital,41.1149992,29.0554118,Sarıyer,0
+way/652478243,Okan Üniversitesi Diş Hastanesi,hospital,40.859123,29.3017045,Tuzla,1
+way/656940377,Bolluca Sağlık Ocağı,hospital,41.1999813,28.7623185,Arnavutköy,0
+way/657571797,Kozyatağı Aile Sağlığı Merkezi,clinic,40.9715898,29.0951513,Kadıköy,1
+way/660120597,Okan Üniversitesi Hastanesi,hospital,40.849257,29.3018773,Tuzla,1
+way/660126546,Tuzla Termal Tesisleri,hospital,40.844869,29.2946489,Tuzla,1
+way/660127082,Özel Gisbir Hastanesi,hospital,40.8476335,29.2944151,Tuzla,1
+way/662046599,Türk Kalp Vakfı,clinic,41.0589906,28.9921745,Şişli,0
+way/662096621,Birlik Sağlık Ocağı,clinic,41.0133422,29.1507322,Ümraniye,1
+way/667625955,İstanbul Florence Nightingale Hastanesi,hospital,41.0695583,28.983983,Şişli,0
+way/673444197,Lokman Hekim Hastanesi,hospital,40.9252625,29.2911887,Pendik,1
+way/674355322,Pendik Devlet Hastanesi Pendik Toplum Ruh Sağlığı Merkezi,clinic,40.8877373,29.2195126,Pendik,1
+way/683648033,Ömer Hekim Aile Sağlığı Merkezi,clinic,40.8723351,29.2303187,Pendik,1
+way/684465694,Marmara Üniversitesi Prof. Dr. Asaf Ataseven Hastanesi,hospital,40.9506146,29.1382554,Maltepe,1
+way/684621563,Gürsel Mehmet Özçivici Aile Sağlığı Merkezi,clinic,40.8890612,29.2434809,Pendik,1
+way/684927956,VM Medical Park Pendik,hospital,40.8806305,29.2565215,Pendik,1
+way/685592731,Güllübağlar Aile Sağlığı Merkezi,clinic,40.8927083,29.2770624,Pendik,1
+way/686139099,Kavakpınar 2 Nolu Aile Sağlığı Merkezi,clinic,40.8804084,29.280017,Pendik,1
+way/686252217,Özel Pendik Yüzyıl Hastanesi,hospital,40.8792473,29.2612978,Pendik,1
+way/686300571,Çamçeşme Aile Sağlığı Merkezi,clinic,40.878529,29.2713609,Pendik,1
+way/690523111,Sülüntepe Aile Sağlığı Merkezi,clinic,40.9143856,29.2833296,Pendik,1
+way/691996334,Yenişehir Aile Sağlığı Merkezi,clinic,40.9332204,29.3137287,Pendik,1
+way/693286301,Cemre Ağız ve Diş Sağlığı Polikliniği,clinic,40.8783024,29.235911,Pendik,1
+way/695774565,Kurtköy Ersoy Hastanesi,hospital,40.9106189,29.2980185,Pendik,1
+way/707608856,Yeditepe Üniversitesi İhtisas Hastanesi,hospital,41.0040968,29.0312823,Kadıköy,1
+way/712549430,T.C. Sağlık Bakanlığı Fındıklı Aile Sağlığı Merkezi,clinic,40.9704,29.1291413,Maltepe,1
+way/719465669,Medicana Ataşehir Hastanesi,hospital,40.9835442,29.1069977,Ataşehir,1
+way/722326781,Maltepe Altayçeşme Devlet Hastanesi,hospital,40.9368707,29.1349905,Maltepe,1
+way/722328515,Ersoy Hastanesi,hospital,40.9331521,29.1347045,Maltepe,1
+way/724706779,Özel Baypark Hospital,hospital,41.0630229,28.8910763,Bayrampaşa,0
+way/725152504,Mehmet Toprak Hastanesi,hospital,40.9172107,29.1456292,Maltepe,1
+way/725154734,Medical Park İstanbul Onkoloji Hastanesi,hospital,40.9224101,29.1536688,Maltepe,1
+way/725375993,Ataşehir Belediyesi Kadın Sağlığı ve Mamografi Merkezi,clinic,40.9771656,29.1246508,Ataşehir,1
+way/725395862,Özel Medicine Hospital Güneşli,hospital,41.0301511,28.8385022,Bağcılar,0
+way/725976455,Yavuz Selim Devlet Hastanesi Poliklinikleri,hospital,40.9015866,29.2045142,Kartal,1
+way/728125275,Dünyagöz,hospital,40.9843915,29.1114634,Ataşehir,1
+way/728955333,Çekmeköy 4 Nolu Aile Sağlığı Merkezi,clinic,41.0392253,29.2628416,Çekmeköy,1
+way/730650358,Karadeniz Aile Sağlığı Merkezi,clinic,41.0824673,28.8824855,Gaziosmanpaşa,0
+way/732697418,Moodist Psikiyatri ve Nöroloji Hastanesi,hospital,41.0023482,29.0534145,Üsküdar,1
+way/732839951,Acıbadem Ataşehir Hastanesi,hospital,40.9942682,29.1269208,Ataşehir,1
+way/732957990,Esenkent Aile Sağlığı Merkezi,clinic,40.9309003,29.1696245,Maltepe,1
+way/733034117,112 Acil Anadolu Komuta Kontrol Merkezi,hospital,41.0075875,29.0304466,Üsküdar,1
+way/733808410,Tepe Aile Sağlığı Merkezi,clinic,40.9512,29.1639421,Maltepe,1
+way/738861681,Zehra Mustafa Yüksel Mamografi ve Kadın Sağlığı Merkezi,clinic,40.9885883,29.061439,Kadıköy,1
+way/739530661,Arnavutköy Cavit Beşkardeş Aile Sağlığı Merkezi,clinic,41.2077508,28.7052812,Arnavutköy,0
+way/740815393,Ataşehir Ağız ve Diş Sağlığı Hastanesi,hospital,40.9906871,29.109163,Ataşehir,1
+way/740980670,Başakşehir 14 Nolu Aile Sağlığı Merkezi,clinic,41.0996277,28.7627063,Başakşehir,0
+way/741201941,Başakşehir 15 Nolu Aile Sağlığı Merkezi,clinic,41.1058555,28.7701433,Başakşehir,0
+way/745713352,Acıbadem Ataşehir Cerrahi Tıp Merkezi,hospital,40.9856026,29.1086871,Ataşehir,1
+way/764227427,Acıbadem Bahçeşehir Hastanesi,hospital,41.0626694,28.6883906,Başakşehir,0
+way/765948693,Medicana Çamlıca Hastanesi,hospital,41.0247113,29.0834597,Üsküdar,1
+way/765948703,Medicana,hospital,41.0243078,29.0825509,Üsküdar,1
+way/775984642,Özel İlke Hastanesi,hospital,40.9976279,28.8348558,Bahçelievler,0
+way/776720292,Ataköy Hastanesi,hospital,40.9925405,28.8406425,Bakırköy,0
+way/783825050,Sultantepe ASM,hospital,41.0283814,29.0211295,Üsküdar,1
+way/785092798,Taksim Eğitim ve Araştırma Hastanesi,hospital,41.0330912,28.9831326,Beyoğlu,0
+way/785629895,Ümraniye 17 Nolu Aile Sağlığı Merkezi,clinic,41.0077079,29.1386755,Ümraniye,1
+way/785705203,Beykoz Devlet Hastanesi Toplum Ruh Sağlığı Merkezi,hospital,41.1539266,29.0934474,Beykoz,1
+way/793003829,Başakşehir Çam ve Sakura Şehir Hastanesi,hospital,41.1045261,28.7764267,Başakşehir,0
+way/795928682,Hüseyin Araç Aile Sağlığı Merkezi,clinic,40.8963402,29.1808973,Kartal,1
+way/795931539,Özel Avrupa Tıp Merkezi,hospital,41.0257045,28.6851857,Esenyurt,0
+way/796911657,Esenler 1 No'lu Göçmen Sağlığı Merkezi,clinic,41.0545446,28.8725324,Esenler,0
+way/797481586,SBÜ Bağcılar Eğitim ve Araştırma Hastanesi Güneşli Semt Polikliniğ,hospital,41.0356583,28.8322844,Bağcılar,0
+way/799074096,Mehmet Remzi Önecek Aile Sağlığı Merkezi,hospital,41.0406038,28.6714,Esenyurt,0
+way/802070571,Kocasinan Aile Sagligi Merkezi,clinic,41.0147399,28.8355759,Bahçelievler,0
+way/802954210,Sırapınar İlyas Cebir Aile Sağlığı Merkezi,clinic,41.1010177,29.327822,Çekmeköy,1
+way/804028921,Sancaktepe Prof. Dr. Feriha Öz Acil Durum Hastanesi,hospital,41.0002128,29.2105858,Sancaktepe,1
+way/804508692,Kartal Dr Lütfi Kırdar Eğitim ve Araştırma Hastane Polİklİnİklerİ,hospital,40.9170247,29.1710033,Kartal,1
+way/812676140,Yakacık Aile Sağlığı Merkezi,clinic,40.9186468,29.2255884,Kartal,1
+way/822871645,Beşiktaş 4 Nolu Acil Sağlık Hizmetleri İstasyonu,clinic,41.0437777,29.0129856,Beşiktaş,0
+way/824867873,İstanbul Fizik Tedavi ve Rehabilitasyon Eğitim Ve Araştırma Hastanesi,hospital,40.995288,28.8546085,Bahçelievler,0
+way/824944376,Sarıyer İsmail Akgün Devlet Hastanesi,hospital,41.1694361,29.0566989,Sarıyer,0
+way/836676030,Acıbadem Dr. Şinasi Can (Kadıköy) Hastanesi,hospital,41.00716,29.0429132,Kadıköy,1
+way/838436357,Yedikule Surp Pırgiç Ermeni Hastanesi,hospital,40.9939031,28.9154024,Zeytinburnu,0
+way/866653469,AsMed,hospital,40.9921016,29.1160537,Ataşehir,1
+way/866786285,Ataşehir Florence Nightingale,hospital,40.9845488,29.1092707,Ataşehir,1
+way/866786287,Özel Ataşehir Florence Nightingale Hastanesi,hospital,40.9847776,29.1087713,Ataşehir,1
+way/866786288,Esthetica,hospital,40.985173,29.1100045,Ataşehir,1
+way/868995487,Beykent Üniversitesi Hastanesi,hospital,41.017543,28.62623,Büyükçekmece,0
+way/870841532,Toki Sağlık Ocağı,clinic,41.0860189,28.9055135,Gaziosmanpaşa,0
+way/874083251,Başıbüyük Aile Sağlığı Merkezi,clinic,40.9578752,29.1484298,Maltepe,1
+way/874096575,Hikmet Büyükkuşoğlu Aile Sağlığı Merkezi,clinic,41.0876635,29.0455421,Sarıyer,0
+way/874103265,Tahtakale Aile Sağlığı Merkezi,clinic,41.0603567,28.7274087,Avcılar,0
+way/874112239,Yayla Asef Çoban Aile Sağlığı Merkezi,clinic,41.1485499,28.8520852,Sultangazi,0
+way/874133378,İBB Evde Sağlık Hizmetleri,clinic,41.0297769,28.9277825,Eyüpsultan,0
+way/874138843,Tuna Aile Sağlığı Merkezi,clinic,41.0503482,28.8601737,Esenler,0
+way/874170009,11 No'lu Acil Sağlık Hizmetleri İstasyonu,clinic,41.0001371,29.023744,Kadıköy,1
+way/874170903,Özel Kadıoğlu Hastanesi,clinic,41.062881,28.9946801,Şişli,0
+way/874180871,Türk Kızılayı Kartal Şubesi,clinic,40.9056069,29.1606995,Kartal,1
+way/875444479,İshaklı Sağlık Evi,clinic,41.1379807,29.3055779,Beykoz,1
+way/875458191,Ambarlı Aile Sağlığı Merkezi,clinic,40.9730999,28.7159292,Avcılar,0
+way/875480790,Fevzi Çakmak Aile Sağlığı Merkezi,clinic,41.0032626,28.8302652,Bahçelievler,0
+way/880806742,Özel Kudret Göz Hastanesi,hospital,40.9981356,29.0329813,Kadıköy,1
+way/886393776,Çağıner Hastanesi,hospital,40.9962043,29.0451688,Kadıköy,1
+way/888102607,Haydarpaşa Numune Hastanesi Ünalan Ek Hizmet Binası,hospital,40.9972306,29.0650495,Üsküdar,1
+way/905367956,Küçükçekmece Ağız ve Diş Sağlığı Merkezi,hospital,41.0218049,28.7902957,Küçükçekmece,0
+way/906601317,Sultangazi Haseki Eğitim ve Araştırma Hastanesi,hospital,41.1047476,28.8731196,Sultangazi,0
+way/910124682,Merdivenköy Aile Sağlığı Merkezi,clinic,40.9878137,29.0764729,Kadıköy,1
+way/911506485,Central Hospital,hospital,40.9659101,29.1002119,Kadıköy,1
+way/914984188,Vanity,clinic,41.0212726,29.0462347,Üsküdar,1
+way/921285655,Erdem Hastanesi,hospital,41.0251672,29.0822238,Üsküdar,1
+way/922963331,Sultanbeyli Devlet Hastanesi,hospital,40.9853747,29.2837113,Sultanbeyli,1
+way/924119807,Sarıyer Hamidiye Etfal Eğitim ve Araştırma Hastanesi,hospital,41.1578154,29.0275609,Sarıyer,0
+way/929247608,Dünyagöz,clinic,41.0217233,29.0385558,Üsküdar,1
+way/930031482,Müzeyyen Erkul Aile Sağlığı Merkezi,clinic,41.0334736,28.7067518,Avcılar,0
+way/939817635,Zeytinburnu Yesiltepe Aile Sağlık Merkezi,hospital,40.9911705,28.8978596,Zeytinburnu,0
+way/960169791,Başakşehir 7 Nolu Aile Sağlığı Merkezi,clinic,41.0866835,28.7526267,Başakşehir,0
+way/996714771,Kartal Verem Savaş Dispanseri,clinic,40.8901877,29.1819498,Kartal,1
+way/996728857,Başakşehir 28 No'lu Aile Sağlığı Merkezi,clinic,41.0890894,28.6545984,Başakşehir,0
+way/997396110,Girne Aile Sağlığı Merkezi,hospital,40.9428437,29.1392549,Maltepe,1
+way/997408916,Kartal Kızılay Hastanesi,hospital,40.890892,29.1819778,Kartal,1
+way/997420463,Kadıköy Verem Savaş Dispanseri,hospital,40.992901,29.0333551,Kadıköy,1
+way/997424836,Çekmeköy İlçe Sağlık Müdürlüğü,hospital,41.0368674,29.1757999,Çekmeköy,1
+way/997688702,Üsküdar Cezmi Or Verem Savaş Dispanseri,hospital,41.0180255,29.0121859,Üsküdar,1
+way/998221556,Ümraniye Verem Savaş Dispanseri,hospital,41.0299978,29.0894173,Ümraniye,1
+way/1002418851,Medistanbul Hastanesi,hospital,41.0927904,28.9047945,Sultangazi,0
+way/1015395710,Seyrantepe Hamidiye Etfal Eğitim ve Araştırma Hastanesi,hospital,41.1036745,28.9961075,Sarıyer,0
+way/1023339026,Zeytinburnu Yıldız Aile Sağlığı Merkezi,clinic,41.0228304,28.9012799,Zeytinburnu,0
+way/1028131529,Özel Abat Cerrahi Tıp Merkezi,hospital,40.9888677,28.6604582,Beylikdüzü,0
+way/1031854963,Rami Aile Sağlığı Merkezi,clinic,41.0486757,28.920358,Eyüpsultan,0
+way/1036515084,Eyüpsultan Devlet Hastanesi,hospital,41.0574382,28.9407454,Eyüpsultan,0
+way/1063507810,Kızılay Altıntepe Tıp Merkezi,hospital,40.9550048,29.1046337,Maltepe,1
+way/1063574467,Özel Bölge Hastanesi,hospital,41.0056524,29.2154685,Sancaktepe,1
+way/1064150643,Zeynep Kamil Kadın Doğum ve Çocuk Hastanesi,hospital,41.0148504,29.0269426,Üsküdar,1
+way/1069015768,Medical Park Hastanesi Ataşehir,hospital,40.9878142,29.1443658,Ataşehir,1
+way/1076773725,Gaziosmanpaşa 14 Nolu Aile Sağlığı Merkezi,clinic,41.0822516,28.8824397,Gaziosmanpaşa,0
+way/1077198443,Şaban Özbek Aile Sağlığı Merkezi,clinic,41.0938571,28.8731689,Sultangazi,0
+way/1080905712,Sultangazi Ali Kuşçu Aile Sağlığı Merkezi,clinic,41.093419,28.8972933,Sultangazi,0
+way/1080920471,Gazi Mahallesi Aile Sağlık Ocağı,clinic,41.1084782,28.8953289,Sultangazi,0
+way/1093808816,Acıbadem Bağdat Caddesi Tıp Merkezi,clinic,40.9664793,29.0682638,Kadıköy,1
+way/1096352283,Kadıköy Florence Nightingale Tıp Merkezi,hospital,40.9809893,29.0424148,Kadıköy,1
+way/1098240450,İstanbul Tuzla Tepeören Aile Sağlığı Merkezi,clinic,40.9084175,29.3921822,Tuzla,1
+way/1104815599,Aile Sağlığı Merkezi,clinic,41.0684545,28.9401542,Eyüpsultan,0
+way/1115714339,Eyüpsultan Halk Sağlığı Merkezi,clinic,41.0829514,28.9621859,Eyüpsultan,0
+way/1115826770,Karayolları Aile Sağlığı Merkezi,clinic,41.0882528,28.895739,Gaziosmanpaşa,0
+way/1116953870,Mahmut Karaca Aile Sağlığı Merkezi,clinic,41.0155484,29.1002303,Ümraniye,1
+way/1118119467,Kadıköy Belediyesi Dr. Rana Beşe Sağlık Polikinliği,hospital,40.9879533,29.0482808,Kadıköy,1
+way/1118752498,Mevlana Aile Sağlığı Merkezi,clinic,41.0851948,28.9125181,Gaziosmanpaşa,0
+way/1122013203,Maltepe Belediyesi Tıp Merkezi,clinic,40.9448209,29.1127202,Maltepe,1
+way/1125692292,Bayındır Hastanesi İçerenköy,hospital,40.9669337,29.1105579,Ataşehir,1
+way/1160755494,Yeşilköy Prof. Dr. Murat Dilmener Acil Durum Hastanesi,hospital,40.9702444,28.8081552,Bakırköy,0
+way/1167192495,Özel Esencan Hastanesi,hospital,41.033385,28.6765436,Esenyurt,0
+way/1218848913,Dünya Göz Suadiye,hospital,40.9611153,29.0750201,Kadıköy,1
+way/1220539479,Başkent Üniversitesi İstanbul Sağlık Uygulama ve Araştırma Merkezi Hastanesi,hospital,41.0249082,29.0411947,Üsküdar,1
+way/1228101378,Özel Bahçelievler Medicana Hastanesi,hospital,41.0064677,28.8700779,Bahçelievler,0
+way/1228101415,İstanbul Göz Hastanesi,hospital,41.0011575,28.8711105,Bahçelievler,0
+way/1228101450,Özel Bahçelievler Medicana Hastanesi,hospital,41.0067451,28.8698718,Bahçelievler,0
+way/1228101577,Aktif International Hastanesi Bahçelievler,hospital,41.0071667,28.8695876,Bahçelievler,0
+way/1228334758,Bağcılar 15 No'lu Aile Sağlık Merkezi,clinic,41.0027046,28.8515137,Bahçelievler,0
+way/1234112219,Çiftehavuzlar Aile Sağlığı Merkezi,clinic,41.0260015,28.8963944,Esenler,0
+way/1234598259,Merkez Aile Sağlık Merkezi,clinic,40.9306225,29.1350246,Maltepe,1
+way/1237885783,Güvercintepe Semt Polikliniği,clinic,41.074124,28.7477776,Başakşehir,0
+way/1237886229,Güvercintepe Aile Sağlığı Merkezi,clinic,41.0746977,28.7495122,Başakşehir,0
+way/1237887928,Aile Sağlığı Merkezi,clinic,41.0645961,28.7554157,Başakşehir,0
+way/1237888035,Ahmet Balamir Aile Sağlığı Merkezi,clinic,41.0888334,28.7569404,Başakşehir,0
+way/1252229791,Sultangazi İlçe Sağlık Müdürlüğü,hospital,41.0961334,28.8670143,Sultangazi,0
+way/1252419719,Lema Clinic,hospital,41.0525878,28.7960453,Küçükçekmece,0
+way/1274264088,Bayrampaşa İlçe Sağlık Müdürlüğü,hospital,41.0679997,28.8842035,Bayrampaşa,0
+way/1276794699,Maltepe 13 Nolu Aile Sağlığı Merkezi,clinic,40.9248867,29.1473059,Maltepe,1
+way/1279070752,Başakşehir Devlet Hastanesi,hospital,41.1184999,28.8086893,Başakşehir,0
+way/1302250325,Medipol Üniversitesi Esenler Hastanesi,hospital,41.0512585,28.8662941,Esenler,0
+way/1302260613,Esenler 9 Nolu Aile Sağlığı Merkezi,clinic,41.0421161,28.8724934,Esenler,0
+way/1302284193,Avicenna Hastanesi,hospital,41.0408327,28.8810195,Esenler,0
+way/1302333751,T.C. Sağlık Bakanlığı Esenler 8 No'lu Aile Sağlığı Merkezi,hospital,41.0435902,28.8630193,Esenler,0
+way/1302677737,Esenler Kadın Doğum ve Çocuk Hastalıkları Hastanesi,hospital,41.0559779,28.8691109,Esenler,0
+way/1313480252,Kağıthane Kızılay Hastanesi,hospital,41.0826748,28.9708833,Kağıthane,0
+way/1318425452,S life hastanesi,hospital,41.0398546,28.6521867,Esenyurt,0
+way/1319843595,Acıbadem Maslak Hastanesi,hospital,41.1274286,29.0251976,Sarıyer,0
+way/1320349072,LHC Clinic,clinic,41.0025077,28.8228725,Bahçelievler,0
+way/1321858507,Beykoz 3 No'lu Aile Sağlığı Merkezi,clinic,41.0781123,29.0724077,Beykoz,1
+way/1322121350,Gönül Ataman Aile Sağlığı Merkezi,clinic,41.0927283,29.0378114,Sarıyer,0
+way/1324194934,İstanbul Meslek Hastalıkları Hastanesi,hospital,40.9490102,29.1387938,Maltepe,1
+way/1325469162,Memorial,hospital,40.99082,29.0798589,Ataşehir,1
+way/1328355053,Erdem Hastanesi,hospital,41.0401293,28.8254441,Bağcılar,0
+way/1331425435,Bakırköy Prof. Dr. Mazhar Osman Ruh Sağlığı ve Sinir Hastalıkları Eğitim ve Araştırma Hastanesi,hospital,40.9890179,28.8619676,Bakırköy,0
+way/1331432629,Özel Florya Hastanesi,hospital,40.9799506,28.7475964,Avcılar,0
+way/1331432630,Avcılar Murat Kölük Devlet Hastanesi,hospital,40.9847659,28.7312802,Avcılar,0
+way/1354421226,Esenler Kadın Doğum Hastanesi,hospital,41.0558065,28.8691387,Esenler,0
+way/1358619487,Acıbadem Kartal Hastanesi,hospital,40.886381,29.2072506,Kartal,1
+way/1358993954,Medipol Üniversitesi Çamlıca Hastanesi,hospital,41.0233174,29.082057,Üsküdar,1
+way/1374787660,Özel Dragos Tıp Merkezi,clinic,40.909875,29.2040311,Kartal,1
+way/1374915732,Kartal Ağız ve Diş Sağlığı Merkezi,clinic,40.9120705,29.2013367,Kartal,1
+way/1374959964,Megapol Hastanesi,hospital,40.9161211,29.1994761,Kartal,1
+way/1376230581,Aksu Özel Göztepe Hastanesi,hospital,40.9877901,29.061993,Kadıköy,1
+way/1377285293,Medicana Ataköy Hastanesi,hospital,40.9761709,28.8560029,Bakırköy,0
+way/1381509803,Pendik Medipol Üniversitesi Hastanesi,hospital,40.8845604,29.2351303,Pendik,1
+way/1382641309,Central Hospital,hospital,40.9792562,29.1107195,Ataşehir,1
+way/1384077790,İbni Sina Hastanesi,hospital,40.9008762,29.1672073,Kartal,1
+way/1386613314,Sarıgazi Gülizar Polat Aile Sağlık Merkezi,clinic,41.0067636,29.2071969,Sancaktepe,1
+way/1416643410,Op. Dr. Arash Jafari,hospital,41.0762069,29.012872,Şişli,0
+way/1422576990,Esenyurt Toplum Sağlığı Merkezi,clinic,41.0314958,28.6578262,Esenyurt,0
+way/1424411140,Hayvan Hastanesi,hospital,40.9941604,28.721652,Avcılar,0
+way/1442921833,Yenidoğan Aile Sağlığı Merkezi,clinic,41.0074565,29.2360311,Sancaktepe,1
+way/1463891607,İSTÜN Şişli Kolan International Hospital,hospital,41.0648306,28.9804088,Şişli,0
+way/1463891640,Türkiye Hastanesi,hospital,41.0659503,28.9812954,Şişli,0
+way/1464434924,Sancaktepe Sağlıklı Yaşam Köyü,hospital,40.9968142,29.2105241,Sancaktepe,1
+way/1465334190,Acıbadem Taksim Hastanesi,hospital,41.0414739,28.9822634,Beyoğlu,0
+way/1472717652,Biruni Üniversitesi Tıp Fakültesi Hastanesi,hospital,40.9989504,28.7955989,Küçükçekmece,0
+way/1479671129,Tema İstanbul Aile Sağlığı Merkezi,clinic,41.005078,28.7996217,Küçükçekmece,0
+way/1483413132,Yeşilbağlar Aile Sağlığı Merkezi,clinic,40.8940834,29.2241852,Pendik,1
+way/1489158115,Bağcılar 31 No'lu Aile Sağlığı Merkezi,clinic,41.0610056,28.8363135,Bağcılar,0
+way/1501558290,İçerenköy Aile Sağlığı Merkezi,clinic,40.9707855,29.1077237,Ataşehir,1
+way/1503604356,Üsküdar 4 Nolu Aile Sağlığı Merkezi,clinic,41.0360758,29.0819635,Üsküdar,1
+way/1515582300,Ayhan-H.Cahit Gülan Aile Sağlığı Merkezi,clinic,40.9792604,29.2131131,Sancaktepe,1
+way/1515582302,Eyüpsultan Abdullah Sarı Aile Sağlığı Merkezi,clinic,40.9837974,29.2192222,Sancaktepe,1
+way/1515586125,Musa Meral Aile Sağlığı Merkezi,clinic,40.9830618,29.2349,Sancaktepe,1
+way/1516149403,Beykoz 6 No'lu Aile Saḡlıḡı Merkezi,clinic,41.0930996,29.0835266,Beykoz,1
+way/1516538955,Mehmet Şimşek Aile Sağlığı Merkezi,clinic,40.998545,29.1945679,Sancaktepe,1
+way/1516538963,Dr.Safiye Ali Aile Sağlığı Merkezi,clinic,40.9920312,29.2330083,Sancaktepe,1
+way/1521285228,Sancaktepe 8 Nolu Aile Sağlığı Merkezi,clinic,40.9984109,29.2474798,Sancaktepe,1
+way/1528814291,FSM Tıp Merkezi,hospital,41.0939673,29.0911337,Beykoz,1
+way/1555104921,erenköy ruh ve sinir sağlığı merkezi çekmeköy ek hizmet binası,hospital,41.0143219,29.1926929,Çekmeköy,1
+way/1558935796,24 No'lu Aile Sağlığı Merkezi,clinic,41.0128651,29.1026248,Ümraniye,1
+way/1562312409,Ömer Dağ Aile Sağlığı Merkezi,clinic,41.1247927,28.7776275,Başakşehir,0
+way/1563079064,Aydos Aile Sağlığı Merkezi,clinic,40.9172643,29.2667166,Pendik,1
+way/1566542062,HEKİMBAŞI MEHMET EMİN AİLE SAĞLIĞI MERKEZİ,clinic,41.0230356,28.7968489,Küçükçekmece,0
+relation/9262573,S.B.Ü. Haydarpaşa Numune Hastanesi Validebağ Semt Polikliniği,hospital,41.01226,29.0409126,Üsküdar,1
+relation/15413695,Haseki Eğitim Ve Araştırma Hastanesi Topçular Semt Polikliniği,clinic,41.0478507,28.913519,Bayrampaşa,0

@@ -1,0 +1,62 @@
+\section{Contribution record}
+The project records one contributor, Faruk Alpay (2267273). Percentages below describe shares
+among listed students; AI assistance is disclosed separately. The course requests teams of 3--4.
+This record does not establish approval for an individual submission.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}Xlr@{}}\toprule
+Component & Listed student & Share \\\midrule
+Problem definition and theory & Faruk Alpay & 100\% \\
+Data and instance generation & Faruk Alpay & 100\% \\
+Solver, exact checks and checker & Faruk Alpay & 100\% \\
+Experiments and analysis & Faruk Alpay & 100\% \\
+Report and presentation material & Faruk Alpay & 100\% \\\bottomrule
+\end{tabularx}\end{center}
+
+\section{AI-tool usage statement}
+The author carried out the project development and research. ChatGPT and OpenAI Codex
+provided assistance with explanations, debugging, writing, and preparing the report and
+presentation. The author reviewed the material and remains responsible for the submitted
+code, results and explanations.
+
+\clearpage\section{Reproducing the report without new experiments}
+From the repository root:
+\begin{verbatim}
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+make assets
+make report
+make check
+\end{verbatim}
+\texttt{make assets} runs \texttt{analysis/coursework.py}. It reads saved outputs and cached
+exact/reference values without invoking a solver. Tables go to \texttt{report/coursework/},
+CSVs to \texttt{results/coursework/}, and plots to \texttt{figures/coursework/}.
+\texttt{make report} requires LaTeX with \texttt{latexmk}, builds this PDF and updates the copy
+in \texttt{deliverables/}.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}lX@{}}\toprule
+Evidence & Saved input \\\midrule
+Main comparison & \texttt{results/raw/main/*.json} \\
+Tiny success counts & \texttt{results/raw/tiny/*.json} \\
+Cached exact optima & \texttt{results/summary.json} (tiny entries) \\
+Convergence and routes & Main-run traces and routes \\
+Complexity & \texttt{results/raw/complexity/complexity.json} \\
+Tenure sensitivity & \texttt{results/raw/tune\_ts/*.json} \\
+Penalty sweep & \texttt{results/psweep\_stats.json} \\\bottomrule
+\end{tabularx}\end{center}
+
+The Python checker uses an independent parser/evaluator. A CW output exceeding $K$ is labelled
+fleet-infeasible. Timing records carry no route solution and are excluded from route validation.
+
+\textbf{Code map.} \texttt{instance.cpp} parses data; \texttt{solution.cpp} evaluates routes;
+\texttt{savings.cpp} implements CW; \texttt{ga.cpp} and \texttt{split.cpp} implement GA/decoding;
+\texttt{tabu.cpp} and \texttt{routes.hpp} implement TS/moves. \texttt{medidrone/checker.py}
+is independent of C++. Algorithms follow the cited literature. No existing VRP solver library
+produces the reported solutions. Comments saying ``own implementation'' mean project-local
+code, to be read alongside the AI disclosure.
+
+\texttt{docs/REPRODUCIBILITY.md} lists optional experiment commands. They are outside the default
+build. The earlier research report source is \texttt{report/research.tex}, using the original
+\texttt{sections/} and \texttt{tables/}; the simplified report uses \texttt{coursework/} inputs.

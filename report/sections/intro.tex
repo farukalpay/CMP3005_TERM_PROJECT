@@ -1,0 +1,48 @@
+% ======================================================================
+\section{Introduction}\label{sec:intro}
+% ======================================================================
+At 07:00 the MediDrone dispatcher in Istanbul receives the day's orders: blood samples,
+vaccines and urgent medication for a hundred clinics on both shores of the Bosphorus. Each drone
+carries at most $Q$ units, every clinic must be visited exactly once, every drone returns to the
+central laboratory, and a flight across the strait costs extra --- an air-traffic corridor, wind,
+a battery margin. The CTO wants good plans \emph{in seconds} and \emph{evidence} that the method works.
+This is the Capacitated Vehicle Routing Problem (CVRP) \citep{dantzig1959truck,toth2014vrp}
+with a twist, and this report is our answer: theory that explains why exact optimisation is out of
+reach, two metaheuristics engineered and analysed like algorithms, and experiments designed to be
+believed.
+
+\paragraph{Related work and gap} Medical drone logistics is a real and growing field
+\citep{amukele2017drone,ackerman2019blood,dorling2017vehicle,otto2018optimization,macrina2020drone}.
+For Istanbul, \citet{ozkan2023multi} routes UAVs carrying blood products between hospitals using real Red
+Crescent demand, \citet{han2019mathematical} plan pharmacy deliveries in Bak{\i}rk\"oy and
+\citet{guzey2024collaborative} combine trucks and drones for disaster relief; related work at our
+department turns drone-vision data into reproducible virtual swarm states but explicitly excludes
+routing \citep{alpay2026pattern}. In none of these studies is the Bosphorus itself a modelling object.
+On the algorithmic side, giant-tour genetic algorithms with the Split decoder
+\citep{prins2004simple,vidal2016split,vidal2012hybrid,vidal2022hybrid} and granular tabu search
+\citep{gendreau1994tabu,taillard1993parallel,toth2003granular} are classics, while the 2024--2026
+frontier designs heuristics with large language models \citep{liu2024evolution,ye2024reevo,xie2026enhancing,gungordu2026mosaic}.
+Comparisons of GA and TS, however, are almost always reported as final gaps; \emph{why} the
+methods behave differently is rarely visualised. Search trajectory networks \citep{ochoa2021search}
+and local-optima networks \citep{ochoa2008study,munoz2022local,munoz2022constrained} were built for exactly this
+purpose but, to our knowledge, have not been used to contrast giant-tour GAs with route-based tabu search on the CVRP.
+
+\paragraph{Contributions} Besides all required tasks (proofs, three algorithms, complexity
+analysis, a fair 10-seed equal-budget protocol, an independent feasibility checker), the project adds:
+\begin{enumerate}[label=\textbf{C\arabic*}]
+\item \textbf{Crossing-aware theory.} The Bosphorus penalty is a \emph{cut metric}; we prove the
+triangle inequality for \emph{any} shoreline, give two counter-examples that break it, and derive
+a Bin-Packing lower bound on the crossing cost, an exact $+2P$ shift of the Clarke--Wright savings and
+a large-$P$ limit (\cref{prop:cross}) --- then verify every statement on data (\cref{sec:bosphorus}).
+\item \textbf{Real data.} Besides the required CVRPLIB instances (obtained from a Hugging Face mirror
+\citep{ml4co2024vrplib}) and our synthetic team instance, we build a \emph{real-geography}
+instance from 905 OpenStreetMap health facilities of Istanbul \citep{osm2026} with the shoreline
+given by district polygons \citep{runfola2020geoboundaries}.
+\item \textbf{Behaviour, not only results.} Search trajectory networks in \emph{partition space}, empirical
+attainment functions \citep{lopezibanez2010exploratory} and performance profiles \citep{dolan2002benchmarking}
+explain where the algorithms differ; a 74-instance benchmark with Wilcoxon tests and a scaling study to $n=1000$
+test the claims beyond the four required instances.
+\item \textbf{Complexity validated to the exponent.} Nine measured growth exponents --- including an $O(n)$
+Split that we derive as a sliding-window minimum --- are compared with their predictions (\cref{sec:complexity}).
+\end{enumerate}
+Everything is reproducible with one command (\cref{app:repro}).

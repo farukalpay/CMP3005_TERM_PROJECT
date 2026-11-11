@@ -1,0 +1,244 @@
+% ======================================================================
+\section{Algorithms}\label{sec:methods}
+% ======================================================================
+All three algorithms share one C++17 code base (no external libraries, \cref{app:repro});
+a solution is a list of at most $K$ route \emph{slots}, and for every customer we store its
+route, its position and the prefix load of its route, so that predecessor, successor and the
+load of any route prefix are $O(1)$ look-ups.
+
+\subsection{Constructive baseline: Clarke--Wright savings}
+\begin{algorithm}[h]
+\caption{Parallel Clarke--Wright savings \citep{clarke1964scheduling}}\label{alg:cw}
+\small
+\begin{algorithmic}[1]
+\Require instance $(d,q,Q)$ \Ensure routes (may use more than $K$ vehicles)
+\State one route $0\to i\to0$ per customer; keep head, tail, load and member list of every route
+\State $L\gets\{(s_{ij},i,j): s_{ij}=d(0,i)+d(0,j)-d(i,j)>0,\ i<j\}$ \Comment{$O(n^2)$}
+\State sort $L$ by decreasing saving (ties lexicographic) \Comment{$O(n^2\log n)$}
+\For{$(s,i,j)\in L$}
+  \If{$r(i)\ne r(j)$, $i$ and $j$ are both route ends, and $\mathrm{load}(r(i))+\mathrm{load}(r(j))\le Q$}
+     \State orient the routes (reverse if needed) so that $i$ is a tail and $j$ a head; link $i\to j$
+     \State relabel the members of the smaller route \Comment{small-to-large: $O(n\log n)$ in total}
+  \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\paragraph{Complexity} Computing the $\binom n2$ savings is $\Theta(n^2)$, sorting them
+$\Theta(n^2\log n)$, and the scan is $\Theta(n^2)$ with $O(1)$ tests per pair. At most $n-1$ merges
+happen; reversals cost $O(n)$ each ($O(n^2)$ worst case) and relabelling the smaller side costs
+$O(n\log n)$ overall. Hence $T_{\mathrm{CW}}(n)=\Theta(n^2\log n)$, dominated by the sort (bucket
+sorting the integer savings of CVRPLIB would give $\Theta(n^2)$). Memory is $\Theta(n^2)$.
+By \cref{prop:cross}(c), on the MediDrone metric CW is biased by exactly $+2P$ towards merging
+far-side pairs --- it consolidates the European clinics first.
+
+\subsection{Genetic algorithm with giant tours and Split}\label{sec:ga}
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize,
+  nd/.style={circle,draw=ink2,fill=white,minimum size=13pt,inner sep=0pt},
+  arc/.style={-{Latex[length=1.5mm]},draw=muted,line width=0.5pt},
+  best/.style={-{Latex[length=1.9mm]},draw=tsC,line width=1.6pt},
+  lab/.style={font=\tiny,fill=white,inner sep=0.6pt,text=ink2}]
+\node[anchor=west,font=\scriptsize\bfseries] at (-0.35,2.05) {(a) giant tour, $Q=10$};
+\foreach \x/\c/\q in {0/a/5,0.85/b/4,1.7/c/3,2.55/d/6,3.4/e/2} {
+  \node[nd] (g\c) at (\x,1.25) {$\c$}; \node[font=\tiny,ink2] at (\x,0.8) {$q{=}\q$};}
+\foreach \u/\w in {a/b,b/c,c/d,d/e} \draw[ink2,line width=0.5pt] (g\u)--(g\w);
+\node[font=\tiny,ink2,align=left,anchor=north west] at (-0.35,0.45) {routes with load $\le 10$:\\ $\{a,b\}{=}9$, $\{b,c\}{=}7$, $\{c,d\}{=}9$, $\{d,e\}{=}8$\\ $\{a,b,c\}{=}12$ and $\{c,d,e\}{=}11$ infeasible};
+\node[anchor=west,font=\scriptsize\bfseries] at (4.55,2.05) {(b) DAG: arc $(i,j)$ = route $t_{i+1}..t_j$, label = cost; node label $V_j$};
+\foreach \i/\V in {0/0,1/20,2/26,3/40,4/48,5/60} {
+  \node[nd] (h\i) at (5.0+1.5*\i,0.75) {\i}; \node[font=\tiny,ink] at (5.0+1.5*\i,0.28) {$V{=}\V$};}
+\foreach \i/\j/\c in {0/1/20,1/2/16,2/3/14,3/4/18} \draw[arc] (h\i)--(h\j) node[lab,midway] {\c};
+\foreach \i/\j/\c in {1/3/24,3/5/21} \draw[arc] (h\i) to[bend left=62] node[lab,pos=0.5] {\c} (h\j);
+\draw[best] (h0) to[bend left=40] node[lab,midway,text=tsC] {26} (h2);
+\draw[best] (h2) to[bend left=40] node[lab,midway,text=tsC] {22} (h4);
+\draw[best] (h4)--(h5) node[lab,midway,text=tsC] {12};
+\node[font=\tiny,tsC,anchor=west] at (12.75,0.75) {$\{a,b\},\{c,d\},\{e\}$};
+\end{tikzpicture}
+\caption{Split on a five-customer giant tour. Node $j$ means ``the first $j$ customers are served''; an arc
+exists only for capacity-feasible routes. The recursion $V_j=\min_i V_i+c(i,j)$ evaluated left to right
+gives $V_5=60$ along $0\to2\to4\to5$ (orange), i.e.\ the three routes $\{a,b\},\{c,d\},\{e\}$; e.g.\
+$V_4=\min(V_3+18,\;V_2+22)=48$.}
+\label{fig:split}
+\end{figure}
+
+\paragraph{Representation and decoding} A chromosome is a permutation of the $n$ customers without
+delimiters (a \emph{giant tour}) \citep{beasley1983route,prins2004simple}. The decoder \emph{Split}
+returns the best way to cut it into routes (\cref{fig:split}). Let $t_1..t_n$ be the tour,
+$\mathit{SQ}_j=\sum_{k\le j}q(t_k)$ and $\mathit{SD}_j=\sum_{k<j}d(t_k,t_{k+1})$.
+The DAG $H=(\{0..n\},A)$ has an arc $(i,j)$, $i<j$, iff $\mathit{SQ}_j-\mathit{SQ}_i\le Q$, with cost
+$c(i,j)=d(0,t_{i+1})+\mathit{SD}_j-\mathit{SD}_{i+1}+d(t_j,0)$. Every segmentation of $t$ into consecutive
+feasible routes corresponds to exactly one $0\to n$ path of equal cost, so the optimum is the shortest path,
+computed in topological order by
+\begin{equation}
+V_0=0,\qquad V_j=\min_{\,i<j,\ (i,j)\in A}\ V_i+c(i,j),\qquad \text{answer } V_n. \label{eq:split}
+\end{equation}
+\paragraph{Complexity of Split} (i) \emph{General}: $|A|\le n(n+1)/2$ and, scanning $j=i+1,i+2,\dots$ for a
+fixed $i$, $c(i,j+1)=c(i,j)-d(t_j,0)+d(t_j,t_{j+1})+d(t_{j+1},0)$ is $O(1)$; so \eqref{eq:split} costs
+$O(n^2)$. (ii) \emph{Bounded routes}: the scan for $i$ stops at the first $j$ with
+$\mathit{SQ}_j-\mathit{SQ}_i>Q$. If no route can hold more than $L$ customers ($L\le Q$ since $q_i\ge1$),
+every node has at most $L$ out-arcs and Bellman's recursion costs $\Theta(nL)$ --- for CVRPLIB A
+instances $L\approx14..26\ll n$. (iii) \emph{Linear}: writing $V_j=\min_{i\in W_j}\phi_i+\mathit{SD}_j+d(t_j,0)$
+with $\phi_i=V_i+d(0,t_{i+1})-\mathit{SD}_{i+1}$ and window $W_j=\{i:\mathit{SQ}_j-\mathit{SQ}_i\le Q\}$, whose left end
+never moves backwards, turns \eqref{eq:split} into a \emph{sliding-window minimum}: a deque of
+indices with increasing $\phi$ is popped at the front when an index leaves the window and at the back when
+dominated. Each index enters and leaves once, so the total is $\Theta(n)$ --- the hard-capacity case of
+Vidal's $O(n)$ Split \citep{vidal2016split}. (iv) \emph{Fleet limit}: a layered DAG
+$V^{(k)}_j=\min_i V^{(k-1)}_i+c(i,j)$ ($k\le K$) is solved with one deque per layer in $\Theta(Kn)$. We use (iii),
+and (iv) only when (iii) returns more than $K$ routes; if even the next-fit packing of the tour needs more
+than $K$ routes, the chromosome is \emph{fleet-infeasible} and ranked after all feasible ones by its excess.
+On 4\,000 random tours Bellman and deque Split return the same optimum (differences $\le8\cdot10^{-9}$, i.e.\
+floating-point summation order; \cref{sec:complexity}).
+
+\begin{algorithm}[t]
+\caption{Steady-state GA (and memetic variant MA)}\label{alg:ga}
+\small
+\begin{algorithmic}[1]
+\Require population size $\mu$, rates $p_c,p_m$, LS probability $p_{ls}$ ($0$ for GA) \Ensure best feasible solution
+\State $P\gets\{$giant tour of CW$\}\cup\{\mu-1$ random permutations$\}$, decoded, without clones
+\While{time left}
+  \For{$c=1..\mu$} \Comment{one generation $=\mu$ offspring}
+    \State $p_1,p_2\gets$ two binary tournaments
+    \State $x\gets\mathrm{OX}(p_1,p_2)$ with prob.\ $p_c$, else $x\gets p_1$;\quad mutate $x$ with prob.\ $p_m$ (swap / inversion / insertion)
+    \State decode $x$ by Split; with prob.\ $p_{ls}$: local search on the routes, concatenate them into $x$ and Split again
+    \If{the edge-set hash of $x$ is new} replace a random member of the worse half of $P$ by $x$ \EndIf
+  \EndFor
+  \If{no improvement for $G_r$ generations} keep the best 20\,\%, re-randomise the rest \EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Operators and why} \emph{Binary tournament} gives mild, rank-free selection pressure in $O(1)$.
+\emph{Order crossover} (OX) \citep{davis1985applying} copies a random slice of $p_1$ and fills the other
+positions in the cyclic order of $p_2$ (\cref{fig:ox}); it always yields a permutation (no repair) and
+preserves relative order, which is what Split exploits. \emph{Mutation} applies one of swap, inversion
+or insertion, so both adjacencies (inversion) and positions (swap/insertion) are perturbed.
+\emph{Replacement \& elitism:} the child replaces a random individual of the worse half, so the best
+half --- including the incumbent --- is never lost (elitism). \emph{Diversity}: a child whose decoded
+solution has the same edge multiset as a population member is rejected (64-bit order-independent hash);
+after $G_r$ idle generations a partial restart re-injects random tours. \emph{Memetic variant (MA)}: with
+probability $p_{ls}$ the offspring is improved by a first-improvement local search over the four
+neighbourhoods of \cref{sec:ts} restricted to feasible moves, then re-encoded; re-splitting can only
+decrease the cost because the local-search routes are one particular segmentation of the concatenated tour.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=0.52cm,y=0.5cm,font=\scriptsize]
+\def\cell#1#2#3#4{\fill[#4] (#1,#2) rectangle +(1,0.9); \node at (#1+0.5,#2+0.45) {#3};}
+\node[anchor=east] at (-0.2,2.45) {$p_1$}; \node[anchor=east] at (-0.2,1.25) {$p_2$}; \node[anchor=east] at (-0.2,0.05) {child};
+\foreach \v [count=\k from 0] in {1,2,3,4,5,6,7,8} {\ifnum\k>1 \ifnum\k<5 \cell{\k}{2}{\v}{gaC!35} \else \cell{\k}{2}{\v}{gridc!60} \fi \else \cell{\k}{2}{\v}{gridc!60} \fi}
+\foreach \v [count=\k from 0] in {5,7,1,3,8,2,6,4} {\cell{\k}{0.8}{\v}{tsC!25}}
+\foreach \v [count=\k from 0] in {1,8,3,4,5,2,6,7} {\ifnum\k>1 \ifnum\k<5 \cell{\k}{-0.4}{\v}{gaC!35} \else \cell{\k}{-0.4}{\v}{tsC!25} \fi \else \cell{\k}{-0.4}{\v}{tsC!25} \fi}
+\draw[ink2,line width=0.5pt] (2,3.15)--(2,3.35)--(5,3.35)--(5,3.15); \node[ink2] at (3.5,3.75) {slice copied};
+\node[anchor=west,ink2,align=left] at (8.6,1.2) {remaining genes of $p_2$ in cyclic order\\ from position 6: $2,6,\not4,\not5,7,1,\not3,8$\\ $\to$ child positions $6,7,8,1,2$ get $2,6,7,1,8$};
+\end{tikzpicture}
+\caption{Order crossover (OX): the slice of $p_1$ (blue) is kept in place, the other positions receive
+the genes of $p_2$ (orange) in $p_2$'s cyclic order, skipping duplicates. $O(n)$ time with a marker array.}
+\label{fig:ox}
+\end{figure}
+
+\subsection{Tabu search on routes}\label{sec:ts}
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=0.6cm,y=0.85cm,font=\scriptsize,
+  c/.style={circle,fill=ink2,inner sep=1.1pt}, uv/.style={circle,fill=tsC,inner sep=1.6pt},
+  dep/.style={rectangle,fill=ink,inner sep=1.7pt},
+  old/.style={draw=remC,line width=0.9pt,dash pattern=on 2pt off 1.3pt},
+  new/.style={draw=addC,line width=1.2pt}, keep/.style={draw=muted,line width=0.55pt}]
+% ---------- generic helpers: a row = depot, 4 nodes, depot
+\newcommand{\rowpts}[2]{% #1 = y, #2 = prefix
+  \node[dep] (#2D0) at (0,#1) {}; \node[dep] (#2D5) at (5,#1) {};
+  \foreach \k in {1,...,4} \coordinate (#2\k) at (\k,#1);}
+% ---------- Relocate
+\begin{scope}
+  \node[font=\scriptsize\bfseries,anchor=west] at (-0.1,1.75) {Relocate $u$ after $v$};
+  \rowpts{1}{A}\rowpts{0}{B}
+  \draw[keep] (AD0)--(A1); \draw[keep] (A3)--(A4)--(AD5); \draw[old] (A1)--(A2)--(A3); \draw[new] (A1) to[bend left=45] (A3);
+  \draw[keep] (BD0)--(B1)--(B2); \draw[old] (B2)--(B3); \draw[keep] (B3)--(B4)--(BD5);
+  \draw[new] (A2)--(B2); \draw[new] (A2)--(B3);
+  \foreach \k in {1,3,4} {\node[c] at (A\k) {}; \node[c] at (B\k) {};}
+  \node[uv,label={[font=\tiny]above left:$u$}] at (A2) {}; \node[uv,label={[font=\tiny]below:$v$}] at (B2) {};
+\end{scope}
+% ---------- Swap
+\begin{scope}[xshift=4.15cm]
+  \node[font=\scriptsize\bfseries,anchor=west] at (-0.1,1.75) {Swap $u\leftrightarrow v$};
+  \rowpts{1}{A}\rowpts{0}{B}
+  \draw[keep] (AD0)--(A1); \draw[keep] (A3)--(A4)--(AD5); \draw[old] (A1)--(A2)--(A3);
+  \draw[keep] (BD0)--(B1); \draw[keep] (B3)--(B4)--(BD5); \draw[old] (B1)--(B2)--(B3);
+  \draw[new] (A1)--(B2)--(A3); \draw[new] (B1)--(A2)--(B3);
+  \foreach \k in {1,3,4} {\node[c] at (A\k) {}; \node[c] at (B\k) {};}
+  \node[uv,label={[font=\tiny]above:$u$}] at (A2) {}; \node[uv,label={[font=\tiny]below:$v$}] at (B2) {};
+\end{scope}
+% ---------- 2-opt
+\begin{scope}[xshift=8.3cm]
+  \node[font=\scriptsize\bfseries,anchor=west] at (-0.1,1.75) {2-opt in one route};
+  \rowpts{0.5}{A}
+  \draw[keep] (AD0)--(A1); \draw[old] (A1)--(A2); \draw[keep] (A2)--(A3); \draw[old] (A3)--(A4); \draw[keep] (A4)--(AD5);
+  \draw[new] (A1) to[bend left=50] (A3); \draw[new] (A2) to[bend right=50] (A4);
+  \foreach \k in {2,4} \node[c] at (A\k) {};
+  \node[uv,label={[font=\tiny]below left:$u$}] at (A1) {}; \node[uv,label={[font=\tiny]below right:$v$}] at (A3) {};
+  \node[font=\tiny,ink2] at (2.5,-0.25) {segment $\mathit{succ}(u)..v$ reversed};
+\end{scope}
+% ---------- 2-opt*
+\begin{scope}[xshift=12.45cm]
+  \node[font=\scriptsize\bfseries,anchor=west] at (-0.1,1.75) {2-opt* (swap tails)};
+  \rowpts{1}{A}\rowpts{0}{B}
+  \draw[keep] (AD0)--(A1)--(A2); \draw[old] (A2)--(A3); \draw[keep] (A3)--(A4)--(AD5);
+  \draw[keep] (BD0)--(B1); \draw[old] (B1)--(B2); \draw[keep] (B2)--(B3)--(B4)--(BD5);
+  \draw[new] (A2)--(B2); \draw[new] (B1)--(A3);
+  \foreach \k in {1,3,4} \node[c] at (A\k) {}; \foreach \k in {1,3,4} \node[c] at (B\k) {};
+  \node[uv,label={[font=\tiny]above:$u$}] at (A2) {}; \node[uv,label={[font=\tiny]below right:$v$}] at (B2) {};
+\end{scope}
+\end{tikzpicture}
+\caption{The four neighbourhoods on routes drawn as rows (depot squares at both ends; removed edges dashed red,
+created edges green). In the granular version every move creates the short edge $(u,v)$ with $v\in N_k(u)$, one of
+the $k$ nearest neighbours of $u$, and its cost change is computed in $O(1)$ from at most six matrix entries.}
+\label{fig:moves}
+\end{figure}
+
+\paragraph{Neighbourhood and $O(1)$ delta evaluation} We implement all four moves of Task~5
+(\cref{fig:moves}), each anchored at a pair $(u,v)$ with $v\in N_k(u)$ (granular neighbourhoods
+\citep{toth2003granular}): for each pair two relocations and, if $v$ is in another route, one swap and four
+tail exchanges, or, if $v$ is in the same route, two 2-opt reversals --- at most $7nk+n$ candidate moves per
+iteration (the $+n$ are relocations into an empty slot). With $a=\pred(u)$, $b=\succc(u)$ and inserting $u$ between $c$ and $e$,
+\begin{align}
+\Delta_{\mathrm{reloc}}&=\underbrace{d(a,b)-d(a,u)-d(u,b)}_{\text{removal of }u}+\underbrace{d(c,u)+d(u,e)-d(c,e)}_{\text{insertion between }c\text{ and }e},\label{eq:delta}\\
+\Delta_{\mathrm{2opt^\ast}}&=d(u,v)+d(w,b)-d(u,b)-d(w,v),\label{eq:delta2}
+\end{align}
+where $w=\pred(v)$ for the tail exchange $r_1[..u]+r_2[v..]$, $r_2[..w]+r_1[b..]$. Capacity is also
+$O(1)$: with prefix loads $\Lambda_r(p)$, the new loads are
+$\Lambda_{r_1}(u)+\mathrm{load}(r_2)-\Lambda_{r_2}(w)$ and $\Lambda_{r_2}(w)+\mathrm{load}(r_1)-\Lambda_{r_1}(u)$.
+Symmetric distances make reversed segments free to evaluate. A test harness checks every delta against a
+full re-evaluation (max.\ error 0 on all instances).
+
+\paragraph{Tabu list, tenure, aspiration} The attribute is the \emph{edge}: when a move removes edges,
+each removed edge $\{x,y\}$ is declared tabu until iteration $t+\theta$ with $\theta$ drawn uniformly in
+$[\theta_{\min},\theta_{\max}]=[10,25]$ (random tenure breaks cycles \citep{taillard1993parallel}). A move is tabu
+if it would \emph{re-create} a tabu edge; an $(n{+}1)^2$ matrix of expiry iterations makes the test
+$O(1)$. One rule covers all four move types. \emph{Aspiration}: a tabu move is accepted if it yields a
+feasible solution better than the best found so far.
+
+\paragraph{Capacity handling: strategic oscillation} Because feasibility itself is \NP-hard
+(\cref{thm:bp}) and good solutions sit on the capacity boundary (load factors up to 0.99), we
+\emph{allow} infeasible moves and minimise $f(s)=\mathrm{dist}(s)+\lambda\cdot\mathrm{overload}(s)$,
+$\mathrm{overload}=\sum_r\max(0,\mathrm{load}_r-Q)$ \citep{gendreau1994tabu}. After each iteration
+$\lambda\gets\lambda(1+\delta)$ if the current solution is infeasible and $\lambda\gets\lambda/(1+\delta)$
+otherwise ($\delta=0.3$, \citep{cordeau2001unified}), so the search oscillates around the feasibility border
+(visualised in \cref{app:extra}). The fleet limit is structural: TS works on exactly $K$ slots
+(an initial CW solution with more routes is first reduced by penalised cheapest insertion).
+\emph{Diversification:} after $\max(2000,20n)$ non-improving iterations the search restarts from the best solution
+perturbed by $\max(3,n/15)$ random relocations.
+
+\begin{algorithm}[t]
+\caption{Granular tabu search with adaptive penalty}\label{alg:ts}
+\small
+\begin{algorithmic}[1]
+\Require initial solution $s$ (Clarke--Wright, reduced to $K$ slots) \Ensure best feasible $s^\ast$
+\While{time left}
+  \State $m^\ast\gets\arg\min\{\Delta\mathrm{dist}(m)+\lambda\,\Delta\mathrm{over}(m)\}$ over moves $m$ anchored at $(u,v)$, $v\in N_k(u)$, such that
+  \Statex \hspace{1.1em}$m$ creates no tabu edge \textbf{or} $m$ gives a feasible solution better than $s^\ast$ \Comment{$O(nk)$ moves, $O(1)$ each}
+  \State apply $m^\ast$ \Comment{$O(L)$}; \ make the removed edges tabu for $\theta\sim U[\theta_{\min},\theta_{\max}]$ iterations
+  \State $\lambda\gets\lambda(1+\delta)^{\pm1}$; \ \textbf{if} $s$ feasible and better than $s^\ast$ \textbf{then} $s^\ast\gets s$
+  \State \textbf{if} stagnation \textbf{then} $s\gets$ perturbation of $s^\ast$, clear tabu list
+\EndWhile
+\end{algorithmic}
+\end{algorithm}

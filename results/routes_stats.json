@@ -1,0 +1,14 @@
+{
+ "syn_cost": 20724.21095,
+ "syn_alg": "ma",
+ "syn_routes": 17,
+ "syn_cross": 10,
+ "syn_maxc": 2,
+ "syn_qE": 938,
+ "ist_cost": 629.2099969,
+ "ist_alg": "ma",
+ "ist_routes": 16,
+ "ist_cross": 6,
+ "ist_qA": 547,
+ "ist_maxc": 2
+}

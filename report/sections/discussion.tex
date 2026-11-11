@@ -1,0 +1,67 @@
+% ======================================================================
+\section{Discussion and reflection}\label{sec:discussion}
+% ======================================================================
+\paragraph{Which algorithm, where, and why} Grounded in \cref{tab:main,fig:convergence,fig:stn,fig:extended}:
+\emph{(i)} On small and medium instances TS and MA are equivalent in final quality (Wilcoxon $p=0.22$ over 73
+instances). MA finds its final solution sooner on the larger A instances (0.02\,s vs.\ 2.5\,s on A-n60-k9, 0.8\,s vs.\
+27.6\,s on A-n80-k10), whereas TS is faster and more reliable on the team instance (median 4.1\,s vs.\ 15.1\,s to reach
+0.1\,\%; 9 vs.\ 7 runs at the best value). \emph{(ii)} TS starts best: it begins from the Clarke--Wright plan reduced to $K$ routes,
+and where that start violates capacity (A-n45-k6) its walk through infeasible space (49\,\% of all iterations,
+\cref{app:extra}) restores feasibility within about ten iterations while it already shortens the routes. \emph{(iii)} On the tightest instances TS is the only safe choice: with a load factor of 0.992
+(P-n55-k15) neither GA nor MA ever produced a plan within the fleet, because their decoders and local search stay in
+feasible space, while TS crosses infeasible space and reached the optimum in every run. \emph{(iv)} The pure GA is not
+competitive at equal time, and its failure mode is structural rather than a tuning issue (\cref{fig:stn}): permutation
+operators rarely realise the partition-level change the CVRP needs. \emph{(v)} \input{sections/disc_scaling}
+
+\paragraph{How the Bosphorus shaped the routes} Less than we expected on our own instance, and exactly as the theory
+says. With the laboratory on the strait and the European clusters far to the west, the pure-distance optimum already
+uses the minimum number of crossings, so the penalty adds $20P$ to the bill and changes nothing else
+(\cref{cor:invariant}); all 100 sweep runs agree. On real geography, where clinics sit close to both shores, the penalty
+does reshape the plan: above $P^\ast=1.12$\,km one crossing disappears, exactly where \cref{prop:cross}(d) predicts.
+In both cases the number of crossing routes equals the bin-packing bound ($10$ and $6$) and no route ever zig-zags.
+Fully side-pure routing would need $\BP(q|_E)+\BP(q|_A)=10+8=18=K$ drones on the team instance --- possible only
+because of the spare vehicle --- but the optimum prefers 17 drones with one mixed route: the theory pins down the
+\emph{number} of crossings, while the optimiser still trades a vehicle against a few kilometres.
+
+\paragraph{Theory vs.\ practice} The best-rotation tour-partitioning heuristic of \cref{sec:approx} carries a
+\emph{proven} factor of $3.96$; on our six main instances its actual ratios are only 1.09--1.21, computed in
+5--30\,ms --- but it ignores the fleet limit and uses one or two drones too many on five of them. TS and MA carry
+\emph{no} guarantee, yet 112 of their 120 runs on the six main instances ended within 0.1\,\% of the best known value. Guarantees are
+worst-case statements over all metric instances, including adversarial ones that a dispatcher never meets;
+metaheuristics are tuned to the distribution of instances that actually occur and can absorb side constraints
+(fleet size, a strait, later time windows) without a new proof. Industry accepts the trade-off for three reasons we
+reproduced here: the empirical quality is far better than the bound, the running time is under control (anytime), and
+quality can be \emph{certified a posteriori} --- with a lower bound (here: the radial bound and the bin-packing bound
+of \cref{prop:cross}) or, for small cases, an exact solver. Theory still matters: it told us that feasibility itself is
+hard (so we designed the penalty), that the strait keeps the metric (so the approximation results and
+Clarke--Wright's merge logic remain valid), and where the hidden bin packing sits.
+
+\paragraph{Limitations} Instances with up to 100 clinics (1000 for the X study); deterministic demands; a constant
+crossing penalty (a corridor-based penalty via the bridges would be the shortest-path closure of \cref{thm:metric}'s
+construction and remains metric); no battery-range or time-window constraints; one machine.
+
+\subsection*{Personal reflection}
+\textbf{What surprised us most.} That the recommended Clarke--Wright seed can trap the GA: one strong individual took
+over the population and ten different random seeds produced the identical result 827 on A-n32-k5, while the unseeded
+GA reached the optimum in eight of ten runs --- yet on the five other instances the same seed helps. And that the Bosphorus,
+the centre of our story, does not change a single route of our team instance --- we expected a gradual ``phase
+diagram'', the corollary explains in one line why there is none, and real geography then produced exactly the
+transition we had looked for. Second, that the
+penalty update behaves like a thermostat: TS spends 49\,\% of its iterations in feasible space. In hindsight this is
+forced by the rule itself --- $\log\lambda$ moves by $\pm\log(1+\delta)$ every iteration, so a bounded $\lambda$ needs as
+many feasible as infeasible iterations, whatever $\delta$.
+\textbf{The hardest bug} was not in a solver but in an analysis script, and it nearly produced a wrong conclusion. The
+first search-trajectory plot showed every TS run as just two points, as if TS did nothing after its first feasible
+solution. The plotting code coloured each partition with the \emph{best} gap ever observed for it instead of the gap
+\emph{at the time of the visit}, so all sequencing improvements inside one partition collapsed into a single point. We
+found it because the picture contradicted the run logs (TS improves from 989 to 944 on A-n45-k6); the fix exposed the
+vertical ``sequencing drop'' of \cref{fig:stn}b, which became one of our findings. In the solver itself, the subtlest
+issue was the GA's sorted population: after a replacement the newcomer was bubbled left, but the right-bubbling loop
+restarted from the old index, which could silently break elitism; a code review of the replacement step caught it
+before any experiment was run.
+\textbf{With more time} we would (1) combine the two winners --- a hybrid genetic search with TS as the education
+operator and diversity-aware survival \citep{vidal2012hybrid,vidal2022hybrid}, which our STN analysis suggests would fix
+the GA's takeover; (2) replace the constant $P$ by a corridor model through the three bridges and add battery range
+(payload-dependent energy as in \citep{dorling2017vehicle}) and time windows for blood samples; (3) learn instance-specific
+neighbourhood sizes, in the spirit of recent LLM-designed heuristics \citep{xie2026enhancing}; and (4) feed risk maps
+from drone-vision pipelines such as \citep{alpay2026pattern} into time-dependent crossing penalties.

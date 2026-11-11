@@ -1,0 +1,137 @@
+% ======================================================================
+\section{Experiments}\label{sec:experiments}
+% ======================================================================
+\subsection{Protocol}\label{sec:setup}
+\textbf{Hardware:} Apple M4 Pro (14 cores), 48\,GB RAM, macOS 26.3, Apple clang 17 with
+\texttt{-O3 -march=native}. Every run is single-threaded; eight runs execute in parallel, one per performance
+core, so that wall-clock budgets stay comparable (the timing study of \cref{sec:complexity} ran alone).
+\textbf{Budgets:} equal wall-clock time for GA, MA and TS --- 30\,s for $n\le50$, 60\,s otherwise, 1\,s for
+the tiny instances; Clarke--Wright (CW) runs once (deterministic).
+\textbf{Seeds:} 1--10 for evaluation, 101--105 for tuning (disjoint), all recorded in the result files.
+\textbf{Parameters} (from the study in \cref{sec:sensitivity}): TS $\theta\in[10,25]$, $k=20$, $\delta=0.3$,
+$\lambda_0=\overline{d(0,i)}/\bar q$, restart after $\max(2000,20n)$ idle iterations; GA $\mu=100$, $p_c=0.9$,
+$p_m=1$, restart after 400 idle generations; MA $\mu=30$, $p_c=1$, $p_m=0.1$, $p_{ls}=0.5$, $k=20$.
+\textbf{Validation:} all \nReported{} solutions reported by the \nRuns{} runs of this study were re-validated by the
+independent Python checker (capacity, every customer exactly once, at most $K$ routes, cost recomputed from the
+coordinates); none failed (\nNone{} runs found no fleet-feasible solution and reported none, see \cref{sec:beyond}). \textbf{Reference values:} the published BKS for CVRPLIB; for our own
+instances the best solution found by any run of any experiment (20\,724.21 and 629.21\,km) --- eight additional
+300\,s runs per instance found nothing better, and 15 of these 16 runs ended at exactly these values.
+
+\subsection{Ground truth on tiny instances}
+\begin{table}[h]
+\centering\small
+\caption{Tiny instances ($Q=50$): exact optimum (identical by Held--Karp/set-partitioning DP and by MILP;
+for $n\le8$ also by enumeration) and how many of 10 runs (1\,s each) reached it. $^\dagger$: CW exceeds $K$.}
+\label{tab:tiny}
+\input{tables/tiny.tex}
+\end{table}
+All three metaheuristics reach the proven optimum in \emph{all 270 runs}, usually within a millisecond, while
+Clarke--Wright is up to 10.4\,\% above it (\cref{tab:tiny}). This is a correctness check of the whole
+pipeline --- evaluation, Split, moves and checker --- rather than a performance result.
+
+\subsection{Main comparison}
+\begin{table}[t]
+\centering\footnotesize
+\caption{Results over 10 seeds with equal wall-clock budgets. Gap in \% to the BKS (CVRPLIB) or to the best
+known value of our instances; $t_{\text{best}}$ = mean time at which the final solution was found. ``rt.'': CW
+needs more routes than the fleet allows.}
+\label{tab:main}
+\setlength{\tabcolsep}{4.2pt}
+\input{tables/main.tex}
+\end{table}
+\Cref{tab:main} answers Task~7. \textbf{TS and MA solve every CVRPLIB instance to the BKS} --- in all 10 runs
+on A-n32, A-n45 and A-n60; on A-n80-k10 MA reaches 1763 in 10/10 runs and TS in 6/10 (mean gap 0.03\,\%).
+On the team instance TS is the most reliable (mean gap 0.006\,\%, 9 of 10 runs at the best value); on the real
+Istanbul instance MA is slightly better (0.04\,\% vs 0.07\,\%). The pure \textbf{GA stays 1--5.5\,\% above} the
+BKS and is the only stochastic method with large run-to-run variance (std up to 114 on the team instance).
+CW is 3--9\,\% above and \emph{infeasible} for the fleet limit on A-n45-k6 and on the team instance.
+A two-sided Mann--Whitney (Wilcoxon rank-sum) test confirms TS $\succ$ GA on every instance
+($p\le2\cdot10^{-3}$, Vargha--Delaney $A_{12}\ge0.85$), whereas TS and MA are indistinguishable except on
+A-n80-k10, where MA is better ($p=0.034$).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/convergence.pdf}
+\caption{Anytime behaviour. (a)--(c) Median gap over 10 seeds (lines) with inter-quartile band, log time.
+(d)--(f) Empirical attainment functions on the team instance: the colour of cell $(t,g)$ is the fraction of runs
+that had reached a gap $\le g$ by time $t$; the coloured contour is the median run. Every horizontal slice is a
+time-to-target distribution \citep{aiex2007ttt}, every vertical slice the quality distribution at a deadline.}
+\label{fig:convergence}
+\end{figure}
+
+\paragraph{Convergence and anytime behaviour} \Cref{fig:convergence} shows \emph{how} the gaps arise. On A-n45-k6,
+where the Clarke--Wright start violates the fleet limit, TS becomes feasible after about ten iterations ($<$1\,ms) and
+is at the optimum almost immediately; MA starts from random tours and needs 0.1--1\,s, then overtakes TS on A-n80-k10.
+The GA improves steadily but slowly. The attainment functions make the dispatcher's question concrete: on the
+team instance, \emph{``a plan within 1\,\% in 1 second''} is achieved by every TS and MA run and by no GA run,
+and the median TS run is within 0.1\,\% after 4.1\,s (all 10 runs within 7.6\,s) against 15.1\,s for MA (7 of 10 runs).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/routes.pdf}
+\caption{Best solutions. (a) Team instance, one colour per drone (eight palette colours assigned by colouring the
+route-neighbourhood graph, so that neighbouring routes never share a colour). (b) The same routes with the ten
+strait-crossing routes highlighted. (c) Real Istanbul instance (depot in Kas{\i}mpa\c{s}a): six routes cross to
+Asia. Every crossing route crosses exactly twice.}
+\label{fig:routes}
+\end{figure}
+
+\paragraph{Routes and the strait} \Cref{fig:routes} visualises the best solutions. Of 17 drones on the team instance,
+\textbf{10 cross the Bosphorus, each exactly twice}, and the European demand $q(E)=938$ needs at least
+$\lceil938/100\rceil=10$ drones: the lower bound of \cref{prop:cross}(b) is \emph{attained} (the exact bin-packing
+number is also 10). Nine of the ten crossing drones stay on the European side for the whole route; the tenth also
+serves Asian clinics, which saves one vehicle compared with fully side-pure routing. All ten crossing drones fly 97--100\,\% full; as \cref{sec:bosphorus}
+shows, this is caused by distance rather than by the penalty --- the European clusters are far from the laboratory, and
+long out-and-back flights are only worth it with a full payload (the intuition behind the radial bound of
+\cref{sec:approx}). The same structure appears on real geography: from the European depot, $q(A)=547$ forces at least
+6 crossings, exactly 6 routes cross, and they are again 97--100\,\% loaded. On both instances not a single route
+zig-zags (4 or more crossings).
+
+\subsection{What the strait does: the penalty as a control parameter}\label{sec:bosphorus}
+\input{sections/exp_psweep}
+
+\subsection{Parameter sensitivity}\label{sec:sensitivity}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/sensitivity.pdf}
+\caption{Parameter study (5 tuning seeds, 10\,s each). (a) TS mean gap for tenure range $\times$ granularity $k$
+(team instance; frame = best cell). (b) The tenure effect on two instances (mean, min--max). (c) GA mean gap for
+mutation rate $\times$ population size. (d) Mean broken-pairs distance of the GA population over time ($\mu=100$).}
+\label{fig:sensitivity}
+\end{figure}
+\Cref{fig:sensitivity} shows a clear \emph{U-shape} for the tabu tenure: with $\theta\le3$ the search re-creates
+the edges it just removed and cycles (gap 1.5\,\%), with $\theta\ge80$ too many edges are forbidden and good moves
+are blocked (1.6--2.1\,\%); the valley $\theta\in[5,40]$ is wide, which makes TS robust. Granularity matters as much:
+$k=5$ hides the moves needed to cross between clusters (gap $\ge1$\,\%), while $k\ge20$ suffices --- the granular
+neighbourhood is $5\times$ cheaper than $k=n$ without losing quality. For the GA, the absence of mutation is the
+only clearly bad setting (5.5\,\%): panel (d) shows why --- without mutation the population collapses to a broken-pairs
+diversity of 0.1 within 50\,ms, whereas $p_m=1$ keeps it at 0.15--0.3 throughout. For MA, applying local search to
+half of the offspring was best ($p_{ls}=0.5$: 0.16\,\%; $p_{ls}=0$: 4.0\,\%).
+
+\subsection{Why TS and MA beat GA: search trajectories in partition space}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/stn.pdf}
+\caption{Search trajectory networks. (a) STN of the 30 runs on A-n45-k6: nodes are partitions of the clinics into
+routes visited by the best-so-far trajectories, size $\propto$ visits. (b, c) The same trajectories in
+``funnel'' coordinates: transfer distance to the best partition (customers that must change route) against the
+gap. Horizontal steps change the clustering, vertical steps only the order inside routes.}
+\label{fig:stn}
+\end{figure}
+\Cref{fig:stn} shows that the difference is \emph{structural}. On A-n45-k6 all ten TS and all ten MA trajectories end in
+the same node --- the optimal partition --- while only 3 of 10 GA trajectories reach it; the other seven end in
+separate sinks 4--11 relocations away. TS's first feasible solution is already only 2 relocations from the optimal
+partition; everything after is sequencing (the vertical drop in panel b). On the team instance the 20 TS and MA runs
+descend one shared funnel from 35 relocations to 0, whereas all GA runs stop 26--43 relocations away at 2--4\,\% gap.
+The GA's operators act on the giant tour, where a good \emph{partition} is only implicit: a mutation that moves one
+clinic to another route is a rare event among the $\Theta(n^2)$ possible changes of the permutation. TS and MA apply
+exactly such relocations deliberately, $nk$ of them per step. \textbf{Partition-level moves, not population size, are
+what the CVRP rewards} --- consistent with the success of hybrid genetic search \citep{vidal2012hybrid}.
+
+\paragraph{A surprise: the Clarke--Wright seed is a double-edged sword} All ten GA runs on A-n32-k5 end at the
+\emph{same} cost 827, and all ten on A-n80-k10 at 1818. The CW giant tour, recommended as a seed individual, is so much
+better than random permutations that its descendants take over the population within milliseconds (a
+``super-individual''), and partial restarts cannot compete with it. \input{sections/exp_ablation}
+
+\subsection{Beyond the four required instances}\label{sec:beyond}
+\input{sections/exp_extended}

@@ -1,0 +1,16 @@
+\begin{tabular}{lcc}
+\toprule
+Measured quantity & predicted exponent & fitted slope (95\% CI) \\
+\midrule
+TS iteration, granular $k=20$ & 1 & $1.08\pm0.06$ \\
+TS iteration, full neighbourhood & 2 & $2.12\pm0.07$ \\
+TS iteration on X instances & 1 & $0.97\pm0.04$ \\
+GA generation, linear Split & 1 & $0.84\pm0.10$ \\
+MA generation (incl.\ local search) & -- & $1.38\pm0.08$ \\
+one move, $O(1)$ delta & 0 & $0.01\pm0.09$ \\
+one move, route re-evaluation & 0 ($L$ fixed) & $0.07\pm0.05$ \\
+one move, full re-evaluation & 1 & $0.78\pm0.20$ \\
+Bellman Split vs.\ $L$ ($n$ fixed) & 1 & $0.57\pm0.12$ \\
+linear Split vs.\ $L$ ($n$ fixed) & 0 & $-0.09\pm0.04$ \\
+\bottomrule
+\end{tabular}

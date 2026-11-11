@@ -1,0 +1,30 @@
+\section{Saved results on the required instances}
+Benchmark gaps use published BKS values. For the team instance the reference is the best value
+already found in the project, $20{,}724.21095$, rather than a proven optimum.
+Mean gap is $100(\text{mean cost}-\text{reference})/\text{reference}$.
+
+\begin{table}[h]\centering\small\setlength{\tabcolsep}{4pt}
+\input{coursework/main_table}
+\caption{GA and TS each have ten runs. SD is sample standard deviation. Time is mean total
+runtime, not time to best. CW runs once, so mean and SD are omitted. Fleet-infeasible CW costs
+are diagnostic and receive no gap.}
+\end{table}
+
+TS reaches the benchmark reference in all ten runs on A-n32-k5, A-n45-k6 and A-n60-k9. On
+A-n80-k10 it reaches 1763 in six runs, with mean 1763.6. GA has a higher mean on every benchmark.
+On A-n45-k6, GA sometimes reaches the reference, but less consistently.
+
+On the team instance TS averages about 20,725.5, compared with 21,352.2 for GA. CW needs 19
+routes when only 18 are allowed. Each route fits capacity, but the plan is still invalid.
+These observations concern the implemented methods and settings, not every possible GA or TS.
+
+\subsection*{Tiny instances: exact answers}
+\begin{table}[h]\centering\small
+\input{coursework/tiny_table}
+\caption{Stored exact costs and one-second runs reaching each optimum.
+Cached dynamic-programming and MILP exact values agree.}
+\end{table}
+
+Each method reaches the exact optimum in all 90 tiny runs. This supports correctness on small
+cases; it does not guarantee optimality on larger ones. The independent Python checker verifies
+coverage, loads, fleet size and recomputed cost without using the C++ evaluator.

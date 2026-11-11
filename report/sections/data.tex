@@ -1,0 +1,41 @@
+% ======================================================================
+\section{Data}\label{sec:data}
+% ======================================================================
+\paragraph{(a) Public benchmarks} The Augerat A, B and P sets and the X set of
+\citet{uchoa2017new} were downloaded from the Hugging Face mirror \texttt{ML4CO/VRPLIBOriDataset}
+\citep{ml4co2024vrplib} (the CVRPLIB server was unreachable during the project) and parsed by our
+own TSPLIB reader \citep{reinelt1991tsplib}; distances are $\operatorname{nint}$-rounded exactly
+as in CVRPLIB. Our checker recomputes the four required BKS (784, 944, 1354, 1763) from the mirrored
+route files; for two B instances the mirrored routes do not reproduce the published value, so we always
+use the published BKS. Load factors are $\tau=0.82, 0.99, 0.92, 0.94$ for A-n32-k5, A-n45-k6, A-n60-k9,
+A-n80-k10.
+
+\paragraph{(b) Team instance} The seed is the sum of the numbers formed by the last four digits of all
+team members' IDs; for our single-member team $\textbf{seed}=7273$ (from 226\underline{7273}; the generator
+takes a list of IDs, so adding team-mates only changes one line). With NumPy's PCG64 generator the rules of
+Task~2(b) give 5 clusters, 80 clustered and 20 uniform clinics, $\sum q=1679$, $K=\lceil16.79\rceil+1=18$, and
+59 European clinics with demand $q(E)=938$ versus 41 Asian clinics with $q(A)=741$ (\cref{fig:instances}a).
+
+\paragraph{(c) Real Istanbul instance} We queried all \texttt{amenity=hospital|clinic} objects in the
+Istanbul bounding box from OpenStreetMap (Overpass API, snapshot of 8 Nov 2026), kept the 905 named
+facilities that fall inside the 39 districts of the urban core, and labelled each by point-in-polygon as
+European (25 districts) or Asian (14 districts). With seed $7273+1$ we sample $n=100$ clinics; the depot is
+the hospital nearest to their geometric median (Kas{\i}mpa\c{s}a, Beyo\u{g}lu --- on the \emph{European}
+side), coordinates are projected to kilometres, demands follow Task~2(b) and $P=5$\,km
+(\cref{fig:instances}b). By \cref{thm:metric} the distance is a metric although the shoreline is not a line.
+
+\paragraph{(d) Tiny instances with ground truth} Nine instances with $n=7,8,9$ (three each, seeds
+$100\cdot7273+10n+i$, two clusters, $Q=50$ so that capacity binds) are solved exactly by two independent
+methods --- Held--Karp \citep{held1962dynamic} plus a set-partitioning DP over subsets, and a two-index MILP with
+MTZ load constraints \citep{miller1960integer} solved by HiGHS \citep{huangfu2018highs} --- and, for $n\le8$, by
+exhaustive enumeration. All three agree on every instance (\cref{tab:tiny}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/instances.pdf}
+\caption{The two MediDrone instances (marker area $\propto$ demand). (a) Synthetic team instance: the
+strait is the line $x=500$; the depot at $(500,500)$ lies on the Asian side. (b) Real geography: grey dots
+are all 905 eligible OpenStreetMap facilities, dark dots the 100 sampled clinics; land is drawn from district
+polygons, so the Bosphorus is the water channel between the European and Asian districts.}
+\label{fig:instances}
+\end{figure}

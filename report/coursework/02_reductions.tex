@@ -1,0 +1,46 @@
+\section{Why the decision problem is NP-complete}
+\subsection*{Checking a proposed solution: membership in NP}
+A certificate is the list of routes. Create a Boolean array with one entry per clinic. Scan the
+routes, mark their clinics, reject duplicate or invalid IDs, add demands and edge costs. Finally
+check that every clinic was seen, each load is at most $Q$, at most $K$ routes are used, and
+the cost is at most $B$.
+
+A valid certificate contains $n$ clinic visits and at most $n+K\le2n$ edges, taking $K\le n$.
+With a distance matrix already available, verification takes $O(n)$ arithmetic operations and
+$O(n)$ extra memory. Thus CVRP decision is in NP. The formal argument uses finitely encoded
+rational or integer edge costs. Building the matrix from coordinates is separate $O(n^2)$
+preprocessing; the program uses a tolerance for floating-point cost checks.
+
+\subsection*{Step A: Hamiltonian Cycle to TSP decision}
+Start with an undirected graph $H$ with $N$ vertices. Hamiltonian Cycle asks whether there is a
+cycle visiting every vertex exactly once [1]. Construct a complete graph on the same vertices.
+Give an edge cost 1 if it exists in $H$ and cost 2 otherwise. Set the TSP bound to $B=N$.
+Constructing these costs examines $O(N^2)$ pairs.
+
+\textbf{Forward direction.} A Hamiltonian cycle of $H$ uses $N$ original edges. Each costs 1 in
+the new graph, giving a TSP tour of cost $N$.
+
+\textbf{Reverse direction.} Every TSP tour has $N$ edges costing at least 1. A total cost at most
+$N$ forces every edge to cost 1. Those edges all belong to $H$, giving a Hamiltonian cycle.
+
+The construction is metric: a direct edge costs at most 2, while a detour through a distinct
+third vertex costs at least $1+1=2$.
+
+\subsection*{Step B: TSP decision to CVRP decision}
+Take a TSP instance with $n+1$ vertices. Choose one as depot 0; the other $n$ become clinics.
+Copy the distances, set every demand to 1, set $Q=n$, set $K=1$, and keep bound $B$.
+Copying the matrix takes $O(n^2)$ time.
+
+A TSP tour becomes a single CVRP route with load $n$, so it is valid and has the same cost.
+Conversely, with one vehicle, a valid CVRP solution is a single depot-to-depot tour visiting all
+clinics. It gives a TSP tour of the same cost. Both directions preserve the answer.
+
+\subsection*{Why the chain works}
+The chain is Hamiltonian Cycle $\le_p$ TSP decision $\le_p$ CVRP decision. A polynomial-time
+construction cannot produce more than polynomially many symbols. Applying another polynomial-time
+construction to that output still takes polynomial time. Since Hamiltonian Cycle is NP-complete,
+CVRP decision is NP-hard. Together with membership in NP, it is NP-complete.
+
+\takeaway{An exact polynomial-time algorithm for every CVRP instance would also solve the
+known-hard problem at the start of the chain. This motivates searching for good feasible plans
+within a time budget. NP-hardness does not prove that every particular instance is difficult.}

@@ -1,0 +1,48 @@
+\section{Split: turning an order into routes}
+\subsection*{A small example}
+Take giant tour $(1,2,3)$, demands $(4,3,4)$ and $Q=7$. All clinics cannot share a drone.
+Possible cuts include $(1,2)\mid(3)$ and $(1)\mid(2,3)$. Split chooses the cheapest valid cut
+for this fixed order. It does not search every permutation.
+
+Put the depot at position 0 on a line and clinics 1, 2 and 3 at positions 1, 2 and 3. Use
+ordinary distances without a crossing penalty. The first cut costs $4+6=10$; the second costs
+$2+6=8$. Split should return the second cut.
+
+\subsection*{The directed acyclic graph}
+For tour $(t_1,\ldots,t_n)$, create nodes $0,1,\ldots,n$. Node $j$ means that the first $j$
+clinics have been served. Arc $(i,j)$ exists if the consecutive block $t_{i+1},\ldots,t_j$ fits
+one drone. Its cost is that block's depot-to-depot route cost:
+\[
+ C(i,j)=d(0,t_{i+1})+\sum_{h=i+1}^{j-1}d(t_h,t_{h+1})+d(t_j,0).
+\]
+Every arc goes forward, so there are no directed cycles. A path from 0 to $n$ is a sequence of
+cuts covering the whole tour.
+
+\subsection*{Dynamic-programming recurrence}
+Let $D[j]$ be the cheapest way to serve the first $j$ clinics. Set $D[0]=0$. Then
+\[
+ D[j]=\min_{\substack{0\le i<j\\\sum_{h=i+1}^{j}q_{t_h}\le Q}}
+       \bigl(D[i]+C(i,j)\bigr).
+\]
+Store the minimizing $i$ to reconstruct routes backwards from $n$. In the example, $D[1]=2$,
+$D[2]=4$ and $D[3]=\min\{D[1]+6,D[2]+6\}=8$.
+
+\textbf{Correctness.} The last route in an optimal solution is some feasible consecutive block
+ending at $j$. Its earlier routes must be optimal for their prefix: otherwise replacing them
+by cheaper routes would improve the whole answer. The recurrence checks every last block
+and combines it with the optimal prefix.
+
+\subsection*{Running time and the fleet limit}
+There are $n$ end positions and at most $n$ starts each: $O(n^2)$ time. If a route can contain at
+most $L$ consecutive clinics, only $L$ starts need checking, giving $O(nL)$. Prefix sums provide
+constant-time block-load and block-cost queries.
+
+This basic recurrence does not limit route count. A state $D[r,j]$ for exactly $r$ routes,
+minimised over $r\le K$, enforces the fleet. Direct layered DP costs $O(KnL)$.
+The existing fast decoder [3,4] reuses candidate starts in a queue, giving $O(n)$ for unlimited
+routes and $O(Kn)$ for the layered version. The ordinary DP remains as \texttt{split\_bellman}
+for explanation and reference.
+
+In \texttt{ga.cpp}, fast unlimited Split runs first. If it uses too many routes but the order
+can fit within $K$, fleet-limited Split runs. Otherwise the chromosome is marked fleet-infeasible.
+\takeaway{Split is exact for the given order. An optimal cut of a poor order can still give a poor plan.}

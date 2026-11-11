@@ -1,0 +1,22 @@
+\section{Search progress and the delivery plan}
+\begin{figure}[h]\centering
+\includegraphics[width=.94\linewidth]{\figdir/convergence.pdf}
+\caption{Best cost so far on A-n45-k6. Lines are medians; shading shows the middle 50\% of ten
+runs. Time is logarithmic. Curves start only when all ten runs have a feasible answer.}
+\end{figure}
+
+TS finds a strong solution early here. GA improves more gradually and finishes with different
+costs across seeds. Best-so-far cost never increases: the current state may worsen, but the
+algorithm retains its best feasible answer. Early success does not end a run here; the methods
+continue for the full common time budget.
+
+\begin{figure}[h]\centering
+\includegraphics[width=.86\linewidth]{\figdir/routes.pdf}
+\caption{A best saved TS plan for MediDrone-7273, cost 20,724.21095. Each colour is a route.
+The star is the depot and the dashed line is the synthetic Bosphorus boundary.}
+\end{figure}
+
+This plan uses 17 of the available 18 drones. Ten routes visit Europe; each crosses twice,
+giving 20 crossing edges. Their penalty is $20\times150=3000$ cost units.
+European demand is 938, requiring at least $\lceil938/100\rceil=10$ drones. The plan reaches
+that simple crossing-route lower bound. This certifies the crossing count, not minimum total distance.

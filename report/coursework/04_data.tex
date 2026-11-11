@@ -1,0 +1,33 @@
+\section{Data and experimental setup}
+\textbf{Public benchmarks.} A-n32-k5, A-n45-k6, A-n60-k9 and A-n80-k10 contain 31, 44, 59 and
+79 customers; the name also counts the depot. Their reference costs are 784, 944, 1354 and 1763.
+Files came from the cached Hugging Face mirror of CVRPLIB [5,6]. The project's TSPLIB/CVRPLIB
+parser uses nearest-integer distances.
+
+\textbf{Team instance.} Student ID 2267273 gives seed $7273$. The generator places the depot at
+$(500,500)$ and creates 100 customers in clusters, with about 20\% uniform points. Demands are
+integers from 1 to 30, capacity is $Q=100$, and
+$K=\lceil\sum_iq_i/100\rceil+1=18$. The boundary is $x=500$; each crossing costs $P=150$.
+These are abstract coordinate/cost units, not real kilometres.
+
+\begin{figure}[h]\centering
+\includegraphics[width=.86\linewidth]{\figdir/instance.pdf}
+\caption{The required synthetic instance. Colour indicates demand; the star is the depot.}
+\end{figure}
+
+\textbf{Tiny cases.} Nine stored instances have 7, 8 or 9 customers, three of each, with $Q=50$.
+Existing exact values agree between dynamic programming and MILP. This revision reads those
+cached values without solving the instances again.
+
+\textbf{Protocol.} Evaluation seeds are 1--10. GA and TS each get 30 seconds on the two smaller
+benchmarks and 60 seconds on the others and the team instance. Tiny runs get 1 second. CW runs
+once. Tuning uses separate seeds 101--105 and 10 seconds per run.
+
+\textbf{Recorded hardware.} Apple M4 Pro, 14 cores, 48 GB RAM, macOS 26.3, Apple clang 17 with
+\texttt{-O3 -march=native}. Solver processes are single-threaded. Main experiments used eight
+concurrent processes; the timing study ran sequentially. Shared hardware can introduce timing noise.
+
+\textbf{Final settings.} GA: population 100, crossover 0.9, mutation 1.0, restart after 400 idle
+generations. TS: candidate list 20, tenure 10--25, penalty multiplier 1.3, restart after
+$\max(2000,20n)$ idle iterations. Mutation 1.0 means one random mutation per child, not a change
+to every position. All settings and seeds remain in the saved JSON results.

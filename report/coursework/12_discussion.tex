@@ -1,0 +1,57 @@
+\section{Discussion, limitations and reflection}
+\subsection*{Theory versus practice}
+NP-hardness concerns exact answers on every instance. It does not prevent finding good plans
+quickly on practical inputs. TS often reaches the reference early in these runs, although it
+does not provide an optimality certificate for the team instance.
+
+Approximation methods offer a proved worst-case relationship to the optimum under stated
+assumptions. Tour partitioning starts from a TSP tour and cuts it into capacity-feasible routes
+[8]. The starting tour's quality affects the guarantee. Fleet size needs separate attention:
+capacity-feasible cuts can still use too many vehicles. Metaheuristics have no general quality
+guarantee, but can search with the project's constraints and a fixed runtime. In practice,
+measured quality, repeatability and independent feasibility checks complement theoretical guarantees.
+
+\subsection*{Limitations}
+Five core instances on one machine do not establish universal TS superiority. Demands are
+deterministic. The model omits battery range, wind, flight permissions and delivery time windows.
+It is an algorithm study. The team reference is empirical, and shared hardware affects timing.
+
+\subsection*{Reflection grounded in the project records}
+The clearest surprise is that the crossing penalty does not reorganize the synthetic instance.
+Its saved plans already achieve the minimum crossing-route count required by European demand.
+
+Earlier implementation notes record a GA replacement-order bug: after moving a replacement
+left in a sorted population, the second ordering loop restarted from its old position. This
+could break the sorted-population invariant and weaken elitism. The recorded fix continues
+from the updated position in \texttt{ga.cpp}. Maintaining this representation invariant matters
+even when a run's final cost looks plausible.
+
+A useful next step is a controlled comparison with a small local search inside GA, using the
+existing memetic variant as a starting point. Battery range or time windows could follow after
+the core algorithms are fully understood.
+
+\subsection*{References}
+\begingroup\small\setlength{\parskip}{3pt}
+[1] Garey, M. R. and Johnson, D. S. (1979). \emph{Computers and Intractability}. Freeman.
+
+[2] Clarke, G. and Wright, J. W. (1964). Scheduling of vehicles from a central depot to a
+number of delivery points. \emph{Operations Research}, 12(4), 568--581.
+
+[3] Prins, C. (2004). A simple and effective evolutionary algorithm for the vehicle routing
+problem. \emph{Computers \& Operations Research}, 31(12), 1985--2002.
+
+[4] Vidal, T. (2016). Technical note: Split algorithm in $O(n)$ for the capacitated vehicle
+routing problem. \emph{Computers \& Operations Research}, 69, 40--47.
+
+[5] CVRPLIB. Capacitated Vehicle Routing Problem Library. \url{http://vrp.atd-lab.inf.puc-rio.br/}.
+
+[6] ML4CO. \emph{VRPLIBOriDataset}, cached benchmark mirror.
+\url{https://huggingface.co/datasets/ML4CO/VRPLIBOriDataset}.
+
+[7] Glover, F. and Laguna, M. (1997). \emph{Tabu Search}. Kluwer.
+
+[8] Haimovich, M. and Rinnooy Kan, A. H. G. (1985). Bounds and heuristics for capacitated
+routing problems. \emph{Mathematics of Operations Research}, 10(4), 527--542.
+
+[9] Davis, L. (1985). Applying adaptive algorithms to epistatic domains. \emph{IJCAI}, 162--164.
+\endgroup

@@ -1,0 +1,37 @@
+\section{Parameter sensitivity and the Bosphorus effect}
+\subsection*{Tabu tenure}
+Tenure controls how long removed edges remain forbidden. Very short tenure allows quick
+reversals and cycling. Very long tenure can block useful moves. The stored study varies tenure
+on the team instance, fixing the candidate list at 20, with five seeds and ten seconds per run.
+
+\begin{figure}[h]\centering
+\includegraphics[width=\linewidth]{\figdir/sensitivity.pdf}
+\caption{Left: tenure ranges with tuning seeds 101--105. Right: crossing routes in the best
+saved team-instance plan at each penalty. Both plots reuse existing evidence.}
+\end{figure}
+
+Middle ranges perform better than very small or large ranges. The final range 10--25 lies in
+this favourable region. This supports a moderate tenure for this instance, rather than a
+universally optimal setting. Final evaluation uses different seeds, 1--10.
+
+\subsection*{What changing the crossing penalty actually did}
+The saved sweep covers $P=0$ to 1000. The best synthetic plans retain ten crossing routes
+throughout; the cached analysis also records unchanged route structure. Increasing $P$ therefore
+does not reorganize this instance's best saved routes.
+
+European clinics are grouped far from the depot, and capacity already requires at least ten
+drones to serve them. A plan reaching that minimum with one out-and-back crossing per such
+drone cannot reduce crossing cost simply by increasing $P$. For that unchanged plan, increasing
+$P$ by one adds 20 to total cost.
+
+The optional real-geography extension does show route changes, but it is a different instance.
+Its result cannot be presented as a route change on the required synthetic instance.
+
+\subsection*{Why pure GA trails TS here}
+TS explicitly relocates clinics between routes and improves visit order. Pure GA modifies a
+giant-tour permutation and relies on Split to create routes. Some useful assignment changes
+can be harder to obtain through those permutation operators. The saved optional local-search
+GA performs much better, which is consistent with the value of route-level improvement.
+This is an interpretation of the observed behaviour, not a proof that the GA representation
+is inherently inferior.
+

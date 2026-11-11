@@ -1,0 +1,28 @@
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/ts_inside.pdf}
+\caption{Inside one TS run on the team instance (seed 1). (a) The current solution in the (distance, overload) plane
+during the first 400 iterations: the search repeatedly dives into infeasible space, where shorter plans exist, and is
+pulled back by the growing penalty. (b) Share of feasible current solutions in a sliding window of 250 recorded
+iterations: the update $\lambda\leftarrow\lambda(1+\delta)^{\pm1}$ pins it at about one half. (c) Share of the four
+neighbourhoods among the applied moves (blocks of 1000 iterations): relocate 35\,\%, 2-opt* 32\,\%, 2-opt 22\,\%,
+swap 10\,\% --- all four are used throughout the run.}
+\label{fig:tsinside}
+\end{figure}
+
+\begin{table}[h]
+\centering\small
+\caption{Extended benchmark: all 74 Augerat instances (A, B, P), 5 seeds, 10\,s per run. Mean gap over instances
+and number of instances on which at least one of the 5 runs reached the published BKS. $^\ddagger$: mean over 23
+instances --- on P-n55-k15 no GA or MA run found a fleet-feasible plan. Negative values: on P-n55-k8 a 7-route
+solution (576) is below the published 8-route BKS (588).}
+\label{tab:extended}
+\input{tables/extended.tex}
+\end{table}
+
+\begin{table}[!t]
+\centering\small
+\caption{Scaling study on X instances (unlimited fleet, 3 seeds, 60\,s): mean gap to the BKS in \%.}
+\label{tab:xset}
+\input{tables/xset.tex}
+\end{table}

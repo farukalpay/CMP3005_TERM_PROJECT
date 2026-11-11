@@ -1,0 +1,67 @@
+% ======================================================================
+\section{Complexity analysis of our own code}\label{sec:complexity}
+% ======================================================================
+\paragraph{One GA generation} A generation creates $\mu$ offspring. Per child: two tournaments $O(1)$,
+OX $O(n)$ (marker array), mutation $O(n)$, Split $O(n)$ with the deque version ($O(nL)$ with Bellman;
+$O(Kn)$ more in the rare fleet-limited case), the edge-set hash $O(n)$, clone look-up $O(1)$ expected, and
+re-insertion into the sorted population $O(\mu)$. Hence
+\begin{equation}
+T_{\text{GA-gen}}=\Theta\big(\mu\,(n+\mu)\big)=\Theta(\mu n)\ \ (\mu\le n),\qquad
+T_{\text{GA-gen}}^{\text{Bellman}}=\Theta(\mu nL),\qquad
+T_{\text{MA-gen}}=T_{\text{GA-gen}}+p_{ls}\,\mu\cdot I_{LS}\cdot O(nk),
+\end{equation}
+where $I_{LS}$ is the number of local-search passes (data dependent; it grows with $n$ because a random child
+needs more improving moves). Memory: $\Theta(\mu n)$.
+
+\paragraph{One TS iteration} The neighbourhood has at most $7nk+n$ moves, each evaluated in $O(1)$ by
+\cref{eq:delta,eq:delta2} plus an $O(1)$ tabu test; applying the chosen move rebuilds at most two routes,
+$O(L)$; finding an empty slot is $O(K)$ and the penalty update $O(1)$. Copying a new incumbent costs $O(n)$
+but happens rarely. So
+\begin{equation}
+T_{\text{TS-it}}=\Theta(nk+L+K)=\Theta(nk),\qquad\text{and }\Theta(n^2)\text{ for the full neighbourhood }k=n-1 .
+\end{equation}
+
+\paragraph{What delta evaluation saves} Re-evaluating a neighbour from scratch costs $\Theta(n)$ (all
+routes) or $\Theta(L)$ if only the two modified routes are re-summed; one iteration would then cost
+$\Theta(n^2k)$ or $\Theta(nkL)$ instead of $\Theta(nk)$ --- a factor $\Theta(n)$, respectively $\Theta(L)$.
+Measured per move (\texttt{bench-eval}, averaged over 5 passes over the whole neighbourhood), delta
+evaluation costs 1.0--1.3\,ns up to $n=800$ (2--4\,ns beyond, when the matrix leaves the cache), route-level
+re-evaluation 35--70\,ns and full re-evaluation 49\,ns at $n=25$ up to 2.4\,$\mu$s at $n=3200$: delta
+evaluation is 41$\times$ to 548$\times$ faster and the gap widens with $n$, as predicted. All three methods
+return identical deltas.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\figdir/complexity.pdf}
+\caption{Empirical validation. (a) Median time per TS iteration and per GA/MA generation on synthetic
+instances with constant route length (and the real X instances), log--log; the number at each line end is the
+fitted slope. (b) For nine quantities, the exponent predicted by the analysis (hollow) versus the fitted
+slope with its 95\,\% confidence interval (filled). (c) Split for $n=1000$ and growing route length $L$:
+Bellman's $\Theta(nL)$ against the deque's $\Theta(n)$.}
+\label{fig:complexity}
+\end{figure}
+
+\paragraph{Empirical validation} We timed both algorithms on synthetic instances with
+$n=25\ldots3200$ and constant expected route length ($Q=155$, about 10 customers per route), each value the
+median of three runs of a fixed number of iterations on an otherwise idle machine; initialisation cancels out
+because we time two run lengths and take the difference. \Cref{fig:complexity} and \cref{tab:slopes} compare
+the slopes of the log--log regressions with the predictions.
+\begin{table}[h]
+\centering\small
+\caption{Predicted exponents versus least-squares slopes of $\log T$ on $\log n$ (or $\log L$).}
+\label{tab:slopes}
+\input{tables/slopes.tex}
+\end{table}
+
+\paragraph{Explaining the differences} (i) \emph{TS} matches its prediction ($1.08$, $2.12$; $0.97$ on the
+real X instances) up to $n=1600$. At $n=3200$ the time per iteration jumps by $5.9\times$ instead of $2\times$:
+the $(n{+}1)^2$ distance and tabu matrices (2$\times$82\,MB) no longer fit in the processor caches, so each
+matrix look-up becomes a memory access --- a constant of the RAM model that silently changes. (ii) The \emph{GA}
+slope $0.84$ is below 1 because a per-child constant (allocations, random numbers) dominates for small $n$;
+between $n=800$ and $3200$ the local slope is $0.99$. (iii) \emph{Full re-evaluation} ($0.78$) and
+\emph{Bellman versus $L$} ($0.57$) are sums $a+bn$ resp.\ $a'n+b'nL$ whose constant part still matters at the
+measured sizes; their local slopes approach 1 at the large end, while the deque Split stays flat ($-0.09$: fewer
+routes have to be built when $L$ grows) and becomes $37\times$ faster than Bellman at $L=500$. (iv) The MA has no
+clean exponent because the number of local-search moves per child is itself instance dependent --- a reminder that
+``cost per iteration'' and ``iterations needed'' are different questions.
+The Clarke--Wright baseline itself takes 25--220\,$\mu$s on the six main instances.

@@ -1,0 +1,47 @@
+\section{Capacity feasibility and the crossing penalty}
+\subsection*{Bin Packing inside the routing problem}
+Bin Packing decision gives item sizes $a_1,\ldots,a_n$, bin capacity $C$ and at most $k$ bins.
+Turn each item into a clinic with demand $q_i=a_i$, and set $Q=C$ and $K=k$. Use distance 1
+between distinct locations, since distance is irrelevant to this feasibility question. If an
+item exceeds $C$, the input is immediately a NO instance.
+
+A packing gives one route per bin, visiting its items in any order. Loads are at most $Q$ and
+there are at most $K$ routes. Conversely, a feasible route assignment gives bins containing
+those same demands. Both directions preserve the answer, and the construction is polynomial.
+A route assignment is also easy to check. Thus even the distance-free fleet-feasibility problem
+is NP-complete, by reduction from Bin Packing [1].
+
+For example, demands $(6,6,6)$ total 18. Two drones of capacity 10 have total capacity 20, but
+cannot serve these demands: no two fit together. Total capacity alone does not guarantee feasibility.
+
+This matters in the code. CW respects individual capacities but may produce too many routes.
+GA checks decoded route counts as well as loads. TS may temporarily overload routes, but saves
+a final answer only when every constraint holds.
+
+\subsection*{Why a fixed crossing cost preserves the metric}
+Let $e(i,j)$ be unrounded Euclidean distance and $c(i,j)$ be 1 when the endpoints are on different
+sides of the Bosphorus, and 0 otherwise. Define
+\[
+ d(i,j)=e(i,j)+P\,c(i,j),\qquad P\ge0.
+\]
+Symmetry and zero self-distance are preserved. For the triangle inequality, consider going from
+$i$ to $k$ via $j$. If $i$ and $k$ are on different sides, $j$ must be on one side, so at least
+one leg of the detour also crosses. If they are on the same side, their direct crossing cost is
+zero. In either case,
+\[
+ c(i,k)\le c(i,j)+c(j,k).
+\]
+Adding this inequality, multiplied by $P$, to the Euclidean triangle inequality gives
+$d(i,k)\le d(i,j)+d(j,k)$. The crossing penalty therefore preserves the metric property.
+
+The synthetic boundary is $x=500$. The depot at $(500,500)$ belongs to Asia because the rule is
+$x\ge500$. A route serving Europe must cross and return.
+
+\subsection*{Benchmark rounding is a separate convention}
+CVRPLIB requires Euclidean distances rounded to the nearest integer for comparison with its
+reference costs. Rounding can introduce small triangle-inequality violations. The exact proof
+above applies to unrounded MediDrone costs. The benchmark evaluator follows the benchmark's
+integer convention.
+
+\takeaway{A plan must pass both capacity and fleet checks. The crossing proof uses a simple
+fact: a direct trip cannot require more side changes than a detour.}

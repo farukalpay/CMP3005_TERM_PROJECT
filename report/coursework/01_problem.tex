@@ -1,0 +1,39 @@
+\maketitle\vspace{-0.7cm}
+\begin{abstract}
+This project compares two ways to plan medical deliveries with capacity-limited drones: a Genetic
+Algorithm (GA) and Tabu Search (TS). A Clarke--Wright savings heuristic provides a fast starting
+solution. The main evaluation uses the four required CVRPLIB benchmarks and a generated instance
+with 100 clinics. Each stochastic method has ten recorded runs and the same time budget per
+instance. In these saved experiments, TS gives lower mean costs than the pure GA on every main
+instance. Both methods reach the exact optimum in all runs on nine tiny test cases. The report
+explains the required reductions, Split dynamic program and running-time analysis using small
+examples. All tables and plots come from existing experiment files.
+\end{abstract}
+
+\section{Problem and project scope}
+A central laboratory must send medical supplies to clinics. A delivery plan answers two questions:
+\emph{which clinics belong to each drone, and in which order should that drone visit them?}
+Every drone starts and finishes at the laboratory. Crossing the Bosphorus adds a fixed cost.
+
+\subsection*{Inputs and a valid plan}
+Travel costs form a complete undirected graph. Demands are positive integers at most $Q$.
+There are $n$ clinics and a depot numbered $0$. Clinic $i$ needs $q_i$ units. Each drone can carry
+at most $Q$ units, and at most $K$ drones are available. The travel cost between $i$ and $j$ is
+$d(i,j)$. A route such as $(0,3,1,0)$ serves clinics 3 and 1 and has cost
+$d(0,3)+d(3,1)+d(1,0)$.
+
+A valid solution visits every clinic exactly once, uses at most $K$ nonempty routes, and keeps the
+sum of demands on each route at most $Q$. For example, with $Q=10$, demands 4 and 5 can share a
+route because $4+5\le10$. Adding a demand of 3 makes that route invalid.
+
+\textbf{Optimization version:} find a valid plan with the smallest total route cost.
+\textbf{Decision version:} given a bound $B$, does a valid plan with total cost at most $B$ exist?
+The decision version supports the NP-completeness argument on the next page.
+
+\subsection*{What this report evaluates}
+The core comparison is Clarke--Wright, GA and TS. The code also contains a memetic GA, real
+Istanbul data and wider benchmarks. These extensions remain available, but are outside the main
+comparison here. The required synthetic instance uses seed 7273, obtained from student ID 2267273.
+
+\takeaway{The project combines assigning clinics to drones with ordering the visits. A short route
+is useful only if it also satisfies the capacity and fleet limits.}

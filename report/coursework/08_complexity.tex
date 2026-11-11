@@ -1,0 +1,40 @@
+\section{Running-time analysis and stored timing evidence}
+Let $n$ be clinics, $\mu$ GA population, $k$ candidate-list size and $L$ maximum route length.
+These describe the cost of a step, not how many steps a good answer needs.
+
+\textbf{Clarke--Wright.} There are $O(n^2)$ savings. Sorting costs $O(n^2\log n)$. At most
+$n-1$ successful merges each touch $O(n)$ clinics in this implementation. This adds $O(n^2)$
+and does not dominate sorting.
+
+\textbf{GA generation.} A generation attempts $\mu$ offspring. Per child, crossover, mutation,
+fast unlimited Split and hashing cost at most $O(n)$ each. Reordering after replacement costs
+$O(\mu)$. The ordinary generation cost is
+\[
+ O\bigl(\mu(n+\mu)\bigr).
+\]
+If every child needs fleet-limited fast Split, a conservative bound is $O(\mu(Kn+\mu))$.
+With ordinary Bellman Split, replace the decoding term by $O(nL)$ per child. Keeping $\mu$
+explicit matters: population 100 is larger than some main benchmarks.
+
+\textbf{TS iteration.} The move generator checks $O(nk)$ candidates. Each uses constant-time
+delta evaluation and a constant-size tabu check. Applying the selected move costs at most
+$O(n)$, so an iteration costs $O(nk)$: linear for fixed $k$, quadratic for $k=n-1$.
+
+\textbf{Delta evaluation.} Fully recomputing a solution costs $O(n)$ per candidate, giving
+$O(n^2k)$ per iteration instead of $O(nk)$. Both solvers store an $O(n^2)$ distance matrix.
+GA adds $O(\mu n)$ population memory; TS adds an $O(n^2)$ tabu matrix.
+
+\begin{figure}[h]\centering
+\includegraphics[width=\linewidth]{\figdir/complexity.pdf}
+\caption{Saved timing data on log--log axes. Left: time per step, with fitted slopes in
+parentheses. Right: time per candidate for delta and full evaluation.}
+\end{figure}
+
+\textbf{Measurements.} The stored study uses synthetic sizes 25--3200, three repetitions, fixed
+iteration counts and approximately constant route lengths. Timing two run lengths and subtracting
+removes initialization. Its GA population is 50, rather than the main comparison's 100.
+Slopes are 1.08 for fixed-list TS (fit through $n=1600$), 2.12 for full-list TS and 0.84 for GA.
+These broadly match predictions 1, 2 and 1 for fixed population and route length. The plotted
+$n=3200$ TS point is outside its fit; the sharp increase is consistent with cache and memory
+effects. GA's fixed overhead matters more for small sizes. A measured slope supports the analysis
+over those sizes, but is not a proof of asymptotic complexity.

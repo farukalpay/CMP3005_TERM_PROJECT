@@ -1,0 +1,30 @@
+{
+  "method": "Summaries and plots from saved evidence only; no solver or exact optimiser invoked",
+  "main": "results/raw/main/*.json (five core instances; CW, GA, TS)",
+  "tiny": "results/raw/tiny/*.json; exact values cached in results/summary.json",
+  "timing": "results/raw/complexity/complexity.json",
+  "tuning": "results/raw/tune_ts/*.json",
+  "crossing": "results/psweep_stats.json (cached summary of results/raw/psweep)",
+  "route_plot": {
+    "algorithm": "ts",
+    "seed": 1,
+    "cost": 20724.21095
+  },
+  "standard_deviation": "sample, denominator runs-1",
+  "references": {
+    "A-n32-k5": 784.0,
+    "A-n45-k6": 944.0,
+    "A-n60-k9": 1354.0,
+    "A-n80-k10": 1763.0,
+    "MediDrone-7273": 20724.21095
+  },
+  "original_hardware": {
+    "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+    "python": "3.14.2",
+    "machine": "arm64",
+    "cpu": "Apple M4 Pro",
+    "cores": "14",
+    "mem_gb": 48.0,
+    "compiler": "Apple clang version 17.0.0 (clang-1700.3.19.1)"
+  }
+}

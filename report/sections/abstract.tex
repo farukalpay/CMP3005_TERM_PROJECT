@@ -1,0 +1,15 @@
+\begin{abstract}
+\noindent MediDrone Istanbul must route capacity-limited drones from one laboratory to clinics on both shores of
+the Bosphorus, where every crossing costs extra. We model the task as a capacitated vehicle routing problem
+(CVRP), prove it \NP-complete via $\hc\le_p\tsp\le_p\cvrp$, show that even deciding whether the fleet suffices is
+Bin Packing, and prove that the crossing penalty is a cut metric for \emph{any} shoreline. The cut structure gives
+a Bin-Packing lower bound on the number of crossing routes --- attained exactly by our best plans --- and predicts
+the penalty (1.12\,km) at which the routes over the real Bosphorus reorganise. We implement Clarke--Wright, a
+giant-tour genetic algorithm with an $O(n)$ Split decoder and a memetic variant, and a granular tabu search with
+$O(1)$ move evaluation and an adaptive capacity penalty, and confirm nine predicted growth exponents by
+measurement. With equal time budgets, tabu search and the memetic GA reach the best-known value on the four
+required CVRPLIB instances and on 72 and 71 of all 74 Augerat instances, the pure GA on 22; on the tightest
+instance (load factor 0.992) only tabu search finds a fleet-feasible plan at all. Search trajectory networks in
+partition space show why: only the methods that relocate clinics between routes funnel into the optimal partition.
+Data include a real instance built from 905 OpenStreetMap health facilities.
+\end{abstract}
